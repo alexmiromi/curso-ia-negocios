@@ -34,7 +34,8 @@ Depois de instalado funciona sem internet. O progresso de leitura fica salvo no 
 - Busca em todo o conteúdo e no glossário
 - Navegação anterior/próxima entre as 52 aulas
 - Offline completo via service worker
-- Gráficos SVG com tooltip, simuladores interativos (árvore de receita, amostra de teste A/B, simulação de "espiar o teste"), autodiagnóstico e ficha de métrica salvos no aparelho (Módulo I)
+- **Módulo I:** 10 gráficos SVG com tooltip · simulador da árvore de receita · calculadora de amostra de teste A/B · simulação de "espiar o teste" · autodiagnóstico de maturidade · ficha de métrica
+- **Módulo II:** 9 gráficos SVG · triagem regra/ML/generativa · simulação de treino passo a passo · sorteio da próxima palavra com temperatura · contador de tokens e custo mensal · calculadora do custo do erro · comparador comprar/alugar/construir · avaliador dos seis filtros
 - Vídeos do YouTube com capa e fallback quando estiver sem internet
 
 ## Estrutura

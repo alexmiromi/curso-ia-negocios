@@ -426,45 +426,116 @@ id:'m2', num:'II', titulo:'Fundamentos de IA para Líderes',
 resumo:'O vocabulário e o mapa mental para decidir sem depender de tradutor.',
 aulas:[
 
-{id:'m2a1', min:8, titulo:'O mapa: IA, aprendizado de máquina, aprendizado profundo e IA generativa',
+{id:'m2a1', min:10, titulo:'O mapa: IA, aprendizado de máquina, aprendizado profundo e IA generativa',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>São quatro círculos, um dentro do outro. Confundi-los faz você comprar a coisa errada e cobrar do fornecedor errado.</p></div>
 
-<div class="box b-nu"><p class="h">Bonecas russas</p>
-<p><strong>Inteligência artificial</strong> — o campo inteiro. Qualquer sistema que executa tarefa que associamos a inteligência humana. Inclui coisa velha e sem estatística nenhuma, como um sistema de regras “se A e B, então C”.</p>
-<p>&nbsp;&nbsp;↳ <strong>Aprendizado de máquina</strong> — em vez de programar as regras, você mostra exemplos e o sistema deriva as regras sozinho.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;↳ <strong>Aprendizado profundo</strong> — aprendizado de máquina com redes neurais de muitas camadas. Domina imagem, som e texto.</p>
-<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;↳ <strong>IA generativa</strong> — modelos profundos que <em>produzem</em> conteúdo novo: texto, imagem, código, áudio.</p></div>
+<div class="fig">
+<p class="fig-t">Quatro círculos, um dentro do outro</p>
+<p class="fig-s">Toda IA generativa é aprendizado profundo. Nem toda IA é aprendizado de máquina — e boa parte do que resolve problema de empresa nem sequer é IA.</p>
+<svg viewBox="0 0 400 272" role="img" aria-label="Círculos concêntricos: inteligência artificial contém aprendizado de máquina, que contém aprendizado profundo, que contém IA generativa">
+<ellipse cx="200" cy="152" rx="196" ry="116" class="box"/>
+<ellipse cx="200" cy="174" rx="152" ry="90" class="box"/>
+<ellipse cx="200" cy="192" rx="108" ry="66" class="box"/>
+<ellipse cx="200" cy="208" rx="64" ry="44" class="boxa"/>
+<text x="200" y="30" class="lb" text-anchor="middle">Inteligência artificial</text>
+<text x="200" y="46" class="tk" text-anchor="middle">inclui regra pura: “se A e B, então C”</text>
+<text x="200" y="100" class="lb" text-anchor="middle">Aprendizado de máquina</text>
+<text x="200" y="116" class="tk" text-anchor="middle">deriva a regra dos exemplos</text>
+<text x="200" y="144" class="lb" text-anchor="middle">Aprendizado profundo</text>
+<text x="200" y="159" class="tk" text-anchor="middle">imagem, som, texto</text>
+<text x="200" y="200" class="lb" text-anchor="middle">IA generativa</text>
+<text x="200" y="216" class="tk" text-anchor="middle">produz conteúdo novo</text>
+</svg>
+<p class="fig-c">O anel de fora é o maior — e é onde mora a solução mais barata para a maioria dos problemas. Quase toda conversa de mercado acontece no menor.</p>
+</div>
 
 <h4>A diferença que mais importa na prática</h4>
-<p><strong>Programação tradicional:</strong> você escreve a regra, o sistema aplica. Previsível, auditável, quebra de forma óbvia.</p>
-<p><strong>Aprendizado de máquina:</strong> você dá exemplos, o sistema infere a regra. Lida com nuance que ninguém consegue escrever à mão — e em troca é estatístico, ou seja, <em>erra por natureza</em> e nem sempre explica por quê.</p>
+<div class="fig">
+<p class="fig-t">Três abordagens, três contratos diferentes</p>
+<p class="fig-s">O que você entrega, o que o sistema faz e o que volta.</p>
+<svg viewBox="0 0 400 210" role="img" aria-label="Comparação entre regra, aprendizado de máquina e IA generativa: o que você fornece, o que o sistema faz e o que recebe">
+<defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="arrf"/></marker></defs>
+<g class="tk" font-size="10.5"><text x="72" y="12" text-anchor="middle">VOCÊ FORNECE</text><text x="200" y="12" text-anchor="middle">O SISTEMA</text><text x="330" y="12" text-anchor="middle">VOCÊ RECEBE</text></g>
+<text x="4" y="42" class="lb" font-size="12">Regra</text>
+<rect x="8" y="50" width="128" height="30" rx="7" class="box"/><text x="72" y="69" class="lb2" text-anchor="middle" font-size="11">a regra, escrita</text>
+<line x1="138" y1="65" x2="152" y2="65" class="arr" marker-end="url(#ah2)"/>
+<rect x="154" y="50" width="92" height="30" rx="7" class="box"/><text x="200" y="69" class="lb2" text-anchor="middle" font-size="11">aplica</text>
+<line x1="248" y1="65" x2="262" y2="65" class="arr" marker-end="url(#ah2)"/>
+<rect x="264" y="50" width="132" height="30" rx="7" class="box"/><text x="330" y="69" class="lb2" text-anchor="middle" font-size="11">sempre a mesma saída</text>
+<text x="4" y="112" class="lb" font-size="12">Aprendizado</text>
+<rect x="8" y="120" width="128" height="30" rx="7" class="boxa"/><text x="72" y="139" class="lb2" text-anchor="middle" font-size="11">milhares de exemplos</text>
+<line x1="138" y1="135" x2="152" y2="135" class="arr" marker-end="url(#ah2)"/>
+<rect x="154" y="120" width="92" height="30" rx="7" class="boxa"/><text x="200" y="132" class="lb2" text-anchor="middle" font-size="10.5">deriva a regra</text><text x="200" y="145" class="lb2" text-anchor="middle" font-size="10.5">sozinho</text>
+<line x1="248" y1="135" x2="262" y2="135" class="arr" marker-end="url(#ah2)"/>
+<rect x="264" y="120" width="132" height="30" rx="7" class="boxa"/><text x="330" y="139" class="lb2" text-anchor="middle" font-size="11">uma probabilidade</text>
+<text x="4" y="182" class="lb" font-size="12">Generativa</text>
+<rect x="8" y="190" width="128" height="18" rx="6" class="box"/><text x="72" y="203" class="lb2" text-anchor="middle" font-size="10.5">uma instrução</text>
+<line x1="138" y1="199" x2="152" y2="199" class="arr" marker-end="url(#ah2)"/>
+<rect x="154" y="190" width="92" height="18" rx="6" class="box"/><text x="200" y="203" class="lb2" text-anchor="middle" font-size="10.5">prevê o texto</text>
+<line x1="248" y1="199" x2="262" y2="199" class="arr" marker-end="url(#ah2)"/>
+<rect x="264" y="190" width="132" height="18" rx="6" class="box"/><text x="330" y="203" class="lb2" text-anchor="middle" font-size="10.5">conteúdo novo, variável</text>
+</svg>
+<p class="fig-c">Repare na coluna da direita: só a primeira linha promete a mesma resposta toda vez. As outras duas são estatísticas — <em>erram por natureza</em>, e o desenho do processo tem que contar com isso.</p>
+</div>
 
 <div class="box b-ex"><p class="h">Exemplo aplicado</p>
 <p><strong>Regra:</strong> “se o pedido está há mais de 3 dias sem faturar, avise o gerente.” Escreva em dez minutos. Funciona sempre igual. Não use IA aqui.</p>
 <p><strong>Aprendizado de máquina:</strong> “identifique quais pedidos têm risco alto de não serem pagos.” Depende de dezenas de sinais que interagem entre si. Ninguém escreve essa regra à mão.</p>
 <p><strong>IA generativa:</strong> “escreva a descrição comercial deste produto a partir da ficha técnica do fornecedor.” Não existe resposta certa única — existe resposta adequada.</p></div>
 
+<h4>Teste com o seu próprio problema</h4>
+<p>Pense num problema real da sua operação e responda. Quatro perguntas bastam para saber que caminho ele pede:</p>
+<div data-w="triagem"></div>
+
 <div class="box b-dn"><p class="h">O erro caro</p><p>Usar IA generativa onde uma regra resolveria. Fica mais caro, mais lento, menos confiável — e você troca um sistema auditável por um que às vezes inventa. Regra primeiro. IA quando a regra não dá conta.</p></div>
+
+<div class="hoje"><p class="h">Faça hoje · 10 minutos</p>
+<p>Liste as três coisas que alguém já sugeriu “fazer com IA” na sua empresa. Passe cada uma pela triagem acima. Se alguma cair em “escreva a regra”, você acabou de economizar meses.</p></div>
 
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Pergunta de triagem: “eu consigo escrever essa regra?” Se sim, escreva. IA é para quando a resposta é não.</p></div>
 `},
 
-{id:'m2a2', min:8, titulo:'Como uma máquina realmente "aprende"',
+{id:'m2a2', min:10, titulo:'Como uma máquina realmente "aprende"',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Aprender, aqui, quer dizer <strong>ajustar números até errar menos</strong> num conjunto de exemplos. Não há compreensão, intenção ou entendimento — há otimização.</p></div>
 
 <h4>O ciclo, sem matemática</h4>
 <ol>
-<li><strong>Exemplos.</strong> Milhares de casos com entrada e resposta certa. Fotos rotuladas, pedidos marcados como fraude ou não, textos e sua continuação.</li>
+<li><strong>Exemplos.</strong> Milhares de casos com entrada e resposta certa.</li>
 <li><strong>Chute inicial.</strong> O modelo começa com números aleatórios e erra quase tudo.</li>
 <li><strong>Medida do erro.</strong> Uma fórmula calcula o tamanho do erro em cada exemplo.</li>
 <li><strong>Ajuste.</strong> Os números internos mudam um pouquinho na direção que reduz o erro.</li>
 <li><strong>Repete</strong> milhões de vezes.</li>
 </ol>
-<p>No fim, os números internos — os <strong>parâmetros</strong> — codificam padrões que ninguém escreveu explicitamente. Um modelo grande de linguagem tem centenas de bilhões desses números.</p>
+
+<p>Isso soa abstrato até você ver acontecer. Abaixo, um modelo com apenas <strong>dois números ajustáveis</strong> aprendendo a partir de doze exemplos. Clique e acompanhe:</p>
+
+<div data-w="treino"></div>
+
+<p>No fim, os números internos — os <strong>parâmetros</strong> — codificam padrões que ninguém escreveu explicitamente. O modelo do exemplo tem dois. Um modelo grande de linguagem tem centenas de bilhões, e o mecanismo é exatamente esse, repetido em escala industrial.</p>
 
 <h4>Treino × inferência: a distinção que muda o orçamento</h4>
+<div class="fig">
+<p class="fig-t">Onde o dinheiro é gasto, de verdade</p>
+<p class="fig-s">O treino é um pico único e enorme. A inferência é uma gotinha — repetida milhões de vezes.</p>
+<svg viewBox="0 0 400 170" role="img" aria-label="Treino é um custo único e alto; inferência são milhares de custos pequenos que somam mais ao longo do tempo">
+<line x1="30" y1="130" x2="390" y2="130" class="ax"/>
+<text x="24" y="134" class="tk" text-anchor="end">0</text>
+<rect x="44" y="34" width="26" height="96" class="s2" data-tip="Treino · custo enorme, uma vez só · quase nenhuma empresa faz"/>
+<rect x="44" y="34" width="26" height="4" rx="2" class="s2"/>
+<text x="57" y="27" class="lb2" text-anchor="middle" font-size="11">Treino</text>
+<text x="57" y="146" class="tk" text-anchor="middle">1×</text>
+<g class="s1">
+<rect x="120" y="122" width="7" height="8" data-tip="uma chamada · centavos"/><rect x="130" y="122" width="7" height="8"/><rect x="140" y="122" width="7" height="8"/><rect x="150" y="122" width="7" height="8"/><rect x="160" y="122" width="7" height="8"/><rect x="170" y="122" width="7" height="8"/><rect x="180" y="122" width="7" height="8"/><rect x="190" y="122" width="7" height="8"/><rect x="200" y="122" width="7" height="8"/><rect x="210" y="122" width="7" height="8"/><rect x="220" y="122" width="7" height="8"/><rect x="230" y="122" width="7" height="8"/><rect x="240" y="122" width="7" height="8"/><rect x="250" y="122" width="7" height="8"/><rect x="260" y="122" width="7" height="8"/><rect x="270" y="122" width="7" height="8"/><rect x="280" y="122" width="7" height="8"/><rect x="290" y="122" width="7" height="8"/><rect x="300" y="122" width="7" height="8"/><rect x="310" y="122" width="7" height="8"/><rect x="320" y="122" width="7" height="8"/><rect x="330" y="122" width="7" height="8"/><rect x="340" y="122" width="7" height="8"/><rect x="350" y="122" width="7" height="8"/><rect x="360" y="122" width="7" height="8"/><rect x="370" y="122" width="7" height="8"/><rect x="380" y="122" width="7" height="8"/>
+</g>
+<path d="M120 112 L385 112" class="lg"/>
+<text x="252" y="106" class="lb2" text-anchor="middle" font-size="11">Inferência · toda vez que alguém usa</text>
+<text x="252" y="146" class="tk" text-anchor="middle">milhões de vezes por mês, para sempre</text>
+</svg>
+<p class="fig-c">Praticamente nenhuma empresa comum treina modelo do zero. Todo mundo <em>usa</em>. A conta que estoura não é a laranja — é a soma das verdes.</p>
+</div>
+
 <div class="tbl"><table>
 <thead><tr><th></th><th>Treino</th><th>Inferência</th></tr></thead>
 <tbody>
@@ -473,15 +544,42 @@ html:`
 <tr><td>Custo</td><td>Altíssimo, concentrado</td><td>Baixo por uso, mas <strong>recorrente</strong></td></tr>
 <tr><td>Quem faz</td><td>Poucas empresas no mundo</td><td>Você, todo dia</td></tr>
 </tbody></table></div>
-<p>Praticamente nenhuma empresa comum treina modelo do zero. Todo mundo <em>usa</em>. Onde a conta estoura é na inferência: barata por chamada, cara quando são milhões de chamadas por mês.</p>
 
-<div class="box b-wr"><p class="h">⚠ Consequência incontornável</p>
-<p>Como o modelo aprende dos exemplos, <strong>ele herda tudo que está neles</strong> — inclusive erro, desequilíbrio e preconceito histórico. Não existe modelo neutro; existe modelo que reflete o dado com que foi alimentado. Por isso governança de dado é assunto de negócio, não de tecnologia.</p></div>
+<h4>O modelo é espelho do passado</h4>
+<div class="fig">
+<p class="fig-t">Entra torto, sai torto — com cara de objetividade</p>
+<p class="fig-s">Histórico de aprovação de pedidos por região, e o que o modelo passa a fazer depois de aprender com ele.</p>
+<svg viewBox="0 0 400 150" role="img" aria-label="A taxa de aprovação histórica por região é reproduzida quase identicamente pelo modelo">
+<line x1="36" y1="110" x2="390" y2="110" class="ax"/>
+<line x1="36" y1="30" x2="390" y2="30" class="gr"/><line x1="36" y1="70" x2="390" y2="70" class="gr"/>
+<text x="30" y="34" class="tk" text-anchor="end">100%</text><text x="30" y="74" class="tk" text-anchor="end">50%</text><text x="30" y="114" class="tk" text-anchor="end">0</text>
+<rect x="62" y="38" width="20" height="72" class="sg" data-tip="Região A · histórico · 90% aprovados"/>
+<rect x="84" y="39" width="20" height="71" class="s1" data-tip="Região A · modelo · 89% aprovados"/>
+<text x="83" y="126" class="tk" text-anchor="middle">Região A</text>
+<rect x="152" y="46" width="20" height="64" class="sg" data-tip="Região B · histórico · 80% aprovados"/>
+<rect x="174" y="48" width="20" height="62" class="s1" data-tip="Região B · modelo · 78% aprovados"/>
+<text x="173" y="126" class="tk" text-anchor="middle">Região B</text>
+<rect x="242" y="78" width="20" height="32" class="sg" data-tip="Região C · histórico · 40% aprovados"/>
+<rect x="264" y="80" width="20" height="30" class="s1" data-tip="Região C · modelo · 37% aprovados"/>
+<text x="263" y="126" class="tk" text-anchor="middle">Região C</text>
+<rect x="332" y="86" width="20" height="24" class="sg" data-tip="Região D · histórico · 30% aprovados"/>
+<rect x="354" y="89" width="20" height="21" class="s1" data-tip="Região D · modelo · 26% aprovados"/>
+<text x="353" y="126" class="tk" text-anchor="middle">Região D</text>
+<text x="200" y="146" class="tk" text-anchor="middle">a diferença sistemática do passado vira critério automático do futuro</text>
+</svg>
+<div class="legend"><span><i class="sq" style="background:var(--tx3);opacity:.55"></i>Histórico (o que fizemos)</span><span><i class="sq" style="background:var(--s1)"></i>Modelo (o que ele passa a fazer)</span></div>
+<p class="fig-c">O modelo não inventou a diferença entre as regiões: ele a copiou fielmente. Se a diferença histórica era justificada, tudo bem. Se era um viés operacional que ninguém tinha notado, agora ela virou política oficial da empresa — rodando sozinha, em escala, com aparência de neutralidade.</p>
+</div>
+
+<div class="box b-wr"><p class="h">⚠ Consequência incontornável</p><p>Como o modelo aprende dos exemplos, <strong>ele herda tudo que está neles</strong> — inclusive erro, desequilíbrio e prática injusta. Não existe modelo neutro; existe modelo que reflete o dado com que foi alimentado. Por isso governança de dado é assunto de negócio, não de tecnologia.</p></div>
+
+<div class="hoje"><p class="h">Faça hoje · 10 minutos</p>
+<p>Escolha uma decisão que a sua empresa toma repetidamente (aprovar, priorizar, recomendar). Pergunte-se: se um modelo aprendesse com os últimos dois anos dessas decisões, o que exatamente ele copiaria? Se a resposta te incomodar, você acabou de achar o dado que precisa arrumar antes de qualquer projeto.</p></div>
 
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Modelo é espelho estatístico do passado. Se o passado da empresa é torto, o modelo é torto — só que mais rápido.</p></div>
 `},
 
-{id:'m2a3', min:7, titulo:'Vocabulário mínimo para não ser enrolado',
+{id:'m2a3', min:11, titulo:'Vocabulário mínimo para não ser enrolado',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Doze palavras resolvem 90% das conversas técnicas. Quem domina o vocabulário faz a pergunta que revela se o fornecedor sabe do que está falando.</p></div>
 
@@ -492,24 +590,59 @@ html:`
 <tr><td><strong>Parâmetro</strong></td><td>Cada número interno ajustável. “7 bilhões de parâmetros” é medida de tamanho, não de qualidade.</td></tr>
 <tr><td><strong>Treino</strong></td><td>O processo de ajustar esses números.</td></tr>
 <tr><td><strong>Inferência</strong></td><td>Usar o modelo já treinado para obter uma resposta.</td></tr>
-<tr><td><strong>Token</strong></td><td>Pedaço de palavra. É a unidade de cobrança e de limite. Em português, ~1 palavra ≈ 1,5 a 2 tokens.</td></tr>
-<tr><td><strong>Janela de contexto</strong></td><td>Quanto texto o modelo consegue considerar de uma vez. Fora da janela, ele simplesmente não vê.</td></tr>
+<tr><td><strong>Token</strong></td><td>Pedaço de palavra. É a unidade de cobrança e de limite.</td></tr>
+<tr><td><strong>Janela de contexto</strong></td><td>Quanto texto o modelo considera de uma vez. Fora da janela, ele simplesmente não vê.</td></tr>
 <tr><td><strong>Prompt</strong></td><td>A instrução que você dá. Em sistema sério, é código — versionado e testado.</td></tr>
 <tr><td><strong>Alucinação</strong></td><td>Resposta inventada com aparência de verdade. Não é bug: é consequência de como o modelo funciona.</td></tr>
 <tr><td><strong>Temperatura</strong></td><td>Botão de criatividade. Baixa = previsível e repetível. Alta = variado e arriscado.</td></tr>
-<tr><td><strong>Embedding</strong></td><td>Transformar texto em coordenadas numéricas, de forma que coisas parecidas fiquem perto. É o que permite busca por significado.</td></tr>
+<tr><td><strong>Embedding</strong></td><td>Transformar texto em coordenadas numéricas, de forma que coisas parecidas fiquem perto.</td></tr>
 <tr><td><strong>Ajuste fino</strong></td><td>Pegar um modelo pronto e treiná-lo um pouco mais com dados seus. Caro e raramente necessário.</td></tr>
-<tr><td><strong>RAG</strong></td><td>Buscar trechos da sua base e colar no prompt antes de perguntar. É como o modelo passa a “saber” da sua empresa. Quase sempre melhor que ajuste fino.</td></tr>
+<tr><td><strong>RAG</strong></td><td>Buscar trechos da sua base e colar no prompt antes de perguntar. É como o modelo passa a “saber” da sua empresa.</td></tr>
 </tbody></table></div>
+
+<h4>Veja token, temperatura e alucinação na mesma tela</h4>
+<p>O modelo não “sabe” a resposta: ele calcula a probabilidade de cada continuação possível e <strong>sorteia uma</strong>. A temperatura controla o quanto o sorteio respeita essas probabilidades. Mexa no controle e sorteie algumas vezes:</p>
+
+<div data-w="proximo"></div>
+
+<div class="box b-ac"><p class="h">O que essa simulação está mostrando</p><p>Alucinação não é o modelo “errando”. É o sorteio pegando uma opção improvável — que existia na lista o tempo todo. Temperatura baixa não elimina o risco; só o torna raro. É por isso que, em tarefa factual, a defesa não é ajustar a temperatura: é <strong>entregar a fonte</strong> e exigir citação.</p></div>
+
+<h4>A janela de contexto</h4>
+<div class="fig">
+<p class="fig-t">O que entra na janela — e o que o modelo simplesmente não vê</p>
+<p class="fig-s">Tudo que você manda ocupa espaço. Passou do limite, o começo cai fora em silêncio.</p>
+<svg viewBox="0 0 400 84" role="img" aria-label="Barra da janela de contexto dividida entre instrução, documentos, histórico e pergunta, com um trecho que ficou de fora">
+<text x="0" y="12" class="tk">DENTRO DA JANELA</text>
+<text x="398" y="12" class="tk" text-anchor="end">FORA</text>
+<rect x="0" y="20" width="66" height="32" class="s1" data-tip="Instrução do sistema · reenviada em toda chamada · você paga por ela sempre"/>
+<rect x="68" y="20" width="116" height="32" class="s2" data-tip="Documentos trazidos pela busca (RAG) · o que faz o modelo saber da sua empresa"/>
+<rect x="186" y="20" width="82" height="32" class="s3" data-tip="Histórico da conversa · cresce a cada turno e é reenviado inteiro"/>
+<rect x="270" y="20" width="34" height="32" class="sg" data-tip="A pergunta do usuário · quase sempre a menor parte"/>
+<g class="lb2" font-size="10.5" fill="#fff"><text x="33" y="40" text-anchor="middle">instrução</text><text x="126" y="40" text-anchor="middle">documentos</text><text x="227" y="40" text-anchor="middle">histórico</text></g>
+<line x1="308" y1="14" x2="308" y2="58" class="ax" stroke-width="2"/>
+<rect x="312" y="20" width="86" height="32" fill="none" stroke="var(--ln2)" stroke-width="1" stroke-dasharray="4 3"/>
+<text x="355" y="40" class="tk" text-anchor="middle">cai fora</text>
+<g class="tk"><text x="287" y="66" text-anchor="middle">pergunta</text><text x="308" y="80" text-anchor="middle">limite</text></g>
+</svg>
+<p class="fig-c">O modelo responde como se o que ficou de fora nunca tivesse existido. Não avisa, não dá erro — só responde pior, e você não sabe por quê. Em conversa longa é o <strong>começo</strong> que cai primeiro: as instruções iniciais somem antes de tudo.</p>
+</div>
+
+<h4>Quanto isso custa por mês</h4>
+<p>Token é a unidade de cobrança. Cole abaixo um prompt real seu — ou use o exemplo — e veja a conta no fim do mês:</p>
+<div data-w="tokens"></div>
 
 <div class="box b-ex"><p class="h">Como isso vira poder de negociação</p>
 <p>Fornecedor: “treinamos uma IA com os dados da sua empresa”.</p>
-<p>Pergunta certa: <em>“Treinaram mesmo, ou é RAG?”</em> Em 95% dos casos é RAG — o que é ótimo e muito mais barato. Se ele não entende a diferença, você já sabe com quem está lidando.</p></div>
+<p>Pergunta certa: <em>“Treinaram mesmo, ou é RAG?”</em> Em 95% dos casos é RAG — o que é ótimo e muito mais barato. Se ele não entende a diferença, você já sabe com quem está lidando.</p>
+<p>Outras três que separam quem sabe de quem repete: <em>“Qual o custo por mil chamadas nesse desenho?”</em> · <em>“O que acontece quando a pergunta está fora da base?”</em> · <em>“Como vocês medem que a resposta está certa?”</em></p></div>
+
+<div class="hoje"><p class="h">Faça hoje · 5 minutos</p>
+<p>Pegue o prompt mais usado da sua operação (ou o que você mais digita no dia a dia) e cole na calculadora acima. Multiplique pelo uso real da equipe. Muita gente descobre aqui que gasta menos que imagina — e outros descobrem o contrário.</p></div>
 
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Modelo maior não é modelo melhor para o seu caso. O que decide é a tarefa, o custo por chamada e a latência aceitável.</p></div>
 `},
 
-{id:'m2a4', min:8, titulo:'O que a IA faz bem, o que faz mal e o que nunca faz',
+{id:'m2a4', min:11, titulo:'O que a IA faz bem, o que faz mal e o que nunca faz',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>A pergunta útil não é “a IA consegue?”. É “a IA consegue com a confiabilidade que este processo exige?”. Sem essa segunda metade, todo piloto vira frustração.</p></div>
 
@@ -533,24 +666,66 @@ html:`
 
 <h4>Nunca faz</h4>
 <ul>
-<li><strong>Assumir responsabilidade.</strong> Deu errado, o responsável é sempre uma pessoa jurídica ou física.</li>
+<li><strong>Assumir responsabilidade.</strong> Deu errado, o responsável é sempre uma pessoa.</li>
 <li><strong>Entender consequência.</strong> Não existe modelo interno de “isso vai machucar alguém”.</li>
-<li><strong>Garantir a mesma resposta sempre</strong>, salvo configuração específica — e mesmo assim com ressalvas.</li>
 <li><strong>Saber o que não sabe.</strong> A confiança na resposta não se relaciona com a correção dela.</li>
 </ul>
 
+<h4>“95% de acerto” é bom ou ruim?</h4>
+<div class="fig">
+<p class="fig-t">Cem casos, cinco erros. Depende inteiramente do que são os cinco.</p>
+<p class="fig-s">Cada quadradinho é um caso. Os cinco em laranja são os que o modelo errou.</p>
+<svg viewBox="0 0 398 100" role="img" aria-label="Cem quadrados representando cem casos, com cinco em laranja marcando os erros"><rect x="0" y="0" width="18" height="18" rx="2" class="s1"/><rect x="20" y="0" width="18" height="18" rx="2" class="s1"/><rect x="40" y="0" width="18" height="18" rx="2" class="s1"/><rect x="60" y="0" width="18" height="18" rx="2" class="s1"/><rect x="80" y="0" width="18" height="18" rx="2" class="s1"/><rect x="100" y="0" width="18" height="18" rx="2" class="s1"/><rect x="120" y="0" width="18" height="18" rx="2" class="s1"/><rect x="140" y="0" width="18" height="18" rx="2" class="s1"/><rect x="160" y="0" width="18" height="18" rx="2" class="s1"/><rect x="180" y="0" width="18" height="18" rx="2" class="s1"/><rect x="200" y="0" width="18" height="18" rx="2" class="s1"/><rect x="220" y="0" width="18" height="18" rx="2" class="s1"/><rect x="240" y="0" width="18" height="18" rx="2" class="s1"/><rect x="260" y="0" width="18" height="18" rx="2" class="s1"/><rect x="280" y="0" width="18" height="18" rx="2" class="s1"/><rect x="300" y="0" width="18" height="18" rx="2" class="s1"/><rect x="320" y="0" width="18" height="18" rx="2" class="s1"/><rect x="340" y="0" width="18" height="18" rx="2" class="s1"/><rect x="360" y="0" width="18" height="18" rx="2" class="s1"/><rect x="380" y="0" width="18" height="18" rx="2" class="s1"/><rect x="0" y="20" width="18" height="18" rx="2" class="s1"/><rect x="20" y="20" width="18" height="18" rx="2" class="s1"/><rect x="40" y="20" width="18" height="18" rx="2" class="s1"/><rect x="60" y="20" width="18" height="18" rx="2" class="s1"/><rect x="80" y="20" width="18" height="18" rx="2" class="s1"/><rect x="100" y="20" width="18" height="18" rx="2" class="s1"/><rect x="120" y="20" width="18" height="18" rx="2" class="s1"/><rect x="140" y="20" width="18" height="18" rx="2" class="s1"/><rect x="160" y="20" width="18" height="18" rx="2" class="s1"/><rect x="180" y="20" width="18" height="18" rx="2" class="s1"/><rect x="200" y="20" width="18" height="18" rx="2" class="s1"/><rect x="220" y="20" width="18" height="18" rx="2" class="s1"/><rect x="240" y="20" width="18" height="18" rx="2" class="s1"/><rect x="260" y="20" width="18" height="18" rx="2" class="s1"/><rect x="280" y="20" width="18" height="18" rx="2" class="s1"/><rect x="300" y="20" width="18" height="18" rx="2" class="s1"/><rect x="320" y="20" width="18" height="18" rx="2" class="s1"/><rect x="340" y="20" width="18" height="18" rx="2" class="s1"/><rect x="360" y="20" width="18" height="18" rx="2" class="s1"/><rect x="380" y="20" width="18" height="18" rx="2" class="s1"/><rect x="0" y="40" width="18" height="18" rx="2" class="s1"/><rect x="20" y="40" width="18" height="18" rx="2" class="s1"/><rect x="40" y="40" width="18" height="18" rx="2" class="s1"/><rect x="60" y="40" width="18" height="18" rx="2" class="s1"/><rect x="80" y="40" width="18" height="18" rx="2" class="s1"/><rect x="100" y="40" width="18" height="18" rx="2" class="s1"/><rect x="120" y="40" width="18" height="18" rx="2" class="s1"/><rect x="140" y="40" width="18" height="18" rx="2" class="s1"/><rect x="160" y="40" width="18" height="18" rx="2" class="s1"/><rect x="180" y="40" width="18" height="18" rx="2" class="s1"/><rect x="200" y="40" width="18" height="18" rx="2" class="s1"/><rect x="220" y="40" width="18" height="18" rx="2" class="s1"/><rect x="240" y="40" width="18" height="18" rx="2" class="s1"/><rect x="260" y="40" width="18" height="18" rx="2" class="s1"/><rect x="280" y="40" width="18" height="18" rx="2" class="s1"/><rect x="300" y="40" width="18" height="18" rx="2" class="s1"/><rect x="320" y="40" width="18" height="18" rx="2" class="s1"/><rect x="340" y="40" width="18" height="18" rx="2" class="s1"/><rect x="360" y="40" width="18" height="18" rx="2" class="s1"/><rect x="380" y="40" width="18" height="18" rx="2" class="s1"/><rect x="0" y="60" width="18" height="18" rx="2" class="s1"/><rect x="20" y="60" width="18" height="18" rx="2" class="s1"/><rect x="40" y="60" width="18" height="18" rx="2" class="s1"/><rect x="60" y="60" width="18" height="18" rx="2" class="s1"/><rect x="80" y="60" width="18" height="18" rx="2" class="s1"/><rect x="100" y="60" width="18" height="18" rx="2" class="s1"/><rect x="120" y="60" width="18" height="18" rx="2" class="s1"/><rect x="140" y="60" width="18" height="18" rx="2" class="s1"/><rect x="160" y="60" width="18" height="18" rx="2" class="s1"/><rect x="180" y="60" width="18" height="18" rx="2" class="s1"/><rect x="200" y="60" width="18" height="18" rx="2" class="s1"/><rect x="220" y="60" width="18" height="18" rx="2" class="s1"/><rect x="240" y="60" width="18" height="18" rx="2" class="s1"/><rect x="260" y="60" width="18" height="18" rx="2" class="s1"/><rect x="280" y="60" width="18" height="18" rx="2" class="s1"/><rect x="300" y="60" width="18" height="18" rx="2" class="s1"/><rect x="320" y="60" width="18" height="18" rx="2" class="s1"/><rect x="340" y="60" width="18" height="18" rx="2" class="s1"/><rect x="360" y="60" width="18" height="18" rx="2" class="s1"/><rect x="380" y="60" width="18" height="18" rx="2" class="s1"/><rect x="0" y="80" width="18" height="18" rx="2" class="s1"/><rect x="20" y="80" width="18" height="18" rx="2" class="s1"/><rect x="40" y="80" width="18" height="18" rx="2" class="s1"/><rect x="60" y="80" width="18" height="18" rx="2" class="s1"/><rect x="80" y="80" width="18" height="18" rx="2" class="s1"/><rect x="100" y="80" width="18" height="18" rx="2" class="s1"/><rect x="120" y="80" width="18" height="18" rx="2" class="s1"/><rect x="140" y="80" width="18" height="18" rx="2" class="s1"/><rect x="160" y="80" width="18" height="18" rx="2" class="s1"/><rect x="180" y="80" width="18" height="18" rx="2" class="s1"/><rect x="200" y="80" width="18" height="18" rx="2" class="s1"/><rect x="220" y="80" width="18" height="18" rx="2" class="s1"/><rect x="240" y="80" width="18" height="18" rx="2" class="s1"/><rect x="260" y="80" width="18" height="18" rx="2" class="s1"/><rect x="280" y="80" width="18" height="18" rx="2" class="s1"/><rect x="300" y="80" width="18" height="18" rx="2" class="s2" data-tip="erro 1 de 5"/><rect x="320" y="80" width="18" height="18" rx="2" class="s2" data-tip="erro 2 de 5"/><rect x="340" y="80" width="18" height="18" rx="2" class="s2" data-tip="erro 3 de 5"/><rect x="360" y="80" width="18" height="18" rx="2" class="s2" data-tip="erro 4 de 5"/><rect x="380" y="80" width="18" height="18" rx="2" class="s2" data-tip="erro 5 de 5"/></svg>
+<div class="tbl" style="margin:12px 0 0"><table><thead><tr><th>Os 5 erros são…</th><th>Custo real</th></tr></thead><tbody>
+<tr><td><strong>Assunto de mensagem classificado errado</strong></td><td>O atendente corrige em 2 segundos. Irrelevante.</td></tr>
+<tr><td><strong>Descrição de produto com frase estranha</strong></td><td>Pego na revisão antes de publicar. Aceitável.</td></tr>
+<tr><td><strong>Pedido aprovado automaticamente sem ser</strong></td><td>A 10 mil pedidos/mês, <strong>500 problemas por mês</strong>. Inaceitável.</td></tr>
+</tbody></table></div>
+<p class="fig-c">Mesma acurácia, três destinos. O número não muda; o custo dos cinco muda tudo.</p>
+</div>
+
+<h4>A matriz que decide o desenho</h4>
+<div class="fig">
+<p class="fig-t">Custo do erro × reversibilidade</p>
+<p class="fig-s">Antes de automatizar, localize o seu caso num dos quatro quadrantes.</p>
+<svg viewBox="0 0 400 220" role="img" aria-label="Matriz de quatro quadrantes cruzando custo do erro com reversibilidade">
+<rect x="64" y="10" width="164" height="92" rx="8" class="box"/>
+<rect x="232" y="10" width="164" height="92" rx="8" class="box"/>
+<rect x="64" y="106" width="164" height="92" rx="8" class="boxa"/>
+<rect x="232" y="106" width="164" height="92" rx="8" class="box"/>
+<g class="lb" font-size="12"><text x="146" y="34" text-anchor="middle">Sugere, humano aprova</text><text x="314" y="34" text-anchor="middle">IA nunca decide</text><text x="146" y="130" text-anchor="middle">Automatize</text><text x="314" y="130" text-anchor="middle">Automático + amostragem</text></g>
+<g class="tk" font-size="10">
+<text x="146" y="52" text-anchor="middle">e-mail em massa,</text><text x="146" y="64" text-anchor="middle">preço publicado,</text><text x="146" y="76" text-anchor="middle">resposta ao cliente</text>
+<text x="314" y="52" text-anchor="middle">cancelar pedido,</text><text x="314" y="64" text-anchor="middle">negar crédito,</text><text x="314" y="76" text-anchor="middle">apagar dado, banir</text>
+<text x="146" y="148" text-anchor="middle">sugerir categoria,</text><text x="146" y="160" text-anchor="middle">resumir conversa,</text><text x="146" y="172" text-anchor="middle">ordenar fila</text>
+<text x="314" y="148" text-anchor="middle">marcar avaliação,</text><text x="314" y="160" text-anchor="middle">priorizar estoque,</text><text x="314" y="172" text-anchor="middle">rotular produto</text>
+</g>
+<text x="146" y="214" class="lb2" text-anchor="middle" font-size="11">Reversível</text>
+<text x="314" y="214" class="lb2" text-anchor="middle" font-size="11">Irreversível</text>
+<text x="30" y="60" class="lb2" text-anchor="middle" font-size="11">Erro</text><text x="30" y="73" class="lb2" text-anchor="middle" font-size="11">caro</text>
+<text x="30" y="152" class="lb2" text-anchor="middle" font-size="11">Erro</text><text x="30" y="165" class="lb2" text-anchor="middle" font-size="11">barato</text>
+</svg>
+<p class="fig-c">Só o quadrante verde aceita automação sem freio. Repare que a coluna da direita não tem saída: irreversível + caro nunca vira automático, por melhor que o modelo seja.</p>
+</div>
+
+<h4>Ponha número nisso</h4>
+<p>“Custo do erro” costuma ficar no abstrato. Coloque os seus valores e veja quanto os erros que sobram custam por mês — e o que isso implica no desenho:</p>
+<div data-w="custoerro"></div>
+
 <div class="box b-dn"><p class="h">A regra do custo do erro</p>
-<p>Antes de automatizar, responda: <strong>quanto custa um erro, e quantos erros por mês eu aguento?</strong></p>
 <ul>
 <li>Erro barato e reversível (sugerir categoria de produto) → automatize e revise por amostragem.</li>
 <li>Erro caro mas reversível (mandar e-mail errado) → IA sugere, humano aprova.</li>
 <li>Erro caro e irreversível (cancelar pedido, negar crédito, apagar dado) → IA jamais decide sozinha.</li>
 </ul></div>
 
+<div class="hoje"><p class="h">Faça hoje · 10 minutos</p>
+<p>Escolha a automação que você mais quer construir. Coloque o volume mensal real e um custo honesto por erro na calculadora. Se o prejuízo mensal passar do que você economizaria, o projeto está reprovado — e você descobriu isso em dez minutos, não em três meses.</p></div>
+
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>O acerto de 95% é excelente numa tarefa e catastrófico em outra. O que muda não é o modelo — é o custo dos 5%.</p></div>
 `},
 
-{id:'m2a5', min:7, titulo:'Comprar, alugar ou construir',
+{id:'m2a5', min:10, titulo:'Comprar, alugar ou construir',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Construir só se defende quando aquilo <em>é</em> a sua vantagem competitiva. Todo o resto se aluga.</p></div>
 
@@ -562,6 +737,10 @@ html:`
 <tr><td><strong>Construir</strong></td><td>Modelo próprio, treinado ou ajustado com dado seu</td><td>Meses</td><td>Você tem dado que ninguém tem <em>e</em> isso é o seu diferencial</td></tr>
 </tbody></table></div>
 
+<h4>Faça a conta antes da reunião</h4>
+<p>A discussão “vamos construir?” quase sempre acontece sem ninguém somar 36 meses. Mexa nos números e veja em que mês (se em algum) construir alcança as outras opções:</p>
+<div data-w="construir"></div>
+
 <h4>Os cinco filtros antes de dizer "vamos construir"</h4>
 <ol>
 <li><strong>O dado é realmente exclusivo?</strong> Se o concorrente compra dado equivalente, sua vantagem dura um trimestre.</li>
@@ -571,17 +750,54 @@ html:`
 <li><strong>A diferença justifica?</strong> Ganhar 3 pontos de acurácia por 8 meses de trabalho quase nunca fecha a conta.</li>
 </ol>
 
-<div class="box b-wr"><p class="h">⚠ O custo escondido de construir</p><p>O modelo é a parte fácil. O caro é: coletar e rotular dado, montar avaliação confiável, colocar em produção, monitorar deriva, retreinar, versionar e ter plano quando degradar. A construção é 20% do esforço. Os 80% são manutenção.</p></div>
+<div class="fig">
+<p class="fig-t">Onde o esforço realmente vai</p>
+<p class="fig-s">A parte que todo mundo imagina quando diz “vamos construir um modelo” é a fatia verde.</p>
+<svg viewBox="0 0 400 128" role="img" aria-label="Barra empilhada: construir o modelo é 20 por cento do esforço; dados, produção e manutenção são os outros 80">
+<rect x="0" y="16" width="76" height="34" rx="0" class="s1" data-tip="Construir o modelo · cerca de 20% do esforço"/>
+<rect x="78" y="16" width="122" height="34" class="s2" data-tip="Coletar, limpar e rotular dados · a maior fatia isolada"/>
+<rect x="202" y="16" width="94" height="34" class="s3" data-tip="Colocar em produção: integração, latência, exceções"/>
+<rect x="298" y="16" width="102" height="34" class="sg" data-tip="Monitorar, retreinar, versionar · para sempre"/>
+<text x="38" y="38" class="lb2" text-anchor="middle" font-size="10.5" fill="#fff">20%</text>
+<text x="139" y="38" class="lb2" text-anchor="middle" font-size="10.5" fill="#fff">30%</text>
+<text x="249" y="38" class="lb2" text-anchor="middle" font-size="10.5" fill="#fff">24%</text>
+<text x="349" y="38" class="lb2" text-anchor="middle" font-size="10.5" fill="#fff">26%</text>
+<g class="tk" font-size="10.5"><text x="38" y="66" text-anchor="middle">o modelo</text><text x="139" y="66" text-anchor="middle">dados</text><text x="249" y="66" text-anchor="middle">produção</text><text x="349" y="66" text-anchor="middle">manutenção</text></g>
+<line x1="78" y1="78" x2="400" y2="78" class="ax"/>
+<text x="239" y="94" class="lb2" text-anchor="middle" font-size="11.5">80% que ninguém orça</text>
+<text x="200" y="118" class="tk" text-anchor="middle" font-size="10.5">e a manutenção não acaba: ela vira custo fixo para sempre</text>
+</svg>
+</div>
+
+<div class="box b-wr"><p class="h">⚠ O custo escondido de construir</p><p>O modelo é a parte fácil. O caro é: coletar e rotular dado, montar avaliação confiável, colocar em produção, monitorar deriva, retreinar, versionar e ter plano quando degradar. Quando alguém apresenta um orçamento que cobre só a fatia verde, o projeto já nasceu subfinanciado em 4 vezes.</p></div>
 
 <div class="box b-ex"><p class="h">Exemplo aplicado</p>
 <p>Uma loja quer recomendação de produto. <strong>Comprar</strong> um módulo pronto custa pouco e entrega o genérico. <strong>Construir</strong> em cima do próprio histórico de compra faz sentido <em>se</em> a loja tem catálogo com padrão de recompra particular — reposição, consumo periódico, produto complementar específico. Aí o dado é realmente diferente do de qualquer módulo genérico, e o filtro 1 passa.</p></div>
 
+<div class="hoje"><p class="h">Faça hoje · 10 minutos</p>
+<p>Pegue a última proposta de fornecedor que você recebeu. Procure nela as linhas de manutenção mensal, monitoramento e retreino. Se não existirem, pergunte — e some ao valor apresentado. É essa soma que vai para o comparador acima.</p></div>
+
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Regra prática: alugue por padrão. Construa só quando conseguir explicar em uma frase por que ninguém mais consegue fazer aquilo.</p></div>
 `},
 
-{id:'m2a6', min:8, titulo:'Anatomia de um caso de uso: o teste dos seis filtros',
+{id:'m2a6', min:10, titulo:'Anatomia de um caso de uso: o teste dos seis filtros',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Ideia de IA é barata e abundante. O que escasseia é caso de uso que sobrevive a seis perguntas seguidas. Aplique os filtros <em>antes</em> de gastar uma hora de equipe.</p></div>
+
+<div class="fig">
+<p class="fig-t">De vinte ideias na reunião, uma vira projeto</p>
+<p class="fig-s">Cada filtro é eliminatório. A queda é brutal — e é assim que deve ser.</p>
+<svg viewBox="0 0 400 232" role="img" aria-label="Funil: vinte ideias caem para uma depois de passar pelos seis filtros">
+<rect x="30" y="4" width="340" height="26" rx="5" class="box"/><text x="200" y="21" class="lb2" text-anchor="middle" font-size="11.5">20 ideias na reunião</text>
+<rect x="52" y="34" width="296" height="26" rx="5" class="box"/><text x="200" y="51" class="lb2" text-anchor="middle" font-size="11.5">14 sobram · 1 Valor</text>
+<rect x="76" y="64" width="248" height="26" rx="5" class="box"/><text x="200" y="81" class="lb2" text-anchor="middle" font-size="11.5">10 sobram · 2 Frequência</text>
+<rect x="104" y="94" width="192" height="26" rx="5" class="box"/><text x="200" y="111" class="lb2" text-anchor="middle" font-size="11.5">6 sobram · 3 Dado</text>
+<rect x="128" y="124" width="144" height="26" rx="5" class="box"/><text x="200" y="141" class="lb2" text-anchor="middle" font-size="11.5">4 sobram · 4 Erro</text>
+<rect x="148" y="154" width="104" height="26" rx="5" class="box"/><text x="200" y="171" class="lb2" text-anchor="middle" font-size="11.5">2 · 5 Dono</text>
+<rect x="164" y="184" width="72" height="26" rx="5" class="boxa"/><text x="200" y="201" class="lb2" text-anchor="middle" font-size="11.5">1 · 6 Medição</text>
+<text x="200" y="226" class="tk" text-anchor="middle">o filtro 6 é o que mais mata projeto bonito</text>
+</svg>
+</div>
 
 <h4>Os seis filtros, em ordem</h4>
 <ol>
@@ -593,7 +809,10 @@ html:`
 <li><strong>Medição.</strong> Qual número prova que funcionou, e qual é o valor dele hoje? Sem linha de base, qualquer resultado é discutível.</li>
 </ol>
 
-<div class="box b-dn"><p class="h">Reprovou em um? Reprovou</p><p>Não são pontos que se somam. São eliminatórios. O filtro 6 é o que mais mata projeto bonito: ninguém mediu o "antes", então o "depois" nunca convence ninguém.</p></div>
+<h4>Teste o seu caso agora</h4>
+<div data-w="filtros"></div>
+
+<div class="box b-dn"><p class="h">Reprovou em um? Reprovou</p><p>Não são pontos que se somam. São eliminatórios. O filtro 6 é o que mais mata projeto bonito: ninguém mediu o “antes”, então o “depois” nunca convence ninguém.</p></div>
 
 <div class="box b-ex"><p class="h">Exemplo aplicado — aprovado</p>
 <p><em>Classificar automaticamente as conversas de atendimento por assunto e urgência.</em></p>
@@ -602,6 +821,9 @@ html:`
 <div class="box b-wr"><p class="h">Exemplo aplicado — reprovado</p>
 <p><em>Um assistente que responde qualquer pergunta sobre a empresa.</em></p>
 <p>Valor difuso, frequência desconhecida, dado espalhado por dez lugares, erro potencialmente caro (informação errada pro cliente), sem dono claro e sem métrica. <strong>Reprova em cinco de seis</strong> — e é exatamente o projeto que mais aparece em reunião.</p></div>
+
+<div class="hoje"><p class="h">Faça hoje · 15 minutos</p>
+<p>Rode os seis filtros nas ideias que você listou na aula 1 deste módulo. Anote em qual filtro cada uma morreu. O padrão que aparecer (quase sempre é o 3 ou o 6) diz o que a sua empresa precisa arrumar antes de qualquer projeto de IA.</p></div>
 
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Caso de uso bom é chato, específico e mensurável. Caso de uso empolgante e vago é o que consome orçamento e não entrega nada.</p></div>
 `}

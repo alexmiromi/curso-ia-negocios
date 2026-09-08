@@ -267,3 +267,30 @@ input[type=range]{width:100%;accent-color:var(--ac);height:30px;margin:0;-webkit
 .hoje .h{font-size:10.5px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:var(--wr);margin:0 0 6px}
 .hoje p,.hoje li{font-size:15px;line-height:1.55}
 .hoje p:last-child,.hoje ol:last-child{margin-bottom:0}
+
+/* ---------- widgets do módulo II ---------- */
+.tri{min-height:88px}
+.tri-q{font-size:16px;line-height:1.5;margin:0 0 12px;font-weight:550}
+.tri-out{border-radius:11px;padding:13px 15px;margin:0 0 12px}
+.tri-out b{display:block;font-size:16px;font-weight:700;margin-bottom:4px;line-height:1.35}
+.tri-out span{font-size:14.5px;line-height:1.55;color:var(--tx)}
+.tri-out.ac{background:var(--acb)} .tri-out.ac b{color:var(--ac)}
+.tri-out.wr{background:var(--wrb)} .tri-out.wr b{color:var(--wr)}
+.tri-out.dn{background:var(--dnb)} .tri-out.dn b{color:var(--dn)}
+.tri-tr{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px}
+.tri-chip{font-size:11.5px;font-weight:650;color:var(--tx3);background:var(--bg3);border-radius:6px;padding:3px 8px}
+.w-ctx{font-size:16px;font-style:italic;color:var(--tx2);background:var(--bg3);border-radius:9px;padding:10px 13px;margin:0 0 12px;line-height:1.5}
+.w-stats{display:flex;gap:8px;margin:12px 0 4px;flex-wrap:wrap}
+.w-stat{background:var(--bg3);border-radius:9px;padding:8px 12px;flex:1;min-width:78px}
+.w-stat b{display:block;font-size:17px;font-weight:730;letter-spacing:-.02em;line-height:1.2;font-variant-numeric:tabular-nums}
+.w-stat span{font-size:10.5px;color:var(--tx3);font-weight:650;letter-spacing:.03em;text-transform:uppercase}
+.ver{margin:4px 0 0}
+.ver-b{border-radius:11px;padding:12px 14px}
+.ver-b b{display:block;font-size:15.5px;font-weight:700;margin-bottom:3px}
+.ver-b span{font-size:14.5px;line-height:1.55}
+.ver-b.ac{background:var(--acb)} .ver-b.ac b{color:var(--ac)}
+.ver-b.wr{background:var(--wrb)} .ver-b.wr b{color:var(--wr)}
+.ver-b.dn{background:var(--dnb)} .ver-b.dn b{color:var(--dn)}
+.f-n{font-weight:720;color:var(--tx)}
+.dg-out.on.bad{background:var(--wrb)} .dg-out.on.bad b{color:var(--wr)}
+.w-note b{display:block;font-size:16px;color:var(--tx);margin-bottom:3px;letter-spacing:-.015em}
