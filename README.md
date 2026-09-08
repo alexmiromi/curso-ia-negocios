@@ -34,6 +34,8 @@ Depois de instalado funciona sem internet. O progresso de leitura fica salvo no 
 - Busca em todo o conteúdo e no glossário
 - Navegação anterior/próxima entre as 52 aulas
 - Offline completo via service worker
+- Gráficos SVG com tooltip, simuladores interativos (árvore de receita, amostra de teste A/B, simulação de "espiar o teste"), autodiagnóstico e ficha de métrica salvos no aparelho (Módulo I)
+- Vídeos do YouTube com capa e fallback quando estiver sem internet
 
 ## Estrutura
 
@@ -41,6 +43,7 @@ Depois de instalado funciona sem internet. O progresso de leitura fica salvo no 
 index.html    estrutura da página
 app.css       estilos e temas
 conteudo.js   todo o material de estudo (dados)
+widgets.js    gráficos dinâmicos, simuladores, vídeo
 app.js        roteador, progresso, busca
 sw.js         cache offline
 manifest.webmanifest

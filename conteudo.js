@@ -13,13 +13,34 @@ id:'m1', num:'I', titulo:'Estratégia Baseada em Dados',
 resumo:'Transformar pergunta de negócio em métrica, e métrica em decisão.',
 aulas:[
 
-{id:'m1a1', min:7, titulo:'Por que quase toda decisão "com dados" ainda é achismo',
+{id:'m1a1', min:8, titulo:'Por que quase toda decisão "com dados" ainda é achismo',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Dado não decide nada. Quem decide é a <strong>pergunta</strong> que você fez antes de olhar o dado. Sem pergunta, o painel vira espelho: você enxerga nele o que já acreditava.</p></div>
 
 <p>O padrão é sempre o mesmo. Alguém abre o painel, vê uma linha caindo e conclui: “é o Google”. Outro olha o mesmo gráfico e diz: “é o preço”. Os dois têm dado. Nenhum dos dois tem prova.</p>
 
-<p>O que separa análise de opinião com gráfico é a ordem das operações. Análise começa na <strong>pergunta</strong>, passa pela <strong>hipótese</strong>, define <strong>qual número mudaria de ideia</strong> e só então olha o dado. Achismo começa no dado e procura a história que encaixa.</p>
+<div class="fig">
+<p class="fig-t">Duas ordens de operação, dois resultados</p>
+<p class="fig-s">A diferença entre análise e achismo não é a quantidade de dado — é o que vem primeiro.</p>
+<svg viewBox="0 0 400 150" role="img" aria-label="Análise: pergunta, hipótese, número que muda a decisão, dado. Achismo: dado, história que encaixa, confirmação.">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="arrf"/></marker></defs>
+<text x="0" y="14" class="lb">Análise</text>
+<rect x="0" y="24" width="82" height="34" rx="7" class="boxa"/><text x="41" y="45" class="lb2" text-anchor="middle">Pergunta</text>
+<line x1="84" y1="41" x2="102" y2="41" class="arr"/>
+<rect x="104" y="24" width="82" height="34" rx="7" class="boxa"/><text x="145" y="45" class="lb2" text-anchor="middle">Hipótese</text>
+<line x1="188" y1="41" x2="206" y2="41" class="arr"/>
+<rect x="208" y="24" width="98" height="34" rx="7" class="boxa"/><text x="257" y="39" class="lb2" text-anchor="middle" font-size="10.5">Número que</text><text x="257" y="51" class="lb2" text-anchor="middle" font-size="10.5">muda a decisão</text>
+<line x1="308" y1="41" x2="326" y2="41" class="arr"/>
+<rect x="328" y="24" width="72" height="34" rx="7" class="boxa"/><text x="364" y="45" class="lb2" text-anchor="middle">Dado</text>
+<text x="0" y="96" class="lb">Achismo</text>
+<rect x="0" y="106" width="72" height="34" rx="7" class="box"/><text x="36" y="127" class="lb2" text-anchor="middle">Dado</text>
+<line x1="74" y1="123" x2="92" y2="123" class="arr"/>
+<rect x="94" y="106" width="118" height="34" rx="7" class="box"/><text x="153" y="127" class="lb2" text-anchor="middle">História que encaixa</text>
+<line x1="214" y1="123" x2="232" y2="123" class="arr"/>
+<rect x="234" y="106" width="100" height="34" rx="7" class="box"/><text x="284" y="127" class="lb2" text-anchor="middle">Confirmação</text>
+</svg>
+<p class="fig-c">Na linha de cima, o dado entra por último e só pode fazer uma coisa: derrubar ou sustentar a hipótese. Na de baixo, ele entra primeiro e a mente faz o resto.</p>
+</div>
 
 <h4>Os três vícios mais comuns</h4>
 <ul>
@@ -27,6 +48,39 @@ html:`
 <li><strong>Confirmação.</strong> Você já sabe a resposta e procura o recorte que confirma. É o vício mais difícil de perceber, porque parece rigor.</li>
 <li><strong>Média que esconde.</strong> Ticket médio subiu 8%. Ótimo — só que subiu porque os clientes baratos sumiram, não porque alguém gastou mais. A média mentiu sem errar uma conta.</li>
 </ul>
+
+<div class="fig">
+<p class="fig-t">A média que mentiu sem errar uma conta</p>
+<p class="fig-s">Mesmo mês, mesma loja. À esquerda o número que foi para a reunião; à direita o que aconteceu de verdade.</p>
+<div class="two">
+<div><p>Ticket médio</p>
+<svg viewBox="0 0 190 150" role="img" aria-label="Ticket médio subiu de 180 para 195 reais, mais 8 por cento">
+<line x1="30" y1="120" x2="185" y2="120" class="ax"/>
+<rect x="50" y="42" width="24" height="78" rx="0" class="s1" data-tip="Julho · ticket médio R$ 180 · 800 pedidos"/>
+<rect x="50" y="42" width="24" height="4" rx="2" class="s1"/>
+<text x="62" y="35" class="lb" text-anchor="middle">R$ 180</text><text x="62" y="136" class="tk" text-anchor="middle">julho</text>
+<rect x="120" y="35" width="24" height="85" class="s1" data-tip="Agosto · ticket médio R$ 195 · 645 pedidos"/>
+<rect x="120" y="35" width="24" height="4" rx="2" class="s1"/>
+<text x="132" y="28" class="lb" text-anchor="middle">R$ 195</text><text x="132" y="136" class="tk" text-anchor="middle">agosto</text>
+<text x="132" y="14" class="lb2" text-anchor="middle" font-weight="700">+8%</text>
+</svg></div>
+<div><p>Pedidos, por faixa de valor</p>
+<svg viewBox="0 0 190 150" role="img" aria-label="Pedidos caíram de 800 para 645; a queda veio quase toda dos pedidos abaixo de 120 reais">
+<line x1="30" y1="120" x2="185" y2="120" class="ax"/>
+<rect x="50" y="70" width="24" height="50" class="s1" data-tip="Julho · até R$ 120 · 400 pedidos"/>
+<rect x="50" y="34" width="24" height="34" class="s2" data-tip="Julho · R$ 120 a 300 · 300 pedidos"/>
+<rect x="50" y="20" width="24" height="12" class="s3" data-tip="Julho · acima de R$ 300 · 100 pedidos"/>
+<text x="62" y="14" class="lb" text-anchor="middle">800</text><text x="62" y="136" class="tk" text-anchor="middle">julho</text>
+<rect x="120" y="89" width="24" height="31" class="s1" data-tip="Agosto · até R$ 120 · 250 pedidos (−38%)"/>
+<rect x="120" y="52" width="24" height="35" class="s2" data-tip="Agosto · R$ 120 a 300 · 290 pedidos"/>
+<rect x="120" y="37" width="24" height="13" class="s3" data-tip="Agosto · acima de R$ 300 · 105 pedidos"/>
+<text x="132" y="31" class="lb" text-anchor="middle">645</text><text x="132" y="136" class="tk" text-anchor="middle">agosto</text>
+<text x="132" y="14" class="lb2" text-anchor="middle" font-weight="700" fill="var(--dn)">−19%</text>
+</svg>
+<div class="legend"><span><i class="sq" style="background:var(--s1)"></i>até R$ 120</span><span><i class="sq" style="background:var(--s2)"></i>R$ 120–300</span><span><i class="sq" style="background:var(--s3)"></i>acima de R$ 300</span></div>
+</div></div>
+<p class="fig-c">Os pedidos baratos caíram 38%. Ninguém gastou mais — quem gastava pouco parou de comprar. A receita real caiu 13%, e o ticket médio “subiu”. Toque nas barras para ver os números.</p>
+</div>
 
 <div class="box b-ex"><p class="h">Exemplo aplicado</p>
 <p>Uma loja on-line vê o faturamento cair 40% num mês. Reação típica: culpar o Google. Análise de verdade quebra o número em partes multiplicativas:</p>
@@ -36,25 +90,44 @@ html:`
 <h4>O hábito que resolve</h4>
 <p>Antes de abrir qualquer relatório, escreva uma frase: <em>“Se o número X estiver acima de Y, eu faço A; se estiver abaixo, faço B.”</em> Se você não consegue completar a frase, não é hora de olhar dado — é hora de definir a decisão.</p>
 
+<div class="hoje"><p class="h">Faça hoje · 10 minutos</p>
+<p>Abra o painel que você mais olha. Para cada indicador, responda em voz alta: “se isso cair 20% amanhã, quem eu chamo e o que eu peço?”. Anote quantos indicadores ficaram sem resposta. Esse número é a quantidade de decoração no seu painel.</p></div>
+
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Painel bom não é o que mostra mais coisa. É o que muda o que você faz na segunda-feira.</p></div>
 `},
 
-{id:'m1a2', min:8, titulo:'Da pergunta de negócio até a métrica',
+{id:'m1a2', min:9, titulo:'Da pergunta de negócio até a métrica',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Existe um funil de tradução entre “estamos preocupados com isso” e “este número, medido assim, com esta fonte”. Pular etapas do funil é a causa número um de projeto de dados que não gera decisão.</p></div>
 
-<h4>O funil de quatro degraus</h4>
+<div class="fig">
+<p class="fig-t">O funil de quatro degraus</p>
+<p class="fig-s">Cada degrau é mais estreito e mais específico que o anterior. O erro clássico é saltar do primeiro direto para o último.</p>
+<svg viewBox="0 0 400 236" role="img" aria-label="Quatro degraus: preocupação, pergunta, hipótese e métrica, cada um mais específico que o anterior">
+<rect x="0" y="0" width="400" height="50" rx="8" class="box"/>
+<text x="12" y="20" class="lb">1 · Preocupação</text>
+<text x="12" y="38" class="lb2">“A gente está vendendo menos.”</text>
+<rect x="24" y="62" width="352" height="50" rx="8" class="box"/>
+<text x="36" y="82" class="lb">2 · Pergunta</text>
+<text x="36" y="100" class="lb2" font-size="10.5">Por que a receita de recorrentes caiu 45% de jan a ago, contra o ano passado?</text>
+<rect x="48" y="124" width="304" height="50" rx="8" class="box"/>
+<text x="60" y="144" class="lb">3 · Hipótese <tspan class="tk">(tem que poder ser falsa)</tspan></text>
+<text x="60" y="162" class="lb2" font-size="10.5">Caiu porque paramos de falar com a base, não porque foram embora.</text>
+<rect x="72" y="186" width="256" height="50" rx="8" class="boxa"/>
+<text x="84" y="206" class="lb">4 · Métrica</text>
+<text x="84" y="224" class="lb2" font-size="10.5">Recompra em 90 dias por safra · banco de pedidos · 2025 × 2026</text>
+</svg>
+</div>
+
+<h4>Os quatro degraus, por dentro</h4>
 <ol>
-<li><strong>Preocupação</strong> — vaga, emocional, do jeito que aparece na reunião. <em>“A gente está vendendo menos.”</em></li>
-<li><strong>Pergunta</strong> — específica, com recorte de tempo e de escopo. <em>“Por que a receita de clientes recorrentes caiu 45% de janeiro a agosto contra o mesmo período do ano passado?”</em></li>
-<li><strong>Hipótese</strong> — uma explicação que pode ser <em>falsa</em>. <em>“Caiu porque paramos de fazer campanha para a base, não porque os clientes foram para o concorrente.”</em></li>
-<li><strong>Métrica</strong> — o número que decide entre as hipóteses, com fonte e período definidos. <em>“Taxa de recompra em 90 dias por safra de cliente, do banco de pedidos, comparando 2025 e 2026.”</em></li>
+<li><strong>Preocupação</strong> — vaga, emocional, do jeito que aparece na reunião.</li>
+<li><strong>Pergunta</strong> — específica, com recorte de tempo e de escopo. Uma pergunta boa já exclui metade das respostas possíveis.</li>
+<li><strong>Hipótese</strong> — uma explicação que pode ser <em>falsa</em>. “O mercado está difícil” não é hipótese: nenhum dado refuta isso. “Nossa recompra caiu mais que o tráfego” é hipótese — ou o número mostra, ou não mostra.</li>
+<li><strong>Métrica</strong> — o número que decide entre as hipóteses, com fonte e período definidos.</li>
 </ol>
 
 <div class="box b-wr"><p class="h">⚠ Erro clássico</p><p>Saltar do degrau 1 direto pro 4. Alguém pede “um painel de vendas” e recebe trinta gráficos que não respondem a nada, porque a pergunta nunca foi escrita.</p></div>
-
-<h4>O teste da hipótese falseável</h4>
-<p>Uma hipótese só serve se existir um resultado capaz de derrubá-la. “O mercado está difícil” não é hipótese — nenhum dado refuta isso. “Nossa taxa de recompra em 90 dias caiu mais que a queda de tráfego” é hipótese: ou o número mostra isso, ou não mostra.</p>
 
 <div class="box b-ex"><p class="h">Exemplo aplicado</p>
 <p><strong>Preocupação:</strong> “o frete está espantando cliente”.<br>
@@ -64,12 +137,17 @@ html:`
 <p>Com isso, a decisão sai sozinha: se o degrau existe em R$ 40, você sabe exatamente onde colocar frete grátis e quanto isso custa.</p></div>
 
 <h4>Toda métrica precisa de ficha</h4>
-<p>Antes de usar um indicador em decisão, ele precisa de: <strong>nome</strong>, <strong>fórmula exata</strong>, <strong>fonte do dado</strong>, <strong>periodicidade</strong>, <strong>dono</strong> e <strong>o que se faz quando ele muda</strong>. Métrica sem ficha vira discussão sobre a métrica em vez de discussão sobre o negócio.</p>
+<p>Antes de usar um indicador em decisão, ele precisa de: <strong>nome</strong>, <strong>fórmula exata</strong>, <strong>fonte do dado</strong>, <strong>periodicidade</strong>, <strong>dono</strong> e <strong>o que se faz quando ele muda</strong>. Métrica sem ficha vira discussão sobre a métrica em vez de discussão sobre o negócio. Preencha uma agora — ela fica salva no seu aparelho:</p>
+
+<div data-w="ficha"></div>
+
+<div class="hoje"><p class="h">Faça hoje · 15 minutos</p>
+<p>Pegue a preocupação mais repetida nas últimas reuniões e desça os quatro degraus por escrito. Se travar no degrau 3, ótimo: você acabou de descobrir que o problema estava mal definido, não mal medido.</p></div>
 
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Se duas pessoas da empresa calculam “conversão” de jeitos diferentes, você não tem métrica — tem apelido.</p></div>
 `},
 
-{id:'m1a3', min:8, titulo:'Métrica vaidosa × métrica acionável · a árvore de indicadores',
+{id:'m1a3', min:9, titulo:'Métrica vaidosa × métrica acionável · a árvore de indicadores',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Métrica vaidosa é a que só sobe e faz você se sentir bem. Métrica acionável é a que, quando piora, aponta para uma <em>alavanca específica</em> que alguém pode puxar.</p></div>
 
@@ -86,24 +164,46 @@ html:`
 <h4>A árvore de indicadores</h4>
 <p>Uma árvore parte de <strong>uma</strong> métrica de topo e a decompõe em fatores que se multiplicam ou somam, até chegar em algo que alguém consegue mexer no dia a dia. A regra é: cada nível tem que <em>reconstruir</em> o nível de cima. Se não fecha a conta, a árvore está errada.</p>
 
-<div class="box b-nu"><p class="h">Árvore típica de comércio eletrônico</p>
-<p><strong>Receita</strong><br>
-&nbsp;&nbsp;= Visitantes × Conversão × Ticket médio<br><br>
-<strong>Visitantes</strong> = orgânico + pago + direto + e-mail + social + indicação<br>
-<strong>Conversão</strong> = (chegou no produto → adicionou) × (adicionou → iniciou checkout) × (iniciou → pagou)<br>
-<strong>Ticket</strong> = itens por pedido × preço médio do item − descontos</p></div>
+<div class="fig">
+<p class="fig-t">Árvore de receita de uma loja on-line</p>
+<p class="fig-s">Do topo para baixo, cada linha reconstrói a de cima. Na base ficam as alavancas que alguém puxa de verdade.</p>
+<svg viewBox="0 0 400 250" role="img" aria-label="Árvore: receita igual visitantes vezes conversão vezes ticket; cada um se abre em alavancas">
+<rect x="150" y="0" width="100" height="32" rx="8" class="boxa"/><text x="200" y="20" class="lb" text-anchor="middle">Receita</text>
+<text x="200" y="50" class="lb2" text-anchor="middle" font-size="11.5">= visitantes × conversão × ticket</text>
+<line x1="200" y1="32" x2="200" y2="40" class="ax"/><line x1="66" y1="40" x2="334" y2="40" class="ax"/>
+<line x1="66" y1="40" x2="66" y2="60" class="ax"/><line x1="200" y1="52" x2="200" y2="60" class="ax"/><line x1="334" y1="40" x2="334" y2="60" class="ax"/>
+<rect x="16" y="60" width="100" height="30" rx="7" class="box"/><text x="66" y="79" class="lb" text-anchor="middle">Visitantes</text>
+<rect x="150" y="60" width="100" height="30" rx="7" class="box"/><text x="200" y="79" class="lb" text-anchor="middle">Conversão</text>
+<rect x="284" y="60" width="100" height="30" rx="7" class="box"/><text x="334" y="79" class="lb" text-anchor="middle">Ticket</text>
+<line x1="66" y1="90" x2="66" y2="104" class="ax"/><line x1="200" y1="90" x2="200" y2="104" class="ax"/><line x1="334" y1="90" x2="334" y2="104" class="ax"/>
+<g class="lb2" font-size="12">
+<text x="66" y="118" text-anchor="middle">orgânico</text><text x="66" y="134" text-anchor="middle">pago</text><text x="66" y="150" text-anchor="middle">e-mail / WhatsApp</text><text x="66" y="166" text-anchor="middle">direto</text><text x="66" y="182" text-anchor="middle">social</text>
+<text x="200" y="118" text-anchor="middle">produto → carrinho</text><text x="200" y="134" text-anchor="middle">carrinho → checkout</text><text x="200" y="150" text-anchor="middle">checkout → pago</text>
+<text x="334" y="118" text-anchor="middle">itens por pedido</text><text x="334" y="134" text-anchor="middle">preço médio do item</text><text x="334" y="150" text-anchor="middle">− descontos</text>
+</g>
+<text x="66" y="204" class="tk" text-anchor="middle">soma</text><text x="200" y="172" class="tk" text-anchor="middle">multiplica</text><text x="334" y="172" class="tk" text-anchor="middle">multiplica − subtrai</text>
+<rect x="0" y="222" width="400" height="28" rx="7" class="boxa"/><text x="200" y="240" class="lb2" text-anchor="middle" font-size="11">Alavancas: cada item da base tem um dono e uma ação possível</text>
+</svg>
+</div>
 
 <p>O poder da árvore aparece na hora da queda. Receita caiu 30%? Desça um nível: foi visitante ou conversão? Foi visitante? Desça de novo: qual canal? Foi orgânico? Desça: quais páginas? Em quatro perguntas você saiu de “estamos vendendo menos” para “as páginas de categoria perderam posição para estas cinco buscas”.</p>
+
+<h4>Sinta o efeito composto</h4>
+<p>Como os três fatores se multiplicam, pequenas variações somadas viram grandes. Mexa nos controles:</p>
+<div data-w="arvore"></div>
 
 <div class="box b-wr"><p class="h">⚠ Armadilha</p><p>Árvore com métrica que aparece em dois galhos ao mesmo tempo. Isso dupla-conta e faz a soma dar mais de 100%. Cada efeito entra em um lugar só.</p></div>
 
 <h4>Uma métrica de topo, não cinco</h4>
 <p>A escolha do topo é estratégica, não técnica. Uma empresa que precisa de caixa agora escolhe receita. Uma que precisa provar modelo escolhe retenção. Uma que precisa crescer escolhe clientes ativos. Escolher três significa não ter escolhido.</p>
 
+<div class="hoje"><p class="h">Faça hoje · 20 minutos</p>
+<p>Desenhe a árvore do seu negócio numa folha, até o terceiro nível. Depois pegue o último mês e tente reconstruir a receita a partir da base. Se a conta não fecha em ±5%, você acabou de achar uma métrica mal definida ou um galho duplicado — e isso vale mais que o desenho.</p></div>
+
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Teste rápido: se o indicador piorar 20%, você sabe <em>quem</em> chamar e <em>o que</em> pedir? Se não sabe, ele é decorativo.</p></div>
 `},
 
-{id:'m1a4', min:9, titulo:'Correlação, causalidade e as armadilhas que enganam gente inteligente',
+{id:'m1a4', min:11, titulo:'Correlação, causalidade e as armadilhas que enganam gente inteligente',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Duas coisas andarem juntas não significa que uma cause a outra. Quase todo erro caro de decisão baseada em dado nasce aqui.</p></div>
 
@@ -119,20 +219,68 @@ html:`
 <p>Você analisa só quem ficou. Estuda os clientes ativos e conclui que “clientes gostam do nosso frete”. Claro — os que odiavam já foram embora e não estão na sua base.</p>
 
 <h4>Armadilha 4 — regressão à média</h4>
-<p>Um mês muito ruim tende a ser seguido por um mês menos ruim, mesmo que ninguém faça nada. Se você agiu logo depois do pior mês, vai atribuir a melhora à sua ação. Metade das “viradas” celebradas em reunião são isso.</p>
+<p>Um mês muito ruim tende a ser seguido por um mês menos ruim, mesmo que ninguém faça nada. Se você agiu logo depois do pior mês, vai atribuir a melhora à sua ação.</p>
+
+<div class="fig">
+<p class="fig-t">Regressão à média: a “virada” que aconteceria de qualquer jeito</p>
+<p class="fig-s">Vendas mensais oscilando em torno de 100. O pior mês foi seguido de recuperação — como quase sempre é.</p>
+<svg viewBox="0 0 400 170" role="img" aria-label="Linha de vendas mensais com um mês muito ruim seguido de recuperação natural">
+<line x1="34" y1="20" x2="390" y2="20" class="gr"/><line x1="34" y1="65" x2="390" y2="65" class="gr"/><line x1="34" y1="110" x2="390" y2="110" class="gr"/><line x1="34" y1="140" x2="390" y2="140" class="ax"/>
+<text x="28" y="24" class="tk" text-anchor="end">120</text><text x="28" y="69" class="tk" text-anchor="end">100</text><text x="28" y="114" class="tk" text-anchor="end">80</text><text x="28" y="144" class="tk" text-anchor="end">60</text>
+<line x1="34" y1="65" x2="390" y2="65" class="lg" stroke-dasharray="none" opacity=".35"/>
+<path class="l1" d="M50 60 L80 71 L110 56 L140 74 L170 62 L200 139 L230 92 L260 71 L290 67 L320 60 L350 76 L380 63"/>
+<g>
+<circle cx="50" cy="60" r="4" class="s1 ring" data-tip="mês 1 · 102"/><circle cx="80" cy="71" r="4" class="s1 ring" data-tip="mês 2 · 97"/><circle cx="110" cy="56" r="4" class="s1 ring" data-tip="mês 3 · 104"/><circle cx="140" cy="74" r="4" class="s1 ring" data-tip="mês 4 · 96"/><circle cx="170" cy="62" r="4" class="s1 ring" data-tip="mês 5 · 101"/>
+<circle cx="200" cy="139" r="5" class="s2 ring" data-tip="mês 6 · 67 — o pior mês"/>
+<circle cx="230" cy="92" r="4" class="s1 ring" data-tip="mês 7 · 88"/><circle cx="260" cy="71" r="4" class="s1 ring" data-tip="mês 8 · 97"/><circle cx="290" cy="67" r="4" class="s1 ring" data-tip="mês 9 · 99"/><circle cx="320" cy="60" r="4" class="s1 ring" data-tip="mês 10 · 102"/><circle cx="350" cy="76" r="4" class="s1 ring" data-tip="mês 11 · 95"/><circle cx="380" cy="63" r="4" class="s1 ring" data-tip="mês 12 · 101"/>
+</g>
+<line x1="215" y1="128" x2="215" y2="150" class="ax"/>
+<text x="218" y="160" class="lb2" font-size="10.5">“agimos aqui” → mês 7 melhorou</text>
+<text x="200" y="158" class="tk" text-anchor="end">pior mês</text>
+<text x="390" y="60" class="tk" text-anchor="end">média</text>
+</svg>
+<p class="fig-c">Se a ação foi tomada no mês 6, a recuperação do mês 7 vai ser atribuída a ela. Mas a série já voltava para a média sozinha — a ação pode ter feito tudo, algo ou nada. Sem grupo de comparação, não dá para saber.</p>
+</div>
 
 <h4>Armadilha 5 — o paradoxo de Simpson</h4>
-<p>Uma tendência que aparece em cada grupo separado pode <em>inverter</em> quando você junta os grupos. Campanha A converte melhor que a B no celular <em>e</em> no computador — mas a B ganha no total, porque pegou mais tráfego de computador, que converte mais. Sempre olhe o dado segmentado antes de concluir.</p>
+<p>Uma tendência que aparece em cada grupo separado pode <em>inverter</em> quando você junta os grupos. Campanha A converte melhor que a B no celular <em>e</em> no computador — mas a B ganha no total, porque pegou mais tráfego de computador, que converte mais.</p>
+
+<div class="fig">
+<p class="fig-t">Paradoxo de Simpson: A ganha em cada grupo, B ganha no total</p>
+<p class="fig-s">Conversão de duas campanhas, 10 mil visitantes cada. Toque nas barras para ver os números.</p>
+<svg viewBox="0 0 400 190" role="img" aria-label="Campanha A vence no celular e no computador, mas perde no total agregado">
+<line x1="36" y1="150" x2="390" y2="150" class="ax"/>
+<line x1="36" y1="30" x2="390" y2="30" class="gr"/><line x1="36" y1="90" x2="390" y2="90" class="gr"/>
+<text x="30" y="34" class="tk" text-anchor="end">4%</text><text x="30" y="94" class="tk" text-anchor="end">2%</text><text x="30" y="154" class="tk" text-anchor="end">0</text>
+<rect x="64" y="96" width="22" height="54" class="s1" data-tip="A · celular · 8.000 visitantes · 144 pedidos · 1,8%"/><rect x="88" y="105" width="22" height="45" class="s2" data-tip="B · celular · 3.000 visitantes · 45 pedidos · 1,5%"/>
+<text x="75" y="90" class="lb2" text-anchor="middle" font-size="10.5">1,8</text><text x="99" y="99" class="lb2" text-anchor="middle" font-size="10.5">1,5</text>
+<text x="87" y="168" class="tk" text-anchor="middle">Celular</text><text x="87" y="181" class="lb2" text-anchor="middle" font-size="10">A vence</text>
+<rect x="184" y="30" width="22" height="120" class="s1" data-tip="A · computador · 2.000 visitantes · 80 pedidos · 4,0%"/><rect x="208" y="42" width="22" height="108" class="s2" data-tip="B · computador · 7.000 visitantes · 252 pedidos · 3,6%"/>
+<text x="195" y="24" class="lb2" text-anchor="middle" font-size="10.5">4,0</text><text x="219" y="36" class="lb2" text-anchor="middle" font-size="10.5">3,6</text>
+<text x="207" y="168" class="tk" text-anchor="middle">Computador</text><text x="207" y="181" class="lb2" text-anchor="middle" font-size="10">A vence</text>
+<rect x="304" y="83" width="22" height="67" class="s1" data-tip="A · TOTAL · 10.000 visitantes · 224 pedidos · 2,24%"/><rect x="328" y="61" width="22" height="89" class="s2" data-tip="B · TOTAL · 10.000 visitantes · 297 pedidos · 2,97%"/>
+<text x="315" y="77" class="lb2" text-anchor="middle" font-size="10.5">2,2</text><text x="339" y="55" class="lb2" text-anchor="middle" font-size="10.5">3,0</text>
+<text x="327" y="168" class="tk" text-anchor="middle">Total</text><text x="327" y="181" class="lb2" text-anchor="middle" font-size="10" font-weight="700">B vence?!</text>
+</svg>
+<div class="legend"><span><i class="sq" style="background:var(--s1)"></i>Campanha A</span><span><i class="sq" style="background:var(--s2)"></i>Campanha B</span></div>
+<p class="fig-c">A pegou 80% do tráfego no celular (converte pouco); B pegou 70% no computador (converte muito). O total mistura os dois e inverte o resultado. Quem olha só o agregado escolhe a campanha errada.</p>
+</div>
+
+<p>Em 4 minutos, o Minuto da Física mostra o mesmo fenômeno com outros exemplos — vale ver antes de seguir:</p>
+<div data-w="yt" data-id="FBsVRJVA0ro" data-t="Você conhece o Paradoxo de Simpson em estatística?" data-d="4:40" data-n="Minuto da Física, em português"></div>
 
 <div class="box b-ex"><p class="h">Exemplo aplicado</p>
 <p>Você troca o layout da página de produto e a conversão sobe 12% na semana seguinte. Comemorar seria natural — e provavelmente errado. Nessa mesma semana: entrou campanha de e-mail, um concorrente ficou fora do ar, e a semana anterior tinha sido feriado. Sem grupo de comparação, os 12% não têm dono.</p></div>
 
 <div class="box b-dn"><p class="h">A frase que evita prejuízo</p><p>“O que mais poderia explicar esse número, além da minha explicação favorita?” Se você não consegue listar três alternativas, ainda não analisou.</p></div>
 
+<div class="hoje"><p class="h">Faça hoje · 10 minutos</p>
+<p>Pegue a última “vitória” comemorada na empresa (uma campanha, uma mudança no site, uma promoção). Liste três explicações alternativas para o resultado que não envolvem a ação tomada. Se uma delas for plausível, a vitória ainda não foi provada.</p></div>
+
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Correlação sugere onde olhar. Só intervenção controlada prova o que causa.</p></div>
 `},
 
-{id:'m1a5', min:8, titulo:'Teste A/B sem se enganar',
+{id:'m1a5', min:10, titulo:'Teste A/B sem se enganar',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>O teste A/B é a forma mais barata de comprar causalidade. Mas ele só entrega isso se você respeitar três regras chatas: sorteio, tamanho e prazo definido antes.</p></div>
 
@@ -143,12 +291,18 @@ html:`
 <p>Dividir por dia (segunda A, terça B) não é sorteio: segunda e terça têm públicos diferentes. Dividir por dispositivo também não. Tem que ser aleatório por visitante, e o visitante precisa ver sempre a mesma versão.</p>
 
 <h4>Regra 2 — tamanho antes de começar</h4>
-<p>Com pouco volume, o teste só mede ruído. A intuição costuma subestimar brutalmente o volume necessário. Quanto <em>menor</em> o efeito que você quer detectar, <em>maior</em> a amostra — detectar um ganho de 20% é barato; detectar 2% custa dez vezes mais.</p>
+<p>Com pouco volume, o teste só mede ruído. A intuição costuma subestimar brutalmente o volume necessário. Quanto <em>menor</em> o efeito que você quer detectar, <em>maior</em> a amostra — detectar um ganho de 20% é barato; detectar 5% custa dezesseis vezes mais.</p>
 
-<div class="box b-nu"><p class="h">Ordem de grandeza</p><p>Para detectar um ganho relativo de 10% numa conversão que hoje é 2%, você precisa de algo como <strong>30 a 40 mil visitantes por grupo</strong>. Uma loja com 20 mil visitas por mês não consegue testar mudanças pequenas — e precisa saber disso antes de tentar.</p></div>
+<div class="box b-nu"><p class="h">Ordem de grandeza</p><p>Para detectar um ganho relativo de 10% numa conversão que hoje é 2%, você precisa de algo como <strong>80 mil visitantes por grupo</strong> — 160 mil no total. Uma loja com 20 mil visitas por mês levaria oito meses para testar isso, e precisa saber disso antes de tentar. Confira com os seus números:</p></div>
+
+<div data-w="amostra"></div>
 
 <h4>Regra 3 — prazo definido antes</h4>
-<p>O erro mais comum é <strong>espiar e parar quando dá bom</strong>. Se você olha todo dia e encerra assim que a diferença fica bonita, você não testou nada — apenas esperou o ruído favorecer sua versão preferida. Defina a data de encerramento antes de ligar o teste e não mexa.</p>
+<p>O erro mais comum é <strong>espiar e parar quando dá bom</strong>. Se você olha todo dia e encerra assim que a diferença fica bonita, você não testou nada — apenas esperou o ruído favorecer sua versão preferida. Veja o que acontece com dois grupos <em>idênticos</em>:</p>
+
+<div data-w="espiar"></div>
+
+<p>Defina a data de encerramento antes de ligar o teste e não mexa. Se a ferramenta mostra “95% de confiança” no dia 8, isso não significa nada se o plano era 30 dias.</p>
 
 <div class="box b-wr"><p class="h">⚠ Mais três venenos</p>
 <ul>
@@ -157,24 +311,41 @@ html:`
 <li><strong>Métrica trocada.</strong> Otimizar cliques e piorar receita é rotina. Escolha a métrica final, não a intermediária.</li>
 </ul></div>
 
+<div class="hoje"><p class="h">Faça hoje · 5 minutos</p>
+<p>Coloque na calculadora acima a conversão real da sua página mais importante e o tráfego mensal dela. Se o resultado passar de 3 meses, escreva numa nota: “não tenho volume para testar mudanças pequenas”. Essa frase vai te poupar meses de teste inconclusivo.</p></div>
+
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Se a empresa não tem volume para testar, o caminho é escolher mudanças grandes e apostar com critério — não fingir que um teste de 300 visitas provou alguma coisa.</p></div>
 `},
 
-{id:'m1a6', min:7, titulo:'Os quatro degraus da maturidade analítica',
+{id:'m1a6', min:8, titulo:'Os quatro degraus da maturidade analítica',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Não dá pra pular degrau. Empresa que tenta prescrever sem descrever direito só automatiza o próprio erro — mais rápido e em escala.</p></div>
 
+<div class="fig">
+<p class="fig-t">Os quatro degraus</p>
+<p class="fig-s">Cada degrau responde a uma pergunta diferente e exige o anterior firme.</p>
+<svg viewBox="0 0 400 200" role="img" aria-label="Escada de quatro degraus: descritiva, diagnóstica, preditiva, prescritiva">
+<rect x="0" y="140" width="100" height="60" class="box"/><rect x="100" y="100" width="100" height="100" class="box"/><rect x="200" y="60" width="100" height="140" class="box"/><rect x="300" y="20" width="100" height="180" class="boxa"/>
+<g class="lb" font-size="12"><text x="50" y="162" text-anchor="middle">1 · Descritiva</text><text x="150" y="122" text-anchor="middle">2 · Diagnóstica</text><text x="250" y="82" text-anchor="middle">3 · Preditiva</text><text x="350" y="42" text-anchor="middle">4 · Prescritiva</text></g>
+<g class="lb2" font-size="11"><text x="50" y="180" text-anchor="middle">O que</text><text x="50" y="193" text-anchor="middle">aconteceu?</text><text x="150" y="140" text-anchor="middle">Por que</text><text x="150" y="153" text-anchor="middle">aconteceu?</text><text x="250" y="100" text-anchor="middle">O que vai</text><text x="250" y="113" text-anchor="middle">acontecer?</text><text x="350" y="60" text-anchor="middle">O que devo</text><text x="350" y="73" text-anchor="middle">fazer?</text></g>
+<circle cx="150" cy="178" r="10" class="s2"/><text x="150" y="182.5" text-anchor="middle" font-size="12" font-weight="800" fill="#fff">!</text>
+<text x="150" y="196" class="tk" text-anchor="middle" font-size="9.5">onde trava</text>
+</svg>
+<p class="fig-c">O ponto de exclamação marca onde quase todo mundo trava: a empresa tem relatório (1) e quer IA (4), mas ninguém consegue explicar o número de ontem (2).</p>
+</div>
+
 <div class="tbl"><table>
-<thead><tr><th>Degrau</th><th>Pergunta</th><th>Exemplo</th><th>O que exige</th></tr></thead>
+<thead><tr><th>Degrau</th><th>Exemplo</th><th>O que exige</th></tr></thead>
 <tbody>
-<tr><td><strong>1. Descritiva</strong></td><td>O que aconteceu?</td><td>Vendemos R$ 180 mil em agosto, 22% abaixo de julho</td><td>Dado confiável e uma definição só por métrica</td></tr>
-<tr><td><strong>2. Diagnóstica</strong></td><td>Por que aconteceu?</td><td>Caiu porque o tráfego orgânico de categoria caiu 31%</td><td>Segmentação e árvore de indicadores</td></tr>
-<tr><td><strong>3. Preditiva</strong></td><td>O que vai acontecer?</td><td>Setembro deve ficar entre R$ 165 e 195 mil</td><td>Histórico limpo e método de previsão</td></tr>
-<tr><td><strong>4. Prescritiva</strong></td><td>O que devo fazer?</td><td>Comprar 40 unidades deste item até dia 12</td><td>Modelo + regra de decisão + confiança pra obedecer</td></tr>
+<tr><td><strong>1. Descritiva</strong></td><td>Vendemos R$ 180 mil em agosto, 22% abaixo de julho</td><td>Dado confiável e uma definição só por métrica</td></tr>
+<tr><td><strong>2. Diagnóstica</strong></td><td>Caiu porque o tráfego orgânico de categoria caiu 31%</td><td>Segmentação e árvore de indicadores</td></tr>
+<tr><td><strong>3. Preditiva</strong></td><td>Setembro deve ficar entre R$ 165 e 195 mil</td><td>Histórico limpo e método de previsão</td></tr>
+<tr><td><strong>4. Prescritiva</strong></td><td>Comprar 40 unidades deste item até dia 12</td><td>Modelo + regra de decisão + confiança pra obedecer</td></tr>
 </tbody></table></div>
 
-<h4>Onde quase todo mundo trava</h4>
-<p>No degrau 2. A empresa tem relatório (degrau 1) e quer inteligência artificial (degrau 4), mas ninguém consegue explicar <em>por que</em> o número de ontem foi aquele. Investir em previsão nessa situação é construir telhado sem parede.</p>
+<h4>Onde a sua empresa está?</h4>
+<p>Oito afirmações, duas por degrau. Responda com honestidade — a resposta fica só no seu aparelho:</p>
+<div data-w="degrau"></div>
 
 <div class="box b-wr"><p class="h">⚠ Sinal de que você ainda está no degrau 1</p>
 <ul>
@@ -189,7 +360,7 @@ html:`
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Antes de perguntar “onde uso IA?”, pergunte “consigo explicar o mês passado em uma hora?”. A resposta define o degrau real.</p></div>
 `},
 
-{id:'m1a7', min:6, titulo:'Contar a história do dado para quem decide',
+{id:'m1a7', min:8, titulo:'Contar a história do dado para quem decide',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Análise que ninguém entende não é análise — é arquivo. A apresentação faz parte do trabalho, não é enfeite depois dele.</p></div>
 
@@ -203,18 +374,47 @@ html:`
 
 <div class="box b-wr"><p class="h">⚠ O anti-padrão</p><p>Começar pela metodologia, mostrar quinze gráficos e terminar com “então, o que vocês acham?”. Nesse formato, a decisão vira opinião de quem falar mais alto.</p></div>
 
+<h4>O gráfico pode mentir sem errar um número</h4>
+<div class="fig">
+<p class="fig-t">Mesmos seis números, duas histórias</p>
+<p class="fig-s">Conversão mensal de uma loja. À esquerda, o eixo começa em 1,9%; à direita, em zero.</p>
+<div class="two">
+<div><p>Eixo cortado: “montanha-russa”</p>
+<svg viewBox="0 0 190 150" role="img" aria-label="Com o eixo começando em 1,9 por cento, a variação parece enorme">
+<line x1="34" y1="20" x2="185" y2="20" class="gr"/><line x1="34" y1="60" x2="185" y2="60" class="gr"/><line x1="34" y1="100" x2="185" y2="100" class="gr"/><line x1="34" y1="120" x2="185" y2="120" class="ax"/>
+<text x="30" y="24" class="tk" text-anchor="end">2,2</text><text x="30" y="64" class="tk" text-anchor="end">2,1</text><text x="30" y="104" class="tk" text-anchor="end">2,0</text><text x="30" y="124" class="tk" text-anchor="end">1,9</text>
+<rect x="40" y="60" width="16" height="60" class="s1" data-tip="jan · 2,05%"/><rect x="64" y="40" width="16" height="80" class="s1" data-tip="fev · 2,10%"/><rect x="88" y="88" width="16" height="32" class="s2" data-tip="mar · 1,98%"/><rect x="112" y="32" width="16" height="88" class="s1" data-tip="abr · 2,12%"/><rect x="136" y="48" width="16" height="72" class="s1" data-tip="mai · 2,08%"/><rect x="160" y="20" width="16" height="100" class="s1" data-tip="jun · 2,15%"/>
+<text x="112" y="140" class="tk" text-anchor="middle">jan → jun</text>
+</svg></div>
+<div><p>Eixo em zero: “estável”</p>
+<svg viewBox="0 0 190 150" role="img" aria-label="Com o eixo começando em zero, a mesma série parece quase constante">
+<line x1="34" y1="20" x2="185" y2="20" class="gr"/><line x1="34" y1="70" x2="185" y2="70" class="gr"/><line x1="34" y1="120" x2="185" y2="120" class="ax"/>
+<text x="30" y="24" class="tk" text-anchor="end">3%</text><text x="30" y="74" class="tk" text-anchor="end">1,5</text><text x="30" y="124" class="tk" text-anchor="end">0</text>
+<rect x="40" y="51.7" width="16" height="68.3" class="s1" data-tip="jan · 2,05%"/><rect x="64" y="50" width="16" height="70" class="s1" data-tip="fev · 2,10%"/><rect x="88" y="54" width="16" height="66" class="s2" data-tip="mar · 1,98%"/><rect x="112" y="49.3" width="16" height="70.7" class="s1" data-tip="abr · 2,12%"/><rect x="136" y="50.7" width="16" height="69.3" class="s1" data-tip="mai · 2,08%"/><rect x="160" y="48.3" width="16" height="71.7" class="s1" data-tip="jun · 2,15%"/>
+<text x="112" y="140" class="tk" text-anchor="middle">jan → jun</text>
+</svg></div>
+</div>
+<p class="fig-c">A variação real é de 1,98% a 2,15% — dentro do ruído normal. O gráfico da esquerda faz março (em laranja) parecer catástrofe. Barra sempre nasce em zero; quem corta o eixo está contando uma história, não mostrando um dado.</p>
+</div>
+
 <h4>Regras de gráfico que resolvem 90% dos casos</h4>
 <ul>
 <li><strong>Um gráfico, uma mensagem.</strong> Se precisa de duas frases pra explicar, são dois gráficos.</li>
 <li><strong>Comparação sempre.</strong> Número sozinho não significa nada. Contra o mês passado, contra o ano passado, contra a meta.</li>
 <li><strong>Eixo começando em zero</strong> em gráfico de barra. Cortar o eixo transforma variação de 3% em precipício visual.</li>
 <li><strong>Título é a conclusão</strong>, não o rótulo. “Tráfego orgânico caiu 31% desde abril” vale mais que “Tráfego por mês”.</li>
-<li><strong>Cor tem função.</strong> Se tudo é colorido, nada é destaque.</li>
+<li><strong>Cor tem função.</strong> Se tudo é colorido, nada é destaque. Uma cor para o que importa, cinza para o resto.</li>
 </ul>
+
+<p>O exemplo mais famoso de dado contado como história: Hans Rosling, 200 países e 200 anos de renda e expectativa de vida, em 4 minutos. Repare que ele não mostra o gráfico — ele <em>narra</em> o gráfico, com conclusão primeiro e destaque em uma coisa por vez. Em inglês; ative as legendas no player.</p>
+<div data-w="yt" data-id="jbkSRLYSojo" data-t="Hans Rosling: 200 países, 200 anos, 4 minutos" data-d="4:47" data-n="BBC, em inglês com legendas"></div>
 
 <div class="box b-ex"><p class="h">Exemplo aplicado</p>
 <p><strong>Ruim:</strong> “Segue o relatório mensal com os indicadores de tráfego, conversão e receita segmentados por canal.”</p>
 <p><strong>Bom:</strong> “Perdemos R$ 62 mil de receita em agosto. 80% disso vem de uma única causa: o tráfego orgânico de páginas de categoria. A conversão não piorou. Proposta: R$ 12 mil em recuperação de conteúdo de categoria nos próximos 60 dias. O que não sei ainda: quanto disso é mudança de algoritmo e quanto é concorrente novo.”</p></div>
+
+<div class="hoje"><p class="h">Faça hoje · 10 minutos</p>
+<p>Pegue o último relatório que você mandou ou recebeu. Reescreva o primeiro parágrafo como as quatro frases da estrutura: conclusão, evidência, implicação, o que não sabemos. Compare com o original. A diferença de clareza é o tamanho do problema.</p></div>
 
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Se a sua análise não cabe em três frases, ela ainda não terminou.</p></div>
 `}

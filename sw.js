@@ -1,5 +1,5 @@
-var CACHE = 'ia-negocios-v1';
-var ASSETS = ['./','index.html','app.css','app.js','conteudo.js','manifest.webmanifest',
+var CACHE = 'ia-negocios-v2';
+var ASSETS = ['./','index.html','app.css','app.js','conteudo.js','widgets.js','manifest.webmanifest',
   'icons/icon-192.png','icons/icon-512.png','icons/icon-180.png'];
 
 self.addEventListener('install', function(e){

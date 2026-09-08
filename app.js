@@ -137,6 +137,7 @@ function telaAula(id){
   else h+='<a class="btn" href="#/">Início</a>';
   h+='</div>';
   view.innerHTML=h;
+  if(window.initWidgets) initWidgets(view);
   window.scrollTo(0,0);
   document.getElementById('mk').onclick=function(){
     var novo=!isLida(a.id);
