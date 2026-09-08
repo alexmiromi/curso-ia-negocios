@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover, maximum-scale=5">
+<title>IA Aplicada aos Negócios</title>
+<meta name="description" content="Curso de estudo: Inteligência Artificial Aplicada aos Negócios — 8 módulos, 52 aulas.">
+<link rel="manifest" href="manifest.webmanifest">
+<meta name="theme-color" content="#0f1115" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f6f3" media="(prefers-color-scheme: light)">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="IA Negócios">
+<link rel="apple-touch-icon" href="icons/icon-180.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+
+<div id="bar">
+  <div class="in">
+    <button class="ib" id="back" aria-label="Voltar" hidden>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"><path d="M15 18l-6-6 6-6"/></svg>
+    </button>
+    <div class="ttl" id="btitle">IA Aplicada aos Negócios</div>
+    <button class="ib" id="srch" aria-label="Buscar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.5-3.5" stroke-linecap="round"/></svg>
+    </button>
+    <button class="ib" id="tg" aria-label="Modo claro/escuro"><span id="tgi">🌙</span></button>
+  </div>
+  <div id="prog"><i></i></div>
+</div>
+
+<main id="view"></main>
+
+<div id="sheet" hidden>
+  <div class="sh-bg"></div>
+  <div class="sh-box">
+    <div class="sh-top">
+      <input id="q" type="search" placeholder="Buscar aula, termo, conceito…" autocomplete="off" enterkeyhint="search">
+      <button class="btn ghost" id="qx">Fechar</button>
+    </div>
+    <div id="qr"></div>
+  </div>
+</div>
+
+<button class="fab" id="top" aria-label="Topo">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round"><path d="M18 15l-6-6-6 6"/></svg>
+</button>
+
+<script src="conteudo.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
