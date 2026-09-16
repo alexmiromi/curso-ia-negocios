@@ -1,0 +1,35 @@
+Módulo um. Estratégia baseada em dados. [[slnc 500]] Aula um de sete: por que quase toda decisão com dados ainda é achismo.
+[[slnc 900]]
+Vamos começar pela ideia central. Dado não decide nada. Quem decide é a pergunta que você fez antes de olhar o dado. Sem pergunta, o painel vira espelho: você enxerga nele o que já acreditava.
+[[slnc 700]]
+O padrão é sempre o mesmo. Alguém abre o painel, vê uma linha caindo, e conclui: é o Google. Outro olha o mesmo gráfico e diz: é o preço. Os dois têm dado. Nenhum dos dois tem prova.
+[[slnc 500]]
+O que separa análise de opinião com gráfico é a ordem das operações. Análise começa na pergunta. Passa pela hipótese. Define qual número mudaria de ideia. E só então olha o dado. Achismo faz o contrário: começa no dado, e procura a história que encaixa.
+[[slnc 500]]
+Repare no que isso muda. Quando o dado entra por último, ele só pode fazer uma coisa: derrubar ou sustentar a hipótese. Quando entra primeiro, a mente faz o resto.
+[[slnc 900]]
+Agora os três vícios mais comuns.
+[[slnc 400]]
+Primeiro: painel sem dono. Trinta indicadores na tela, e nenhuma decisão amarrada a nenhum deles. Se ninguém faz nada diferente quando o número muda, o número não deveria estar ali.
+[[slnc 400]]
+Segundo: confirmação. Você já sabe a resposta, e procura o recorte que confirma. É o vício mais difícil de perceber, porque parece rigor.
+[[slnc 400]]
+Terceiro: a média que esconde. E esse merece um exemplo inteiro.
+[[slnc 700]]
+Imagine uma loja. Em julho, o ticket médio foi de cento e oitenta reais. Em agosto, subiu para cento e noventa e cinco. Oito por cento de alta. É esse o número que vai para a reunião, e ele é verdadeiro.
+[[slnc 400]]
+Mas olhe o que aconteceu embaixo dele. Em julho foram oitocentos pedidos. Em agosto, seiscentos e quarenta e cinco. Uma queda de dezenove por cento. E quando você separa por faixa de valor, a queda tem endereço: os pedidos de até cento e vinte reais caíram trinta e oito por cento. As outras duas faixas ficaram praticamente iguais.
+[[slnc 500]]
+Ou seja: ninguém gastou mais. Quem gastava pouco parou de comprar. A receita real caiu treze por cento, e o ticket médio subiu. A média mentiu sem errar uma única conta.
+[[slnc 900]]
+Agora um exemplo de como se faz diferente.
+[[slnc 400]]
+Uma loja online vê o faturamento cair quarenta por cento num mês. Reação típica: culpar o Google. Análise de verdade quebra o número em partes que se multiplicam. Faturamento é igual a visitantes, vezes taxa de conversão, vezes ticket médio.
+[[slnc 400]]
+Se visitantes caiu quarenta e cinco por cento e a conversão até subiu, o problema é de aquisição. Nada a ver com o site. Mas se visitantes ficou igual e a conversão desabou, o problema está dentro da loja: preço, frete, checkout, estoque. São dois planos de ação completamente diferentes. E só esse segundo passo diz qual deles é o seu.
+[[slnc 900]]
+O hábito que resolve isso é simples. Antes de abrir qualquer relatório, escreva uma frase: se o número X estiver acima de Y, eu faço A. Se estiver abaixo, eu faço B. [[slnc 400]] Se você não consegue completar essa frase, não é hora de olhar dado. É hora de definir a decisão.
+[[slnc 700]]
+Uma tarefa de dez minutos para hoje. Abra o painel que você mais olha. Para cada indicador, responda em voz alta: se isso cair vinte por cento amanhã, quem eu chamo, e o que eu peço? Anote quantos indicadores ficaram sem resposta. Esse número é a quantidade de decoração no seu painel.
+[[slnc 700]]
+Para levar daqui: painel bom não é o que mostra mais coisa. É o que muda o que você faz na segunda-feira.

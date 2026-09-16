@@ -27,6 +27,29 @@ Mais um glossário com 43 termos.
 
 Depois de instalado funciona sem internet. O progresso de leitura fica salvo no aparelho.
 
+## Áudio (audiobook)
+
+O Módulo I tem narração completa: **7 aulas, 30 minutos**, geradas a partir de roteiros
+escritos para ouvido (em `audio/roteiros/`) — os gráficos são descritos em palavras e as
+tabelas viradas em frases.
+
+- Player com velocidade **1× · 1,25× · 1,5× · 1,75× · 2×**, ±15 s e barra arrastável
+- Continua de onde você parou, por aula
+- Toca com a tela desligada e aparece no painel do carro (Media Session API): nome da aula
+  e botões do volante funcionam
+- Emenda automática entre aulas
+- Botão "baixar áudio" na tela do módulo, para ouvir sem internet
+
+Para regerar com outra voz ou outro ritmo:
+
+```bash
+say -v '?' | grep pt_BR     # vozes disponíveis
+audio/gerar.sh Reed 165     # voz, palavras por minuto (padrão: Luciana 172)
+```
+
+Depois de regerar, confira as durações com `audio/gerar.sh --manifesto` e atualize o
+campo `aud:` de cada aula em `conteudo.js`.
+
 ## Recursos
 
 - Modo claro/escuro com preferência salva
@@ -45,6 +68,8 @@ index.html    estrutura da página
 app.css       estilos e temas
 conteudo.js   todo o material de estudo (dados)
 widgets.js    gráficos dinâmicos, simuladores, vídeo
+player.js     player de áudio (velocidade, fila, painel do carro)
+audio/        MP3 das aulas + roteiros de narração + gerar.sh
 app.js        roteador, progresso, busca
 sw.js         cache offline
 manifest.webmanifest

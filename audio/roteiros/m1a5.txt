@@ -1,0 +1,41 @@
+Módulo um, aula cinco de sete: teste A B sem se enganar.
+[[slnc 900]]
+A ideia central: o teste A B é a forma mais barata de comprar causalidade. Mas ele só entrega isso se você respeitar três regras chatas. Sorteio, tamanho, e prazo definido antes.
+[[slnc 700]]
+Primeiro, por que ele funciona. Ao sortear quem vê a versão A e quem vê a versão B, você garante que os dois grupos são iguais em tudo. Inclusive naquilo que você nem sabe medir. Aí qualquer diferença no resultado só pode vir da mudança. É exatamente isso que olhar o histórico nunca dá.
+[[slnc 700]]
+Regra um: sorteio de verdade. Dividir por dia, segunda com A e terça com B, não é sorteio. Segunda e terça têm públicos diferentes. Dividir por dispositivo também não. Tem que ser aleatório por visitante, e o visitante precisa ver sempre a mesma versão.
+[[slnc 700]]
+Regra dois: tamanho definido antes de começar. Com pouco volume, o teste só mede ruído. E a intuição costuma subestimar brutalmente o volume necessário.
+[[slnc 400]]
+Aqui está a relação que importa: quanto menor o efeito que você quer detectar, maior a amostra. Detectar um ganho de vinte por cento é barato. Detectar cinco por cento custa dezesseis vezes mais.
+[[slnc 400]]
+Um número concreto, para calibrar a sua intuição. Para detectar um ganho relativo de dez por cento, numa conversão que hoje é de dois por cento, você precisa de algo em torno de oitenta mil visitantes por grupo. Cento e sessenta mil no total.
+[[slnc 400]]
+Uma loja com vinte mil visitas por mês levaria oito meses para rodar esse teste. E precisa saber disso antes de tentar, não depois. No aplicativo tem uma calculadora onde você coloca a sua conversão e o seu tráfego, e ela diz em quantos dias o teste fecha. Ou se não dá.
+[[slnc 900]]
+Regra três: prazo definido antes. E essa é a que mais gente quebra sem perceber.
+[[slnc 400]]
+O erro é espiar e parar quando dá bom. Se você olha o resultado todo dia, e encerra assim que a diferença fica bonita, você não testou nada. Apenas esperou o ruído favorecer a sua versão preferida.
+[[slnc 500]]
+Deixa eu te mostrar o tamanho disso. Imagine dois grupos absolutamente idênticos. Mesma página, mesmo público. O efeito real é zero por cento.
+[[slnc 400]]
+Se você acompanhar a diferença aparente entre eles dia a dia, ao longo de quarenta e cinco dias, ela não fica em zero. Ela oscila. E oscila muito: chega a passar de trinta por cento para cima ou para baixo, e costuma passar mais de dez dias inteiros dentro daquela faixa de mais ou menos dez por cento, que é a zona de tentação.
+[[slnc 400]]
+Ou seja: quem parasse num desses dias declararia vencedor um grupo que é idêntico ao outro. E o efeito real, lembre-se, é zero.
+[[slnc 400]]
+No aplicativo tem essa simulação, com um botão para rodar de novo quantas vezes você quiser. Vale muito ver acontecer.
+[[slnc 500]]
+A regra prática: defina a data de encerramento antes de ligar o teste, e não mexa. Se a ferramenta mostrar noventa e cinco por cento de confiança no dia oito, isso não significa nada, se o plano era trinta dias.
+[[slnc 700]]
+E mais três venenos, rápidos.
+[[slnc 300]]
+Testar tudo de uma vez. Mudou cor, texto e posição. Se ganhou, você não sabe qual parte ganhou.
+[[slnc 300]]
+Ciclo incompleto. Teste de uma semana, num produto cujo ciclo de decisão é de três semanas, mede a metade errada.
+[[slnc 300]]
+E métrica trocada. Otimizar cliques e piorar receita é rotina. Escolha a métrica final, não a intermediária.
+[[slnc 700]]
+Uma tarefa de cinco minutos. Coloque na calculadora do aplicativo a conversão real da sua página mais importante, e o tráfego mensal dela. Se o resultado passar de três meses, escreva numa nota: não tenho volume para testar mudanças pequenas. Essa frase vai te poupar meses de teste inconclusivo.
+[[slnc 700]]
+Para levar daqui: se a empresa não tem volume para testar, o caminho é escolher mudanças grandes e apostar com critério. E não fingir que um teste de trezentas visitas provou alguma coisa.

@@ -1,0 +1,43 @@
+Módulo um, aula quatro de sete: correlação, causalidade, e as armadilhas que enganam gente inteligente.
+[[slnc 900]]
+A ideia central: duas coisas andarem juntas não significa que uma cause a outra. Quase todo erro caro de decisão baseada em dado nasce aqui.
+[[slnc 500]]
+Correlação é observação: quando A sobe, B costuma subir. Causalidade é uma afirmação muito mais forte: se eu mexer em A, B muda. A segunda exige intervenção, ou um desenho de estudo. Olhar histórico raramente basta.
+[[slnc 700]]
+Vamos passar por cinco armadilhas.
+[[slnc 500]]
+Armadilha um: a terceira variável escondida. Vendas de sorvete e afogamentos sobem juntos. Sorvete não afoga ninguém: o calor causa os dois. No negócio é igual. O e-mail marketing aumenta a conversão, porque é disparado na Black Friday, quando tudo converte mais.
+[[slnc 500]]
+Armadilha dois: causalidade invertida. Clientes que usam a busca interna compram três vezes mais, logo vamos investir na busca. Talvez. Ou talvez quem já decidiu comprar é que usa a busca. A intenção causa o uso, e não o contrário.
+[[slnc 500]]
+Armadilha três: viés de sobrevivência. Você analisa só quem ficou. Estuda os clientes ativos e conclui que clientes gostam do nosso frete. Claro que gostam: os que odiavam já foram embora, e não estão na sua base.
+[[slnc 500]]
+Armadilha quatro: regressão à média. E essa merece um pouco mais de atenção.
+[[slnc 400]]
+Um mês muito ruim tende a ser seguido por um mês menos ruim, mesmo que ninguém faça absolutamente nada. Imagine uma série de vendas mensais oscilando em torno de cem. Alguns meses em cento e dois, outros em noventa e seis, e assim por diante. Aí vem um mês de sessenta e sete: de longe o pior de todos.
+[[slnc 400]]
+Você age. E o mês seguinte vem em oitenta e oito. Depois noventa e sete. A recuperação é atribuída à sua ação. [[slnc 300]] Mas a série já voltava para a média sozinha. A sua ação pode ter feito tudo, pode ter feito algo, e pode não ter feito nada. Sem grupo de comparação, não dá para saber.
+[[slnc 400]]
+Metade das viradas celebradas em reunião são exatamente isso.
+[[slnc 700]]
+Armadilha cinco: o paradoxo de Simpson. Essa é a mais contraintuitiva de todas, e vale acompanhar os números com atenção.
+[[slnc 400]]
+Duas campanhas, A e B, dez mil visitantes cada.
+[[slnc 300]]
+No celular: a campanha A converteu um vírgula oito por cento. A campanha B, um vírgula cinco. A ganha.
+[[slnc 300]]
+No computador: a campanha A converteu quatro por cento. A campanha B, três vírgula seis. A ganha de novo.
+[[slnc 400]]
+A campanha A ganhou nos dois grupos. Então ela ganha no total, certo? [[slnc 500]] Errado. No total, a campanha A ficou em dois vírgula dois por cento, e a B em dois vírgula nove. A B ganha.
+[[slnc 500]]
+Como isso é possível? Porque o tráfego não estava distribuído igual. A campanha A pegou oitenta por cento do tráfego no celular, que converte pouco. A B pegou setenta por cento no computador, que converte muito. O total mistura os dois, e inverte o resultado.
+[[slnc 400]]
+Quem olha só o agregado escolhe a campanha errada. Por isso a regra: sempre olhe o dado segmentado antes de concluir.
+[[slnc 700]]
+Um exemplo final, do dia a dia. Você troca o layout da página de produto, e a conversão sobe doze por cento na semana seguinte. Comemorar seria natural, e provavelmente errado. Porque nessa mesma semana entrou campanha de e-mail, um concorrente ficou fora do ar, e a semana anterior tinha sido feriado. Sem grupo de comparação, os doze por cento não têm dono.
+[[slnc 500]]
+Existe uma frase que evita muito prejuízo, e eu sugiro que você a adote: o que mais poderia explicar esse número, além da minha explicação favorita? [[slnc 400]] Se você não consegue listar três alternativas, ainda não analisou.
+[[slnc 700]]
+Uma tarefa de dez minutos. Pegue a última vitória comemorada na empresa: uma campanha, uma mudança no site, uma promoção. Liste três explicações alternativas para o resultado, que não envolvam a ação tomada. Se uma delas for plausível, a vitória ainda não foi provada.
+[[slnc 700]]
+Para levar daqui: correlação sugere onde olhar. Só intervenção controlada prova o que causa.

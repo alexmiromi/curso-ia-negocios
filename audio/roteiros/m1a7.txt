@@ -1,0 +1,51 @@
+Módulo um, aula sete de sete: contar a história do dado para quem decide.
+[[slnc 900]]
+A ideia central: análise que ninguém entende não é análise. É arquivo. A apresentação faz parte do trabalho, e não é um enfeite que se coloca depois dele.
+[[slnc 700]]
+Existe uma estrutura que funciona, com quatro partes, nesta ordem.
+[[slnc 500]]
+Primeira: a conclusão. Logo de cara, em uma frase. Por exemplo: a queda de receita é de aquisição, não de conversão. Quem decide não quer suspense.
+[[slnc 400]]
+Segunda: a evidência. Dois ou três números que sustentam essa frase. Não vinte.
+[[slnc 400]]
+Terceira: o que isso implica. Ou seja, a decisão que está sendo pedida, com o custo dela.
+[[slnc 400]]
+E quarta: o que ainda não sabemos. Honestidade sobre o limite da análise. Isso compra credibilidade, não tira.
+[[slnc 500]]
+O anti-padrão é o contrário disso: começar pela metodologia, mostrar quinze gráficos, e terminar com então, o que vocês acham? Nesse formato, a decisão vira opinião de quem falar mais alto.
+[[slnc 900]]
+Agora, uma demonstração de como um gráfico pode mentir sem errar um único número.
+[[slnc 400]]
+Imagine a conversão mensal de uma loja, ao longo de seis meses: dois vírgula zero cinco por cento, dois vírgula um, um vírgula nove oito, dois vírgula um dois, dois vírgula zero oito, e dois vírgula um cinco.
+[[slnc 400]]
+Se você desenha isso num gráfico de barras cujo eixo começa em um vírgula nove, o resultado parece uma montanha-russa. O mês de março, que foi um vírgula nove oito, vira um precipício. Alguém vai perguntar o que aconteceu em março.
+[[slnc 400]]
+Agora desenhe exatamente os mesmos números, com o eixo começando em zero. As seis barras ficam praticamente iguais. Porque elas são praticamente iguais: a variação real vai de um vírgula nove oito a dois vírgula um cinco. Isso está dentro do ruído normal.
+[[slnc 400]]
+Mesmos seis números. Duas histórias opostas. A regra que evita isso: barra sempre nasce em zero. Quem corta o eixo está contando uma história, não mostrando um dado.
+[[slnc 900]]
+Cinco regras de gráfico que resolvem noventa por cento dos casos.
+[[slnc 300]]
+Um: um gráfico, uma mensagem. Se precisa de duas frases para explicar, são dois gráficos.
+[[slnc 300]]
+Dois: comparação sempre. Número sozinho não significa nada. Contra o mês passado, contra o ano passado, contra a meta.
+[[slnc 300]]
+Três: eixo começando em zero, em gráfico de barra. Já vimos o porquê.
+[[slnc 300]]
+Quatro: o título é a conclusão, não o rótulo. Tráfego orgânico caiu trinta e um por cento desde abril vale muito mais do que tráfego por mês.
+[[slnc 300]]
+E cinco: cor tem função. Se tudo é colorido, nada é destaque. Uma cor para o que importa, cinza para o resto.
+[[slnc 900]]
+Para fechar, um exemplo dos dois jeitos de mandar a mesma análise.
+[[slnc 400]]
+O jeito ruim: segue o relatório mensal com os indicadores de tráfego, conversão e receita, segmentados por canal.
+[[slnc 500]]
+O jeito bom: perdemos sessenta e dois mil reais de receita em agosto. Oitenta por cento disso vem de uma única causa: o tráfego orgânico das páginas de categoria. A conversão não piorou. A proposta é doze mil reais em recuperação de conteúdo de categoria, nos próximos sessenta dias. E o que eu ainda não sei: quanto disso é mudança de algoritmo, e quanto é concorrente novo.
+[[slnc 500]]
+Repare que o segundo tem a conclusão, a evidência, a decisão pedida com custo, e o limite da análise. Tudo em quatro frases.
+[[slnc 700]]
+Uma tarefa de dez minutos. Pegue o último relatório que você mandou, ou recebeu. Reescreva o primeiro parágrafo nas quatro partes: conclusão, evidência, implicação, e o que não sabemos. Compare com o original. A diferença de clareza é o tamanho do problema.
+[[slnc 700]]
+Para levar daqui: se a sua análise não cabe em três frases, ela ainda não terminou.
+[[slnc 900]]
+E com isso termina o módulo um. Você viu como transformar preocupação em pergunta, pergunta em métrica, e métrica em decisão. No módulo dois, entramos nos fundamentos de inteligência artificial propriamente ditos: o que cada tipo de sistema faz, o que ele não faz, e como decidir quando vale usar.

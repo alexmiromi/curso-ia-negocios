@@ -1,0 +1,33 @@
+Módulo um, aula seis de sete: os quatro degraus da maturidade analítica.
+[[slnc 900]]
+A ideia central: não dá para pular degrau. A empresa que tenta prescrever sem descrever direito só automatiza o próprio erro. Mais rápido, e em escala.
+[[slnc 700]]
+São quatro degraus, e cada um responde a uma pergunta diferente.
+[[slnc 500]]
+Degrau um, analítica descritiva. A pergunta é: o que aconteceu? Um exemplo de resposta: vendemos cento e oitenta mil reais em agosto, vinte e dois por cento abaixo de julho. O que esse degrau exige é dado confiável, e uma definição só por métrica.
+[[slnc 500]]
+Degrau dois, diagnóstica. A pergunta é: por que aconteceu? Resposta: caiu porque o tráfego orgânico de categoria caiu trinta e um por cento. O que exige: segmentação, e a árvore de indicadores que vimos na aula três.
+[[slnc 500]]
+Degrau três, preditiva. A pergunta é: o que vai acontecer? Resposta: setembro deve ficar entre cento e sessenta e cinco e cento e noventa e cinco mil reais. O que exige: histórico limpo, e um método de previsão.
+[[slnc 500]]
+Degrau quatro, prescritiva. A pergunta é: o que eu devo fazer? Resposta: comprar quarenta unidades deste item até o dia doze. O que exige: modelo, mais regra de decisão, mais confiança suficiente para que alguém obedeça.
+[[slnc 900]]
+E aqui está o ponto mais importante desta aula: onde quase todo mundo trava.
+[[slnc 400]]
+Trava no degrau dois. A empresa tem relatório, que é o degrau um, e quer inteligência artificial, que é o degrau quatro. Mas ninguém consegue explicar por que o número de ontem foi aquele. Investir em previsão nessa situação é construir telhado sem parede.
+[[slnc 700]]
+Três sinais de que você ainda está no degrau um.
+[[slnc 300]]
+Um: duas áreas apresentam números diferentes para a mesma coisa.
+[[slnc 300]]
+Dois: ninguém sabe dizer de qual sistema o dado saiu.
+[[slnc 300]]
+Três: a explicação de qualquer variação demora mais de um dia para sair.
+[[slnc 500]]
+No aplicativo, nesta aula, tem um autodiagnóstico: oito afirmações, duas por degrau. Você responde sim ou não, e ele diz em que degrau a sua empresa realmente está, e qual é o próximo passo. As respostas ficam só no seu aparelho.
+[[slnc 700]]
+Por último, uma coisa que quase ninguém menciona: o degrau quatro tem um pré-requisito humano.
+[[slnc 400]]
+Prescrição só gera valor se alguém obedece. Um modelo que diz compre quarenta unidades, e é ignorado toda semana pelo comprador, não é um problema de modelo. É um problema de confiança e de processo. Por isso o degrau quatro é tanto organizacional quanto técnico.
+[[slnc 700]]
+Para levar daqui: antes de perguntar onde eu uso inteligência artificial, pergunte outra coisa. Eu consigo explicar o mês passado em uma hora? A resposta define o seu degrau real.

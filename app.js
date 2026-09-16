@@ -21,6 +21,8 @@ function lidas(){ return LS.get('lidas',{}); }
 function isLida(id){ return !!lidas()[id]; }
 function marca(id,v){ var l=lidas(); if(v){l[id]=1;}else{delete l[id];} LS.set('lidas',l); }
 function nLidas(){ return Object.keys(lidas()).length; }
+window.aulaLida=isLida;
+window.marcaLida=function(id){ marca(id,true); };
 function modDone(m){ var n=0; m.aulas.forEach(function(a){ if(isLida(a.id)) n++; }); return n; }
 
 /* ---------- tema ---------- */
@@ -41,6 +43,8 @@ document.getElementById('tg').onclick=function(){
 /* ---------- utilitários ---------- */
 function esc(s){ return String(s).replace(/[&<>"]/g,function(c){ return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]; }); }
 function tempo(min){ if(min<60) return min+' min'; var h=Math.floor(min/60), r=min%60; return h+'h'+(r?' '+r+'min':''); }
+function mmss(s){ var m=Math.floor(s/60), r=Math.round(s%60); return m+':'+(r<10?'0':'')+r; }
+var ICO_P='<svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>';
 var view=document.getElementById('view');
 var btitle=document.getElementById('btitle');
 var back=document.getElementById('back');
@@ -105,11 +109,20 @@ function telaModulo(id){
    +'<div class="stats"><div class="stat"><b>'+m.aulas.length+'</b><span>aulas</span></div>'
    +'<div class="stat"><b>'+tempo(mins)+'</b><span>leitura</span></div>'
    +'<div class="stat"><b>'+d+'/'+m.aulas.length+'</b><span>concluídas</span></div></div></header>';
+  var comAudio=m.aulas.filter(function(a){ return a.aud; });
+  if(comAudio.length){
+    var segs=comAudio.reduce(function(s,a){ return s+a.aud; },0);
+    h+='<div class="ouvir-row"><button class="ouvir" data-mod="'+m.id+'">'
+     +'<span class="ic">'+ICO_P+'</span>Ouvir o módulo <span class="dur">'+Math.round(segs/60)+' min</span></button></div>';
+    h+='<div class="baixar"><button id="dl">Baixar áudio para ouvir sem internet</button><span id="dlst"></span></div>';
+  }
   h+='<div class="alist">';
   m.aulas.forEach(function(a){
     h+='<a class="arow'+(isLida(a.id)?' ok':'')+'" href="#/a/'+a.id+'">'
      +'<span class="ck"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span>'
-     +'<span class="tt">'+esc(a.titulo)+'</span><span class="mn">'+a.min+' min</span></a>';
+     +'<span class="tt">'+esc(a.titulo)+'</span>'
+     +(a.aud?'<button class="pa" data-play="'+a.id+'" aria-label="Ouvir esta aula"><span class="ic">'+ICO_P+'</span></button>':'')
+     +'<span class="mn">'+a.min+' min</span></a>';
   });
   h+='</div>';
   var mi=CURSO.modulos.indexOf(m);
@@ -127,7 +140,13 @@ function telaAula(id){
   btitle.textContent='Módulo '+m.num+' · '+(it.idx+1)+'/'+m.aulas.length;
   back.hidden=false;
   var h='<article><p class="crumb">Módulo '+m.num+' · '+esc(m.titulo)+' · '+a.min+' min</p>'
-   +'<h1>'+esc(a.titulo)+'</h1>'+a.html+'</article>';
+   +'<h1>'+esc(a.titulo)+'</h1>';
+  if(a.aud){
+    h+='<div class="ouvir-row"><button class="ouvir" data-play="'+a.id+'">'
+     +'<span class="ic">'+ICO_P+'</span><span class="lab">Ouvir</span>'
+     +'<span class="dur">'+mmss(a.aud)+'</span></button></div>';
+  }
+  h+=a.html+'</article>';
   var ok=isLida(a.id);
   h+='<div class="done-row"><button class="btn '+(ok?'':'pri ')+'w" id="mk">'+(ok?'✓ Concluída — desmarcar':'Marcar como concluída')+'</button></div>';
   h+='<div class="navr">';
@@ -159,12 +178,40 @@ function telaGlossario(){
 }
 
 /* ---------- roteador ---------- */
+function ligaAudio(){
+  if(!window.PLAYER) return;
+  view.querySelectorAll('[data-play]').forEach(function(b){
+    b.onclick=function(e){ e.preventDefault(); e.stopPropagation(); PLAYER.toca(b.getAttribute('data-play')); };
+  });
+  view.querySelectorAll('[data-mod]').forEach(function(b){
+    b.onclick=function(){ PLAYER.tocaModulo(b.getAttribute('data-mod')); };
+  });
+  var dl=document.getElementById('dl');
+  if(dl) dl.onclick=function(){
+    var st=document.getElementById('dlst');
+    var p=(location.hash||'').split('/')[2];
+    var mm=null; CURSO.modulos.forEach(function(x){ if(x.id===p) mm=x; });
+    if(!mm) return;
+    var alvos=mm.aulas.filter(function(a){ return a.aud; }).map(function(a){ return 'audio/'+a.id+'.mp3'; });
+    dl.disabled=true; var ok=0;
+    st.textContent='baixando 0 de '+alvos.length+'…';
+    Promise.all(alvos.map(function(u){
+      return fetch(u).then(function(r){ ok++; st.textContent='baixando '+ok+' de '+alvos.length+'…'; return r; }).catch(function(){});
+    })).then(function(){
+      st.textContent='pronto — '+ok+' aula'+(ok>1?'s':'')+' disponível'+(ok>1?'eis':'')+' sem internet';
+      dl.textContent='Baixado'; 
+    });
+  };
+  PLAYER.pinta();
+}
+
 function rota(){
   var p=(location.hash||'#/').replace(/^#\/?/,'').split('/');
   if(p[0]==='m' && p[1]) telaModulo(p[1]);
   else if(p[0]==='a' && p[1]) telaAula(p[1]);
   else if(p[0]==='glossario') telaGlossario();
   else telaHome();
+  ligaAudio();
 }
 addEventListener('hashchange',rota);
 back.onclick=function(){

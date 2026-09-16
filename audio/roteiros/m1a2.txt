@@ -1,0 +1,37 @@
+Módulo um, aula dois de sete: da pergunta de negócio até a métrica.
+[[slnc 900]]
+A ideia central: existe um funil de tradução entre, de um lado, estamos preocupados com isso, e do outro, este número, medido assim, com esta fonte. Pular etapas desse funil é a causa número um de projeto de dados que não gera decisão.
+[[slnc 700]]
+São quatro degraus, e cada um é mais estreito e mais específico que o anterior.
+[[slnc 500]]
+Degrau um: a preocupação. Vaga, emocional, do jeito que aparece na reunião. Por exemplo: a gente está vendendo menos.
+[[slnc 400]]
+Degrau dois: a pergunta. Específica, com recorte de tempo e de escopo. Por exemplo: por que a receita de clientes recorrentes caiu quarenta e cinco por cento, de janeiro a agosto, comparado com o mesmo período do ano passado? Uma pergunta boa já exclui metade das respostas possíveis.
+[[slnc 400]]
+Degrau três: a hipótese. E aqui vai o detalhe que quase todo mundo erra: uma hipótese só serve se ela puder ser falsa. Por exemplo: caiu porque paramos de falar com a base, e não porque os clientes foram para o concorrente.
+[[slnc 400]]
+Degrau quatro: a métrica. O número que decide entre as hipóteses, com fonte e período definidos. No nosso exemplo: taxa de recompra em noventa dias, por safra de cliente, saindo do banco de pedidos, comparando dois mil e vinte e cinco com dois mil e vinte e seis.
+[[slnc 700]]
+Sobre o degrau três, insista comigo um pouco. O mercado está difícil não é hipótese. Nenhum dado refuta isso. Agora, nossa taxa de recompra em noventa dias caiu mais do que a queda de tráfego: isso é hipótese. Ou o número mostra, ou não mostra.
+[[slnc 500]]
+O erro clássico é saltar do degrau um direto para o quatro. Alguém pede um painel de vendas, e recebe trinta gráficos que não respondem a nada. Porque a pergunta nunca foi escrita.
+[[slnc 900]]
+Vamos a um exemplo completo, descendo os quatro degraus.
+[[slnc 400]]
+A preocupação: o frete está espantando cliente.
+[[slnc 300]]
+A pergunta: qual é a taxa de abandono na etapa de frete do checkout, por faixa de valor de frete, nos últimos noventa dias?
+[[slnc 300]]
+A hipótese: acima de quarenta reais de frete, o abandono dobra.
+[[slnc 300]]
+A métrica: abandono na etapa de frete é igual aos carrinhos que chegaram na etapa, menos os que passaram dela, dividido pelos que chegaram. Tudo isso segmentado por faixa de frete.
+[[slnc 500]]
+E olha o que acontece: com isso, a decisão sai sozinha. Se o degrau existe mesmo nos quarenta reais, você sabe exatamente onde colocar frete grátis, e quanto isso vai custar.
+[[slnc 900]]
+Por último, uma regra que evita muita discussão inútil. Toda métrica precisa de ficha. Seis campos: nome, fórmula exata, fonte do dado, periodicidade, dono, e o que se faz quando ela muda. Métrica sem ficha vira discussão sobre a métrica, em vez de discussão sobre o negócio.
+[[slnc 400]]
+No aplicativo, nesta aula, tem um formulário para você preencher a ficha da métrica mais importante do seu negócio. Ela fica salva no seu aparelho. Vale parar e preencher quando puder.
+[[slnc 700]]
+Uma tarefa de quinze minutos. Pegue a preocupação mais repetida nas últimas reuniões e desça os quatro degraus por escrito. Se você travar no degrau três, ótimo: acabou de descobrir que o problema estava mal definido, e não mal medido.
+[[slnc 700]]
+Para levar daqui: se duas pessoas da sua empresa calculam conversão de jeitos diferentes, você não tem métrica. Você tem apelido.

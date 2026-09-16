@@ -1,0 +1,41 @@
+Módulo um, aula três de sete: métrica vaidosa contra métrica acionável, e a árvore de indicadores.
+[[slnc 900]]
+A ideia central: métrica vaidosa é a que só sobe, e faz você se sentir bem. Métrica acionável é a que, quando piora, aponta para uma alavanca específica, que alguém pode puxar.
+[[slnc 700]]
+Vejamos cinco pares, cada um com a versão vaidosa e a versão acionável.
+[[slnc 400]]
+Total de visitas acumulado é vaidoso: acumulado só cresce. A versão acionável é visitas por canal, por semana. Aí você sabe qual canal desligou.
+[[slnc 300]]
+Total de cadastros é vaidoso. A versão acionável é cadastros que compraram em trinta dias. Cadastro sem compra é custo, não é resultado.
+[[slnc 300]]
+Seguidores é vaidoso. Receita atribuída ao canal social é acionável. Seguidor não paga boleto.
+[[slnc 300]]
+Ticket médio geral é vaidoso, e você viu por quê na primeira aula. Ticket por segmento e por canal é acionável.
+[[slnc 300]]
+E número de pedidos é vaidoso. Margem por pedido é acionável. Dá para vender muito e perder dinheiro em todos.
+[[slnc 900]]
+Agora a árvore de indicadores, que é a ferramenta central desta aula.
+[[slnc 400]]
+Uma árvore parte de uma única métrica de topo, e a decompõe em fatores que se multiplicam ou somam, até chegar em algo que alguém consegue mexer no dia a dia. A regra é: cada nível tem que reconstruir o nível de cima. Se não fecha a conta, a árvore está errada.
+[[slnc 500]]
+Numa loja online, a árvore fica assim. No topo, receita. Receita é igual a visitantes, vezes conversão, vezes ticket médio.
+[[slnc 400]]
+Abrindo visitantes, você tem a soma dos canais: orgânico, pago, e-mail e WhatsApp, direto, e social.
+[[slnc 400]]
+Abrindo conversão, você tem uma multiplicação de três etapas: de quem chegou no produto para quem adicionou ao carrinho; de quem adicionou para quem iniciou o checkout; e de quem iniciou para quem pagou.
+[[slnc 400]]
+E abrindo ticket, você tem itens por pedido, vezes preço médio do item, menos descontos.
+[[slnc 500]]
+Na base dessa árvore ficam as alavancas: cada item tem um dono e uma ação possível. É isso que a torna útil.
+[[slnc 700]]
+O poder da árvore aparece na hora da queda. Receita caiu trinta por cento? Desça um nível: foi visitante ou foi conversão? Foi visitante? Desça de novo: qual canal? Foi orgânico? Desça mais: quais páginas? [[slnc 400]] Em quatro perguntas, você saiu de estamos vendendo menos, e chegou em as páginas de categoria perderam posição para estas cinco buscas.
+[[slnc 700]]
+Uma coisa que vale sentir na pele: como os três fatores se multiplicam, variações pequenas somadas viram grandes. Dez por cento a mais em um fator dá dez por cento na receita. Mas dez por cento nos três dá trinta e três por cento. No aplicativo tem um simulador com três controles deslizantes para você experimentar isso.
+[[slnc 500]]
+E uma armadilha. Cuidado com árvore que tem a mesma métrica em dois galhos ao mesmo tempo. Isso conta duas vezes o mesmo efeito, e faz a soma dar mais de cem por cento. Cada efeito entra em um lugar só.
+[[slnc 700]]
+Por último: uma métrica de topo, não cinco. A escolha do topo é estratégica, não técnica. Uma empresa que precisa de caixa agora escolhe receita. Uma que precisa provar modelo escolhe retenção. Uma que precisa crescer escolhe clientes ativos. Escolher três significa não ter escolhido.
+[[slnc 700]]
+Uma tarefa de vinte minutos. Desenhe a árvore do seu negócio numa folha, até o terceiro nível. Depois pegue o último mês e tente reconstruir a receita a partir da base. Se a conta não fechar dentro de cinco por cento, você acabou de achar uma métrica mal definida, ou um galho duplicado. E isso vale mais do que o desenho.
+[[slnc 700]]
+Para levar daqui, um teste rápido: se o indicador piorar vinte por cento, você sabe quem chamar e o que pedir? Se não sabe, ele é decorativo.

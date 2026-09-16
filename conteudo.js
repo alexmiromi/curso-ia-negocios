@@ -13,7 +13,7 @@ id:'m1', num:'I', titulo:'Estratégia Baseada em Dados',
 resumo:'Transformar pergunta de negócio em métrica, e métrica em decisão.',
 aulas:[
 
-{id:'m1a1', min:8, titulo:'Por que quase toda decisão "com dados" ainda é achismo',
+{id:'m1a1', aud:254, min:8, titulo:'Por que quase toda decisão "com dados" ainda é achismo',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Dado não decide nada. Quem decide é a <strong>pergunta</strong> que você fez antes de olhar o dado. Sem pergunta, o painel vira espelho: você enxerga nele o que já acreditava.</p></div>
 
@@ -96,7 +96,7 @@ html:`
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Painel bom não é o que mostra mais coisa. É o que muda o que você faz na segunda-feira.</p></div>
 `},
 
-{id:'m1a2', min:9, titulo:'Da pergunta de negócio até a métrica',
+{id:'m1a2', aud:241, min:9, titulo:'Da pergunta de negócio até a métrica',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Existe um funil de tradução entre “estamos preocupados com isso” e “este número, medido assim, com esta fonte”. Pular etapas do funil é a causa número um de projeto de dados que não gera decisão.</p></div>
 
@@ -147,7 +147,7 @@ html:`
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Se duas pessoas da empresa calculam “conversão” de jeitos diferentes, você não tem métrica — tem apelido.</p></div>
 `},
 
-{id:'m1a3', min:9, titulo:'Métrica vaidosa × métrica acionável · a árvore de indicadores',
+{id:'m1a3', aud:269, min:9, titulo:'Métrica vaidosa × métrica acionável · a árvore de indicadores',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Métrica vaidosa é a que só sobe e faz você se sentir bem. Métrica acionável é a que, quando piora, aponta para uma <em>alavanca específica</em> que alguém pode puxar.</p></div>
 
@@ -203,7 +203,7 @@ html:`
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Teste rápido: se o indicador piorar 20%, você sabe <em>quem</em> chamar e <em>o que</em> pedir? Se não sabe, ele é decorativo.</p></div>
 `},
 
-{id:'m1a4', min:11, titulo:'Correlação, causalidade e as armadilhas que enganam gente inteligente',
+{id:'m1a4', aud:293, min:11, titulo:'Correlação, causalidade e as armadilhas que enganam gente inteligente',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Duas coisas andarem juntas não significa que uma cause a outra. Quase todo erro caro de decisão baseada em dado nasce aqui.</p></div>
 
@@ -280,7 +280,7 @@ html:`
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Correlação sugere onde olhar. Só intervenção controlada prova o que causa.</p></div>
 `},
 
-{id:'m1a5', min:10, titulo:'Teste A/B sem se enganar',
+{id:'m1a5', aud:279, min:10, titulo:'Teste A/B sem se enganar',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>O teste A/B é a forma mais barata de comprar causalidade. Mas ele só entrega isso se você respeitar três regras chatas: sorteio, tamanho e prazo definido antes.</p></div>
 
@@ -317,7 +317,7 @@ html:`
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Se a empresa não tem volume para testar, o caminho é escolher mudanças grandes e apostar com critério — não fingir que um teste de 300 visitas provou alguma coisa.</p></div>
 `},
 
-{id:'m1a6', min:8, titulo:'Os quatro degraus da maturidade analítica',
+{id:'m1a6', aud:193, min:8, titulo:'Os quatro degraus da maturidade analítica',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Não dá pra pular degrau. Empresa que tenta prescrever sem descrever direito só automatiza o próprio erro — mais rápido e em escala.</p></div>
 
@@ -360,7 +360,7 @@ html:`
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Antes de perguntar “onde uso IA?”, pergunte “consigo explicar o mês passado em uma hora?”. A resposta define o degrau real.</p></div>
 `},
 
-{id:'m1a7', min:8, titulo:'Contar a história do dado para quem decide',
+{id:'m1a7', aud:292, min:8, titulo:'Contar a história do dado para quem decide',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Análise que ninguém entende não é análise — é arquivo. A apresentação faz parte do trabalho, não é enfeite depois dele.</p></div>
 
