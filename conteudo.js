@@ -1401,76 +1401,293 @@ id:'m4', num:'IV', titulo:'IA em Finanças, Risco e Performance',
 resumo:'Previsão, anomalia, preço e cenário — onde a IA vira número no resultado.',
 aulas:[
 
-{id:'m4a1', min:8, titulo:'Previsão de demanda sem matemática',
+{id:'m4a1', min:15, titulo:'Previsão de demanda sem matemática',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Prever é decompor o passado em três partes — tendência, sazonalidade e ruído — e projetar as duas primeiras. Ruído não se prevê; se dimensiona.</p></div>
 
 <h4>As três camadas de qualquer série</h4>
+
+<div class="fig">
+<p class="fig-t">Toda série de venda é a soma de três coisas — e só duas são projetáveis</p>
+<p class="fig-s">Um item de curva A, doze meses. Em cima, o que você vê no relatório. Embaixo, as três camadas que produziram aquele desenho.</p>
+<svg viewBox="0 0 400 256" role="img" aria-label="Série de vendas de doze meses decomposta em três camadas: tendência de dois por cento ao mês, sazonalidade com pico em novembro e ruído aleatório">
+<text x="0" y="12" class="lb" font-size="11.5">O QUE VOCÊ VÊ — venda mês a mês</text>
+<line x1="8" y1="74" x2="392" y2="74" class="ax"/>
+<rect x="14" y="49.2" width="20" height="24.8" class="sg" data-tip="Janeiro · 84 unidades"/>
+<rect x="46" y="47.3" width="20" height="26.7" class="sg" data-tip="Fevereiro · 90 unidades"/>
+<rect x="78" y="46.3" width="20" height="27.7" class="sg" data-tip="Março · 93 unidades"/>
+<rect x="110" y="42.4" width="20" height="31.6" class="sg" data-tip="Abril · 106 unidades"/>
+<rect x="142" y="40.5" width="20" height="33.5" class="sg" data-tip="Maio · 113 unidades — Dia das Mães"/>
+<rect x="174" y="41.0" width="20" height="33.0" class="sg" data-tip="Junho · 111 unidades"/>
+<rect x="206" y="40.5" width="20" height="33.5" class="sg" data-tip="Julho · 113 unidades"/>
+<rect x="238" y="40.4" width="20" height="33.6" class="sg" data-tip="Agosto · 113 unidades"/>
+<rect x="270" y="39.5" width="20" height="34.5" class="sg" data-tip="Setembro · 116 unidades"/>
+<rect x="302" y="39.0" width="20" height="35.0" class="sg" data-tip="Outubro · 118 unidades"/>
+<rect x="334" y="25.4" width="20" height="48.6" class="sg" data-tip="Novembro · 164 unidades — Black Friday"/>
+<rect x="366" y="34.3" width="20" height="39.7" class="sg" data-tip="Dezembro · 134 unidades"/>
+<text x="24" y="86" class="tk" text-anchor="middle">jan</text>
+<text x="344" y="86" class="tk" text-anchor="middle">nov</text>
+<text x="376" y="86" class="tk" text-anchor="middle">dez</text>
+<text x="0" y="98" class="lb" font-size="11.5">1 · TENDÊNCIA — projetável</text>
+<line x1="8" y1="138" x2="392" y2="138" class="ax"/>
+<line x1="24" y1="130.4" x2="376" y2="112.3" class="l1"/>
+<text x="392" y="110" class="tk" text-anchor="end">+2,2% ao mês</text>
+<text x="0" y="156" class="lb" font-size="11.5">2 · SAZONALIDADE — projetável</text>
+<line x1="8" y1="182" x2="392" y2="182" class="ax"/>
+<rect x="14" y="182" width="20" height="8.8" class="s3" data-tip="Janeiro · 12% abaixo do normal"/>
+<rect x="46" y="182" width="20" height="13.2" class="s3" data-tip="Fevereiro · 18% abaixo"/>
+<rect x="78" y="182" width="20" height="5.9" class="s3" data-tip="Março · 8% abaixo"/>
+<rect x="110" y="182" width="20" height="2.9" class="s3" data-tip="Abril · 4% abaixo"/>
+<rect x="142" y="171.7" width="20" height="10.3" class="s3" data-tip="Maio · 14% acima — Dia das Mães"/>
+<rect x="174" y="182" width="20" height="1.5" class="s3" data-tip="Junho · 2% abaixo"/>
+<rect x="206" y="182" width="20" height="4.4" class="s3" data-tip="Julho · 6% abaixo"/>
+<rect x="238" y="180.5" width="20" height="1.5" class="s3" data-tip="Agosto · 2% acima"/>
+<rect x="270" y="182" width="20" height="2.9" class="s3" data-tip="Setembro · 4% abaixo"/>
+<rect x="302" y="177.6" width="20" height="4.4" class="s3" data-tip="Outubro · 6% acima"/>
+<rect x="334" y="161.5" width="20" height="20.5" class="s3" data-tip="Novembro · 28% acima — Black Friday"/>
+<rect x="366" y="174.7" width="20" height="7.3" class="s3" data-tip="Dezembro · 10% acima"/>
+<text x="0" y="216" class="lb" font-size="11.5">3 · RUÍDO — o resto, e ele não se prevê</text>
+<line x1="8" y1="236" x2="392" y2="236" class="ax"/>
+<rect x="14" y="236" width="20" height="7.0" class="s2" data-tip="Janeiro · ruído de −5%"/>
+<rect x="46" y="226.2" width="20" height="9.8" class="s2" data-tip="Fevereiro · ruído de +7%"/>
+<rect x="78" y="236" width="20" height="4.2" class="s2" data-tip="Março · ruído de −3%"/>
+<rect x="110" y="230.4" width="20" height="5.6" class="s2" data-tip="Abril · ruído de +4%"/>
+<rect x="142" y="236" width="20" height="12.6" class="s2" data-tip="Maio · ruído de −9%"/>
+<rect x="174" y="233.2" width="20" height="2.8" class="s2" data-tip="Junho · ruído de +2%"/>
+<rect x="206" y="227.6" width="20" height="8.4" class="s2" data-tip="Julho · ruído de +6%"/>
+<rect x="238" y="236" width="20" height="5.6" class="s2" data-tip="Agosto · ruído de −4%"/>
+<rect x="270" y="231.8" width="20" height="4.2" class="s2" data-tip="Setembro · ruído de +3%"/>
+<rect x="302" y="236" width="20" height="9.8" class="s2" data-tip="Outubro · ruído de −7%"/>
+<rect x="334" y="229" width="20" height="7.0" class="s2" data-tip="Novembro · ruído de +5%"/>
+<rect x="366" y="236" width="20" height="2.8" class="s2" data-tip="Dezembro · ruído de −2%"/>
+</svg>
+<div class="legend"><span><i class="sq" style="background:var(--tx3);opacity:.55"></i>venda observada</span><span><i style="background:var(--s1)"></i>tendência</span><span><i class="sq" style="background:var(--s3)"></i>sazonalidade</span><span><i class="sq" style="background:var(--s2)"></i>ruído</span></div>
+<p class="fig-c">O pico de novembro não é sorte nem talento: é sazonalidade, e ela se repete. A queda de maio, apesar do Dia das Mães, é ruído de −9% — e ninguém deveria abrir reunião para explicá-la.</p>
+</div>
+
 <ul>
 <li><strong>Tendência:</strong> a direção de fundo. Cresce, cai ou anda de lado ao longo de meses.</li>
 <li><strong>Sazonalidade:</strong> o padrão que se repete em ciclo conhecido. Dia da semana, mês do ano, datas comerciais.</li>
-<li><strong>Ruído:</strong> o resto. Aleatório por definição. Tentar explicar ruído é a principal fonte de decisão ruim.</li>
+<li><strong>Ruído:</strong> o resto. Aleatório por definição. Tentar explicar ruído é a principal fonte de decisão ruim — e de reunião inútil.</li>
 </ul>
-
-<div class="box b-ex"><p class="h">Exemplo aplicado</p>
-<p>Um produto vende 100 unidades por mês, com dois picos anuais e crescimento de 2% ao mês. A previsão para o mês que vem não é “100”. É: <em>tendência 102, ajuste sazonal +15% porque é mês de pico, faixa provável entre 105 e 130</em>. A faixa é a parte útil — ela diz quanto estoque de segurança comprar.</p></div>
 
 <h4>Comece pela linha de base ingênua</h4>
 <p>Antes de qualquer modelo, calcule a previsão mais burra possível: <em>o mês que vem será igual ao mês passado</em>, ou <em>igual ao mesmo mês do ano passado</em>. Anote o erro dela. Nenhum modelo pode ser adotado sem bater essa linha de base com folga.</p>
 
-<div class="box b-wr"><p class="h">⚠ Motivo de dez em cada dez fracassos</p><p>Empresa contrata modelo sofisticado, não mede a linha de base ingênua, e nunca descobre que o modelo é <em>pior</em> que “repete o ano passado”. Sem baseline, não existe avaliação.</p></div>
+<div class="box b-wr"><p class="h">⚠ Motivo de dez em cada dez fracassos</p><p>Empresa contrata modelo sofisticado, não mede a linha de base ingênua, e nunca descobre que o modelo é <em>pior</em> que “repete o ano passado”. Sem baseline, não existe avaliação — existe torcida.</p></div>
 
 <h4>O que atrapalha previsão no varejo</h4>
+<p>Quatro coisas corrompem o histórico de uma loja on-line. A primeira é de longe a maior, e é a que quase ninguém corrige.</p>
+
+<div class="fig">
+<p class="fig-t">O histórico gravou 117. A demanda era 390.</p>
+<p class="fig-s">Um mês de um item de curva A que ficou 21 dias sem estoque. Cada barra é um dia.</p>
+<svg viewBox="0 0 400 128" role="img" aria-label="Vendas diárias de um mês com ruptura: nove dias vendendo cerca de treze unidades e vinte e um dias em zero por falta de estoque">
+<rect x="123" y="18" width="269" height="74" class="band"/>
+<line x1="8" y1="92" x2="392" y2="92" class="ax"/>
+<rect x="10" y="44" width="9" height="48" class="s1" data-tip="Dia 1 · 12 unidades"/>
+<rect x="22.8" y="32" width="9" height="60" class="s1" data-tip="Dia 2 · 15 unidades"/>
+<rect x="35.6" y="48" width="9" height="44" class="s1" data-tip="Dia 3 · 11 unidades"/>
+<rect x="48.4" y="36" width="9" height="56" class="s1" data-tip="Dia 4 · 14 unidades"/>
+<rect x="61.2" y="40" width="9" height="52" class="s1" data-tip="Dia 5 · 13 unidades"/>
+<rect x="74" y="28" width="9" height="64" class="s1" data-tip="Dia 6 · 16 unidades"/>
+<rect x="86.8" y="44" width="9" height="48" class="s1" data-tip="Dia 7 · 12 unidades"/>
+<rect x="99.6" y="52" width="9" height="40" class="s1" data-tip="Dia 8 · 10 unidades"/>
+<rect x="112.4" y="36" width="9" height="56" class="s1" data-tip="Dia 9 · 14 unidades — a última unidade saiu aqui"/>
+<rect x="125.2" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3" data-tip="Dia 10 · vendeu 0 porque não tinha. A demanda seguia perto de 13."/>
+<rect x="138" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="150.8" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="163.6" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="176.4" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="189.2" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="202" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="214.8" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="227.6" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="240.4" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="253.2" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="266" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="278.8" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="291.6" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="304.4" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="317.2" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="330" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="342.8" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="355.6" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="368.4" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<rect x="381.2" y="40" width="9" height="52" fill="none" stroke="var(--s2)" stroke-width="1.2" stroke-dasharray="3 3"/>
+<text x="64" y="14" class="lb" text-anchor="middle" font-size="11">9 dias com estoque</text>
+<text x="258" y="14" class="lb" text-anchor="middle" font-size="11">21 dias sem estoque</text>
+<text x="10" y="106" class="tk" text-anchor="start">dia 1</text>
+<text x="129" y="106" class="tk" text-anchor="middle">dia 10</text>
+<text x="390" y="106" class="tk" text-anchor="end">dia 30</text>
+<text x="200" y="122" class="tk" text-anchor="middle">o tracejado é a demanda que continuou existindo e não foi atendida</text>
+</svg>
+<p class="fig-c">O ERP grava 117 unidades vendidas. O modelo lê isso como “a demanda caiu 70%” e recomenda comprar menos no mês seguinte. Aí falta de novo. O histórico piora, a compra encolhe, e o item de curva A vira item morto por decisão de planilha.</p>
+</div>
+
 <ul>
-<li><strong>Ruptura:</strong> vendeu zero porque não tinha estoque, não porque não havia demanda. O histórico registra a falta, não o desejo. Corrigir isso é a maior fonte de ganho e quase ninguém faz.</li>
-<li><strong>Promoção:</strong> o pico foi causado por você. Se não marcar no histórico, o modelo acha que era sazonalidade.</li>
-<li><strong>Produto novo:</strong> sem histórico, não há previsão. Use produto análogo.</li>
-<li><strong>Cauda longa:</strong> item que vende 3 unidades por mês é ruído puro. Previsão individual é inútil; agregue por família.</li>
+<li><strong>Ruptura:</strong> vendeu zero porque não tinha, não porque não havia demanda. Corrigir isso é a maior fonte de ganho em previsão de varejo e quase ninguém faz. O mínimo viável: marcar no histórico os dias em que o item esteve indisponível e estimar a venda daqueles dias pela média dos dias com estoque.</li>
+<li><strong>Promoção:</strong> o pico foi causado por você. Se não marcar a data e o desconto no histórico, o modelo conclui que aquilo era sazonalidade e espera o pico de novo no ano que vem, sem promoção nenhuma.</li>
+<li><strong>Produto novo:</strong> sem histórico, não há previsão. Use um produto análogo — mesma categoria, mesma faixa de preço — e substitua pela série real assim que houver oito a doze semanas próprias.</li>
+<li><strong>Cauda longa:</strong> item que vende 3 unidades por mês é ruído puro. Previsão individual é inútil; agregue por família, preveja a família e distribua pelos itens.</li>
 </ul>
 
-<div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Previsão útil vem com faixa e com data de validade. Número único e sem intervalo é chute com aparência de ciência.</p></div>
+<h4>O número é chute; a faixa é a decisão</h4>
+<p>A previsão útil não é “102 unidades”. É “entre 88 e 121, em 8 de cada 10 meses”. Essa segunda forma é a única que responde à pergunta que você realmente tem: <em>quanto comprar</em>. Mexa nos controles abaixo — mude a tendência, aumente o ruído, sorteie outro histórico — e depois ligue a ruptura do mês 9 para ver o estrago que ela faz na previsão:</p>
+
+<div data-w="m4Serie"></div>
+
+<p>Duas coisas deveriam ter ficado claras. A primeira: a cada novo sorteio, o número central pula e a faixa quase não muda — a faixa é a parte honesta do resultado. A segunda: um único mês contaminado por ruptura derruba a previsão dos meses seguintes, e o modelo não avisa que isso aconteceu. Limpar o histórico rende mais do que trocar de algoritmo.</p>
+
+<div class="box b-ex"><p class="h">Exemplo aplicado</p>
+<p>Um produto vende 100 unidades por mês, com dois picos anuais e crescimento de 2% ao mês. A previsão para o mês que vem não é “100”. É: <em>tendência 102, ajuste sazonal +15% porque é mês de pico, faixa provável entre 105 e 130</em>. A faixa é a parte útil — ela diz quanto estoque de segurança carregar. E o número que você vai comprar não é nem 117 nem 130: é o que a conta de custo da próxima aula mandar.</p></div>
+
+<div class="hoje"><p class="h">Faça hoje · 20 minutos</p>
+<p>Escolha os cinco itens que mais faturam na sua loja. Para cada um, puxe do ERP dois números dos últimos 12 meses: unidades vendidas por mês e <em>quantos dias do mês o item ficou com saldo zero</em>. Se algum item passou de 5 dias zerado em qualquer mês, você acabou de encontrar um histórico mentiroso — e todo pedido de compra baseado nele está subdimensionado. Marque esses meses como “contaminados” numa coluna à parte; é o primeiro passo de qualquer previsão que preste.</p></div>
+
+<div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Previsão útil vem com faixa e com data de validade. Número único e sem intervalo é chute com aparência de ciência — e histórico com ruptura não corrigida é chute com aparência de dado.</p></div>
 `},
 
-{id:'m4a2', min:7, titulo:'Como avaliar uma previsão',
+{id:'m4a2', min:14, titulo:'Como avaliar uma previsão',
 html:`
-<div class="key"><p class="h">Ideia central</p><p>Previsão se julga por dois números diferentes: <strong>tamanho do erro</strong> e <strong>viés do erro</strong>. Modelo com erro pequeno e viés sistemático é pior do que parece.</p></div>
+<div class="key"><p class="h">Ideia central</p><p>Previsão se julga por dois números diferentes: <strong>tamanho do erro</strong> e <strong>viés do erro</strong>. Modelo com erro pequeno e viés sistemático é pior do que parece — e é o único dos dois que se conserta de graça.</p></div>
 
 <h4>Erro</h4>
 <p>Quanto a previsão erra, em média, para mais ou para menos, sem sinal. Em operação, o mais legível é o <strong>erro percentual médio</strong>: “erramos 18% para cima ou para baixo, tipicamente”. É o número que diz quanto estoque de segurança você precisa carregar.</p>
 
 <h4>Viés</h4>
-<p>Se os erros fossem aleatórios, metade seria para cima e metade para baixo, e a soma tenderia a zero. Se a soma dos erros é sistematicamente positiva, o modelo <strong>subestima sempre</strong> — e você vive em ruptura. Se é negativa, superestima — e você acumula estoque parado. Viés é mais grave que tamanho, porque é corrigível e ninguém corrige.</p>
+<p>Se os erros fossem aleatórios, metade seria para cima e metade para baixo, e a soma tenderia a zero. Se a soma dos erros <em>com sinal</em> é sistematicamente positiva, o modelo subestima sempre — e você vive em ruptura. Se é negativa, superestima — e você acumula estoque parado. Viés é mais grave que tamanho, porque é corrigível e ninguém corrige.</p>
+
+<div class="fig">
+<p class="fig-t">Mesmo erro médio de 14,5%. Um deles quebra o estoque; o outro, não.</p>
+<p class="fig-s">Doze meses de erro de previsão de dois modelos. Cada barra é o erro de um mês: acima da linha, previu menos do que vendeu; abaixo, previu mais.</p>
+<svg viewBox="0 0 400 212" role="img" aria-label="Comparação entre um modelo sem viés, cujos erros se alternam e se cancelam, e um modelo enviesado, que erra sempre para baixo e acumula 174 por cento de erro no ano">
+<text x="0" y="12" class="lb" font-size="11.5">MODELO A — erra para os dois lados</text>
+<line x1="10" y1="44" x2="392" y2="44" class="ax"/>
+<rect x="15.8" y="27.2" width="20" height="16.8" class="s1" data-tip="Mês 1 · previu 14% a menos do que vendeu"/>
+<rect x="47.5" y="44" width="20" height="19.2" class="s1" data-tip="Mês 2 · previu 16% a mais"/>
+<rect x="79.2" y="29.6" width="20" height="14.4" class="s1" data-tip="Mês 3 · previu 12% a menos"/>
+<rect x="110.8" y="44" width="20" height="18" class="s1" data-tip="Mês 4 · previu 15% a mais"/>
+<rect x="142.5" y="23.6" width="20" height="20.4" class="s1" data-tip="Mês 5 · previu 17% a menos"/>
+<rect x="174.2" y="44" width="20" height="15.6" class="s1" data-tip="Mês 6 · previu 13% a mais"/>
+<rect x="205.8" y="24.8" width="20" height="19.2" class="s1" data-tip="Mês 7 · previu 16% a menos"/>
+<rect x="237.5" y="44" width="20" height="16.8" class="s1" data-tip="Mês 8 · previu 14% a mais"/>
+<rect x="269.2" y="26" width="20" height="18" class="s1" data-tip="Mês 9 · previu 15% a menos"/>
+<rect x="300.8" y="44" width="20" height="19.2" class="s1" data-tip="Mês 10 · previu 16% a mais"/>
+<rect x="332.5" y="28.4" width="20" height="15.6" class="s1" data-tip="Mês 11 · previu 13% a menos"/>
+<rect x="364.2" y="44" width="20" height="15.6" class="s1" data-tip="Mês 12 · previu 13% a mais"/>
+<text x="0" y="90" class="lb" font-size="11.5">MODELO B — erra sempre para baixo</text>
+<line x1="10" y1="104" x2="392" y2="104" class="ax"/>
+<rect x="15.8" y="104" width="20" height="15.6" class="s2" data-tip="Mês 1 · previu 13% a mais do que vendeu"/>
+<rect x="47.5" y="104" width="20" height="19.2" class="s2" data-tip="Mês 2 · previu 16% a mais"/>
+<rect x="79.2" y="104" width="20" height="14.4" class="s2" data-tip="Mês 3 · previu 12% a mais"/>
+<rect x="110.8" y="104" width="20" height="20.4" class="s2" data-tip="Mês 4 · previu 17% a mais"/>
+<rect x="142.5" y="104" width="20" height="16.8" class="s2" data-tip="Mês 5 · previu 14% a mais"/>
+<rect x="174.2" y="104" width="20" height="18" class="s2" data-tip="Mês 6 · previu 15% a mais"/>
+<rect x="205.8" y="104" width="20" height="19.2" class="s2" data-tip="Mês 7 · previu 16% a mais"/>
+<rect x="237.5" y="104" width="20" height="15.6" class="s2" data-tip="Mês 8 · previu 13% a mais"/>
+<rect x="269.2" y="104" width="20" height="18" class="s2" data-tip="Mês 9 · previu 15% a mais"/>
+<rect x="300.8" y="104" width="20" height="16.8" class="s2" data-tip="Mês 10 · previu 14% a mais"/>
+<rect x="332.5" y="104" width="20" height="19.2" class="s2" data-tip="Mês 11 · previu 16% a mais"/>
+<rect x="364.2" y="104" width="20" height="15.6" class="s2" data-tip="Mês 12 · previu 13% a mais"/>
+<text x="0" y="140" class="lb" font-size="11.5">ERRO ACUMULADO — a conta que ninguém faz</text>
+<line x1="10" y1="150" x2="392" y2="150" class="ax"/>
+<path d="M25.8 146.7 L57.5 150.5 L89.2 147.7 L120.8 151.2 L152.5 147.2 L184.2 150.2 L215.8 146.5 L247.5 149.8 L279.2 146.3 L310.8 150 L342.5 147 L374.2 150" class="l1"/>
+<path d="M25.8 153 L57.5 156.8 L89.2 159.6 L120.8 163.5 L152.5 166.8 L184.2 170.3 L215.8 174 L247.5 177.1 L279.2 180.6 L310.8 183.8 L342.5 187.6 L374.2 190.6" class="l2"/>
+<circle cx="374.2" cy="150" r="3.5" class="s1 ring" data-tip="Modelo A · erro acumulado do ano: zero"/>
+<circle cx="374.2" cy="190.6" r="3.5" class="s2 ring" data-tip="Modelo B · erro acumulado do ano: 174% de venda não atendida"/>
+<text x="368" y="144" class="tk" text-anchor="end">A: zero</text>
+<text x="368" y="203" class="tk" text-anchor="end">B: −174% ao longo do ano</text>
+</svg>
+<div class="legend"><span><i style="background:var(--s1)"></i>modelo A · sem viés</span><span><i style="background:var(--s2)"></i>modelo B · viés para baixo</span></div>
+<p class="fig-c">Nas duas primeiras faixas, os modelos são indistinguíveis: mesmo tamanho de erro. A terceira faixa é o que importa. O modelo A se cancela; o B afunda o ano inteiro. E o conserto do B é somar um fator de correção — uma linha de cálculo.</p>
+</div>
 
 <div class="box b-ex"><p class="h">Exemplo aplicado</p>
-<p>Dois modelos, mesmo erro médio de 15%. O A erra 15% ora para cima ora para baixo. O B erra 15% <em>sempre para baixo</em>. O B é muito pior: ele produz ruptura crônica. E é trivialmente melhorável — basta somar um fator de correção. Ninguém percebe porque só se olha a métrica de erro.</p></div>
+<p>Um comprador reclama que “o sistema sempre pede menos do que precisa”. Some os erros com sinal dos últimos seis meses do item: se der +170%, ele está certo e o modelo tem viés. A correção é multiplicar a saída por um fator de ajuste (por exemplo, 1,14) e reavaliar em três meses. Não é elegante, não é IA, e resolve mais do que trocar de fornecedor de software.</p></div>
+
+<h4>“Comparado com o quê?”</h4>
+<p>Toda métrica de erro precisa de um ponto de comparação, e o ponto de comparação é grátis: a previsão ingênua. Muita gente contrata modelo sem nunca ter medido a alternativa de graça.</p>
+
+<div class="fig">
+<p class="fig-t">O modelo contratado perde para a média móvel com fator sazonal</p>
+<p class="fig-s">Erro percentual médio de quatro métodos, mesmo período de teste, mesmo conjunto de itens.</p>
+<svg viewBox="0 0 400 176" role="img" aria-label="Erro de quatro métodos de previsão: repetir o mês passado erra trinta e um por cento, repetir o mesmo mês do ano passado erra vinte e três, média móvel com fator sazonal erra dezessete e o modelo contratado erra dezenove">
+<line x1="153.7" y1="8" x2="153.7" y2="158" class="lg"/>
+<text x="0" y="14" class="lb2" font-size="11">Ingênua 1 · repete o mês passado</text>
+<rect x="8" y="18" width="265.7" height="14" class="sg" data-tip="Erro percentual médio de 31%"/>
+<text x="280" y="29" class="lb" font-size="11">31%</text>
+<text x="0" y="54" class="lb2" font-size="11">Ingênua 2 · repete o mesmo mês do ano passado</text>
+<rect x="8" y="58" width="197.1" height="14" class="sg" data-tip="Erro percentual médio de 23%"/>
+<text x="212" y="69" class="lb" font-size="11">23%</text>
+<text x="0" y="94" class="lb2" font-size="11">Média móvel de 3 meses + fator sazonal</text>
+<rect x="8" y="98" width="145.7" height="14" class="s1" data-tip="Erro percentual médio de 17% — e custa uma consulta no banco"/>
+<text x="160" y="109" class="lb" font-size="11">17%</text>
+<text x="0" y="134" class="lb2" font-size="11">Modelo contratado</text>
+<rect x="8" y="138" width="162.9" height="14" class="s2" data-tip="Erro percentual médio de 19% — pior que a média móvel"/>
+<text x="178" y="149" class="lb" font-size="11">19%</text>
+<text x="200" y="170" class="tk" text-anchor="middle">erro percentual médio · menor é melhor</text>
+</svg>
+<p class="fig-c">A linha cinza marca o melhor método gratuito. Qualquer coisa à direita dela não deveria ter sido comprada. Este é o gráfico que nenhum fornecedor mostra — e é o primeiro que você deve exigir.</p>
+</div>
 
 <h4>Erro simétrico não é custo simétrico</h4>
-<p>Prever 100 e vender 130 custa venda perdida e cliente insatisfeito. Prever 130 e vender 100 custa capital parado e risco de obsolescência. São custos <strong>diferentes</strong>. Para item de margem alta e giro rápido, errar para baixo dói mais; para item caro e perecível, errar para cima dói mais. A previsão deve ser ajustada por esse custo assimétrico, não pela simetria estatística.</p>
+<p>Prever 100 e vender 130 custa venda perdida e cliente que foi comprar no concorrente. Prever 130 e vender 100 custa capital parado, armazenagem e risco de encalhe. São custos <strong>diferentes</strong>, e o modelo não sabe disso — ele só minimiza erro estatístico, que trata os dois lados igual.</p>
+<p>Daí sai a conclusão mais contraintuitiva desta aula: <strong>a quantidade certa a comprar quase nunca é a previsão</strong>. Mexa nos custos de faltar e de sobrar abaixo e veja o fundo da curva se deslocar:</p>
+
+<div data-w="m4Estoque"></div>
+
+<p>Repare no que acontece quando você aumenta o erro típico da previsão: o ponto ótimo se afasta ainda mais do número previsto. Ou seja — quanto <em>pior</em> o seu modelo, mais a decisão tem que se distanciar dele. Melhorar a previsão custa projeto; ajustar a decisão ao custo do erro custa uma multiplicação.</p>
 
 <div class="box b-nu"><p class="h">Checklist antes de aceitar uma previsão</p>
 <ol>
 <li>Qual o erro da linha de base ingênua? O modelo bate com folga?</li>
-<li>Existe viés? Some os erros com sinal.</li>
-<li>O erro está concentrado em quais itens? Geralmente em poucos, e são os que importam.</li>
+<li>Existe viés? Some os erros <em>com sinal</em> dos últimos seis meses.</li>
+<li>O erro está concentrado em quais itens? Geralmente em poucos, e são justamente os que mais faturam.</li>
 <li>Foi testado em período que o modelo não viu no treino?</li>
-<li>O custo de errar para cima é igual ao de errar para baixo? Se não, a previsão foi ajustada?</li>
+<li>O custo de errar para cima é igual ao de errar para baixo? Se não, a quantidade comprada foi ajustada por isso?</li>
 </ol></div>
 
-<div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Pergunte sempre: “comparado com o quê?”. Previsão sem baseline e sem teste fora do período de treino é propaganda.</p></div>
+<div class="hoje"><p class="h">Faça hoje · 15 minutos</p>
+<p>Pegue um item de curva A. Monte três colunas para os últimos 6 meses: previsto, vendido, e a diferença <em>com sinal</em>. Some a última coluna. Se o resultado tiver o mesmo sinal em 5 dos 6 meses, você tem viés — e um fator de correção resolve hoje o que um projeto de seis meses resolveria em seis meses.</p></div>
+
+<div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Pergunte sempre: “comparado com o quê?”. Previsão sem baseline e sem teste fora do período de treino é propaganda. E depois de avaliar a previsão, ajuste a decisão pelo custo do erro — o modelo não faz isso por você.</p></div>
 `},
 
-{id:'m4a3', min:8, titulo:'Detecção de anomalia: o vigia que nunca dorme',
+{id:'m4a3', min:15, titulo:'Detecção de anomalia: o vigia que nunca dorme',
 html:`
-<div class="key"><p class="h">Ideia central</p><p>É a aplicação de IA com melhor relação entre esforço e retorno numa operação. Não precisa acertar a causa — basta gritar cedo.</p></div>
+<div class="key"><p class="h">Ideia central</p><p>É a aplicação de IA com melhor relação entre esforço e retorno numa operação. Não precisa acertar a causa — basta gritar cedo. E precisa gritar pouco, senão ninguém escuta.</p></div>
 
 <h4>Por que vale tanto</h4>
 <p>Falha operacional silenciosa custa proporcionalmente ao tempo até a descoberta. Um detector que reduz esse tempo de trinta dias para um dia economiza 97% do prejuízo daquele incidente — sem consertar nada, apenas avisando.</p>
 
+<div class="fig">
+<p class="fig-t">Três anomalias. Duas qualquer um vê; a terceira come o mês inteiro.</p>
+<p class="fig-s">Pedidos por dia ao longo de 45 dias numa loja on-line.</p>
+<svg viewBox="0 0 400 148" role="img" aria-label="Série de pedidos diários com três anomalias: um pico no dia 12, uma queda abrupta no dia 26 e uma degradação lenta a partir do dia 33 que soma dezessete por cento de perda">
+<rect x="282" y="14" width="110" height="96" class="band"/>
+<line x1="10" y1="56.7" x2="392" y2="56.7" class="lg"/>
+<line x1="10" y1="110" x2="392" y2="110" class="ax"/>
+<path d="M10 55.6 L18.6 55.6 L27.3 54.5 L35.9 56.1 L44.5 57.7 L53.2 53.5 L61.8 57.7 L70.5 58.8 L79.1 54.5 L87.7 55.6 L96.4 58.3 L105 18.8 L113.6 58.8 L122.3 54 L130.9 55.1 L139.5 55.6 L148.2 58.8 L156.8 54 L165.5 57.7 L174.1 58.3 L182.7 55.6 L191.4 58.8 L200 58.3 L208.6 57.2 L217.3 59.3 L225.9 92.4 L234.5 55.6 L243.2 59.3 L251.8 59.3 L260.5 54 L269.1 56.7 L277.7 57.2 L286.4 55.1 L295 59.3 L303.6 59.3 L312.3 62 L320.9 64.7 L329.5 64.1 L338.2 64.7 L346.8 68.4 L355.5 71.1 L364.1 69.5 L372.7 70 L381.4 72.7 L390 74.8" class="l3"/>
+<circle cx="105" cy="18.8" r="4.5" class="s2 ring" data-tip="Dia 12 · 171 pedidos. Não foi venda: foi um robô raspando preço e disparando o carrinho."/>
+<circle cx="225.9" cy="92.4" r="4.5" class="s2 ring" data-tip="Dia 26 · 33 pedidos. O checkout ficou 6 horas fora do ar."/>
+<text x="105" y="11" class="lb" text-anchor="middle" font-size="11">pico</text>
+<text x="225.9" y="105" class="lb" text-anchor="middle" font-size="11">queda</text>
+<text x="337" y="26" class="lb" text-anchor="middle" font-size="11">degradação lenta</text>
+<text x="337" y="39" class="tk" text-anchor="middle">−17% em 13 dias</text>
+<text x="10" y="124" class="tk" text-anchor="start">dia 1</text>
+<text x="225.9" y="124" class="tk" text-anchor="middle">dia 26</text>
+<text x="390" y="124" class="tk" text-anchor="end">dia 45</text>
+<text x="200" y="142" class="tk" text-anchor="middle">a linha cinza é o patamar normal do período estável</text>
+</svg>
+<p class="fig-c">O pico e a queda geram reunião no mesmo dia. A degradação da direita cai menos de 3% ao dia — cabe no ruído normal — e ninguém percebe. Ela sozinha custou mais que as outras duas somadas.</p>
+</div>
+
 <h4>Três níveis, do mais simples ao mais sofisticado</h4>
 <ol>
 <li><strong>Limite fixo.</strong> “Se as vendas de hoje forem menores que 40% da média das últimas 4 semanas, avise.” Cobre a maior parte dos casos. Custo: uma consulta agendada.</li>
-<li><strong>Limite estatístico.</strong> Considera desvio típico e sazonalidade, para não disparar todo domingo. Reduz alarme falso.</li>
-<li><strong>Modelo de anomalia.</strong> Aprende o padrão normal em várias dimensões ao mesmo tempo e aponta a combinação estranha, mesmo quando nenhuma métrica isolada saiu da faixa.</li>
+<li><strong>Limite estatístico.</strong> Considera desvio típico e sazonalidade, para não disparar todo domingo. Reduz alarme falso — é a diferença entre um vigia usável e um vigia demitido.</li>
+<li><strong>Modelo de anomalia.</strong> Aprende o padrão normal em várias dimensões ao mesmo tempo e aponta a combinação estranha, mesmo quando nenhuma métrica isolada saiu da faixa. É o único nível que pega a degradação lenta do gráfico acima.</li>
 </ol>
 
 <div class="box b-ac"><p class="h">Comece pelo nível 1</p><p>Uma dúzia de verificações simples e agendadas costuma pegar mais problema real do que qualquer modelo sofisticado adotado sem disciplina. O ganho está em <em>ter o vigia</em>, não em ele ser inteligente.</p></div>
@@ -1485,24 +1702,116 @@ html:`
 <li>Estoque de item da curva A zerado sem pedido de compra em aberto</li>
 <li>Preço de venda abaixo do custo em qualquer item</li>
 <li>Mesma mensagem enviada mais de N vezes ao mesmo contato</li>
-<li>Fila de integração com fornecedor parada há mais de N minutos</li>
+<li>Fila de integração com o ERP parada há mais de N minutos</li>
 <li>Frete cotado como zero ou como valor absurdo</li>
 <li>Pedido pago sem baixa de estoque, ou baixa dupla</li>
 <li>Cadastro de produto criado sem imagem ou sem preço</li>
 </ul></div>
 
-<div class="box b-wr"><p class="h">⚠ A doença do alarme</p><p>Alarme que dispara demais é pior que não ter alarme: as pessoas aprendem a ignorar, e aí ele não serve nem quando é de verdade. Regra: se um alarme dispara mais de uma vez por semana sem ação, ou o limite está errado ou o alarme deve morrer.</p></div>
+<h4>A doença do alarme</h4>
+<p>Alarme que dispara demais é pior que não ter alarme: as pessoas aprendem a ignorar, e aí ele não serve nem quando é de verdade. O efeito é medível e vira dinheiro.</p>
 
-<div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Detectar cedo vale mais que diagnosticar bem. Prefira dez verificações bobas e confiáveis a um modelo elegante que ninguém acompanha.</p></div>
+<div class="fig">
+<p class="fig-t">O alarme mais sensível foi o mais lento</p>
+<p class="fig-s">Trinta dias da mesma loja, com a mesma falha real no dia 22. A única diferença é onde está o limite.</p>
+<svg viewBox="0 0 400 152" role="img" aria-label="Duas faixas de trinta dias: com limite apertado há dezessete disparos e a falha real demora quatro dias para ser tratada; com limite calibrado há dois disparos e a falha é tratada no mesmo dia">
+<text x="0" y="12" class="lb" font-size="11.5">LIMITE APERTADO — dispara abaixo de 90% da média</text>
+<text x="12" y="26" class="tk" text-anchor="start">17 disparos em 30 dias</text>
+<path d="M276 26 L284 26 L280 31 Z" fill="var(--s3)"/>
+<rect x="12" y="34" width="11" height="12" class="sg"/>
+<rect x="24.5" y="34" width="11" height="12" class="s2" data-tip="Dia 2 · alarme falso"/>
+<rect x="37" y="34" width="11" height="12" class="s2" data-tip="Dia 3 · alarme falso"/>
+<rect x="49.5" y="34" width="11" height="12" class="sg"/>
+<rect x="62" y="34" width="11" height="12" class="sg"/>
+<rect x="74.5" y="34" width="11" height="12" class="s2" data-tip="Dia 6 · alarme falso"/>
+<rect x="87" y="34" width="11" height="12" class="s2" data-tip="Dia 7 · alarme falso"/>
+<rect x="99.5" y="34" width="11" height="12" class="sg"/>
+<rect x="112" y="34" width="11" height="12" class="s2" data-tip="Dia 9 · alarme falso"/>
+<rect x="124.5" y="34" width="11" height="12" class="sg"/>
+<rect x="137" y="34" width="11" height="12" class="sg"/>
+<rect x="149.5" y="34" width="11" height="12" class="sg"/>
+<rect x="162" y="34" width="11" height="12" class="s2" data-tip="Dia 13 · alarme falso"/>
+<rect x="174.5" y="34" width="11" height="12" class="s2" data-tip="Dia 14 · alarme falso"/>
+<rect x="187" y="34" width="11" height="12" class="s2" data-tip="Dia 15 · alarme falso"/>
+<rect x="199.5" y="34" width="11" height="12" class="sg"/>
+<rect x="212" y="34" width="11" height="12" class="sg"/>
+<rect x="224.5" y="34" width="11" height="12" class="s2" data-tip="Dia 18 · alarme falso"/>
+<rect x="237" y="34" width="11" height="12" class="s2" data-tip="Dia 19 · alarme falso"/>
+<rect x="249.5" y="34" width="11" height="12" class="sg"/>
+<rect x="262" y="34" width="11" height="12" class="sg"/>
+<rect x="274.5" y="34" width="11" height="12" class="s3" data-tip="Dia 22 · a falha de verdade. Entrou na fila como mais um alerta e ficou lá."/>
+<rect x="287" y="34" width="11" height="12" class="s2" data-tip="Dia 23 · alarme falso"/>
+<rect x="299.5" y="34" width="11" height="12" class="s2" data-tip="Dia 24 · alarme falso"/>
+<rect x="312" y="34" width="11" height="12" class="s2" data-tip="Dia 25 · alarme falso"/>
+<rect x="324.5" y="34" width="11" height="12" class="sg"/>
+<rect x="337" y="34" width="11" height="12" class="s2" data-tip="Dia 27 · alarme falso"/>
+<rect x="349.5" y="34" width="11" height="12" class="s2" data-tip="Dia 28 · alarme falso"/>
+<rect x="362" y="34" width="11" height="12" class="sg"/>
+<rect x="374.5" y="34" width="11" height="12" class="s2" data-tip="Dia 30 · alarme falso"/>
+<text x="0" y="60" class="tk" text-anchor="start">a falha real (triângulo) ficou 4 dias na fila até alguém abrir</text>
+<text x="0" y="84" class="lb" font-size="11.5">LIMITE CALIBRADO — 72%, contra o mesmo dia da semana</text>
+<text x="12" y="94" class="tk" text-anchor="start">2 disparos em 30 dias</text>
+<path d="M276 94 L284 94 L280 99 Z" fill="var(--s3)"/>
+<rect x="12" y="102" width="11" height="12" class="sg"/>
+<rect x="24.5" y="102" width="11" height="12" class="sg"/>
+<rect x="37" y="102" width="11" height="12" class="sg"/>
+<rect x="49.5" y="102" width="11" height="12" class="sg"/>
+<rect x="62" y="102" width="11" height="12" class="sg"/>
+<rect x="74.5" y="102" width="11" height="12" class="sg"/>
+<rect x="87" y="102" width="11" height="12" class="sg"/>
+<rect x="99.5" y="102" width="11" height="12" class="sg"/>
+<rect x="112" y="102" width="11" height="12" class="sg"/>
+<rect x="124.5" y="102" width="11" height="12" class="sg"/>
+<rect x="137" y="102" width="11" height="12" class="sg"/>
+<rect x="149.5" y="102" width="11" height="12" class="sg"/>
+<rect x="162" y="102" width="11" height="12" class="sg"/>
+<rect x="174.5" y="102" width="11" height="12" class="s2" data-tip="Dia 14 · alarme falso — o único do mês"/>
+<rect x="187" y="102" width="11" height="12" class="sg"/>
+<rect x="199.5" y="102" width="11" height="12" class="sg"/>
+<rect x="212" y="102" width="11" height="12" class="sg"/>
+<rect x="224.5" y="102" width="11" height="12" class="sg"/>
+<rect x="237" y="102" width="11" height="12" class="sg"/>
+<rect x="249.5" y="102" width="11" height="12" class="sg"/>
+<rect x="262" y="102" width="11" height="12" class="sg"/>
+<rect x="274.5" y="102" width="11" height="12" class="s3" data-tip="Dia 22 · a falha de verdade. Era o segundo alerta do mês — foi aberta na hora."/>
+<rect x="287" y="102" width="11" height="12" class="sg"/>
+<rect x="299.5" y="102" width="11" height="12" class="sg"/>
+<rect x="312" y="102" width="11" height="12" class="sg"/>
+<rect x="324.5" y="102" width="11" height="12" class="sg"/>
+<rect x="337" y="102" width="11" height="12" class="sg"/>
+<rect x="349.5" y="102" width="11" height="12" class="sg"/>
+<rect x="362" y="102" width="11" height="12" class="sg"/>
+<rect x="374.5" y="102" width="11" height="12" class="sg"/>
+<text x="0" y="128" class="tk" text-anchor="start">a mesma falha virou ação no mesmo dia</text>
+<text x="17" y="146" class="tk" text-anchor="start">dia 1</text>
+<text x="280" y="146" class="tk" text-anchor="middle">dia 22</text>
+<text x="380" y="146" class="tk" text-anchor="end">dia 30</text>
+</svg>
+<div class="legend"><span><i class="sq" style="background:var(--tx3);opacity:.55"></i>dia normal</span><span><i class="sq" style="background:var(--s2)"></i>alarme falso</span><span><i class="sq" style="background:var(--s3)"></i>falha de verdade</span></div>
+<p class="fig-c">Apertar o limite não antecipou a descoberta: atrasou. Sensibilidade sem confiança não é detecção — é barulho com selo de qualidade.</p>
+</div>
+
+<div class="box b-wr"><p class="h">⚠ A regra que salva o vigia</p><p>Se um alarme dispara mais de uma vez por semana <em>sem gerar ação</em>, ou o limite está errado ou o alarme deve morrer. Manter alarme ignorado no ar contamina todos os outros.</p></div>
+
+<h4>Encontre o limite que custa menos</h4>
+<p>Essa escolha parece subjetiva e não é: ela tem um mínimo de custo, e dá para achá-lo. Mexa nos controles — comece arrastando “quanto a falha derruba as vendas” para −15%, que é a degradação lenta do primeiro gráfico, e veja quantos dias ela sobrevive:</p>
+
+<div data-w="m4Alarme"></div>
+
+<p>Duas lições saem daí. Primeira: a curva de custo tem fundo largo e pontas caras — não gaste tempo caçando o limite perfeito, gaste fugindo dos extremos. Segunda: quando a variação normal é alta, mexer no limite não resolve nada; o que resolve é comparar contra a mesma hora do mesmo dia da semana, que corta a variação pela metade antes de qualquer ajuste.</p>
+
+<div class="hoje"><p class="h">Faça hoje · 20 minutos</p>
+<p>Abra a caixa de entrada onde chegam os alertas da operação (e-mail, grupo de mensagem, painel — onde for). Conte quantos alertas chegaram nos últimos 7 dias e quantos <em>geraram alguma ação</em>. Se a proporção de ação for menor que 1 em 5, você não tem sistema de detecção: tem spam interno. Desligue hoje os três alertas que mais dispararam sem ação — e prometa não ligar nenhum novo antes de escrever qual ação ele dispara.</p></div>
+
+<div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Detectar cedo vale mais que diagnosticar bem — mas só se alguém ainda estiver escutando. Prefira dez verificações bobas e confiáveis a um modelo elegante que ninguém acompanha, e mate sem dó todo alarme que não gera ação.</p></div>
 `},
 
-{id:'m4a4', min:8, titulo:'Preço, elasticidade e margem',
+{id:'m4a4', min:14, titulo:'Preço, elasticidade e margem',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Elasticidade responde a única pergunta que importa em precificação: <strong>se eu baixar 10% o preço, o volume sobe o suficiente para compensar a margem perdida?</strong> Sem esse número, desconto é fé.</p></div>
 
 <h4>A conta que quase ninguém faz</h4>
 <p>Produto a R$ 100, custo R$ 70, margem R$ 30. Você dá 10% de desconto: preço R$ 90, margem R$ 20. A margem caiu <strong>33%</strong>, não 10%. Para manter o mesmo lucro total, o volume precisa subir 50%.</p>
-<p>Esse é o cálculo decisivo, e ele muda radicalmente com a margem do item. Em produto de margem apertada, um desconto pequeno exige explosão de volume que nunca acontece.</p>
 
 <div class="tbl"><table>
 <thead><tr><th>Margem atual</th><th>Desconto 10%</th><th>Volume extra necessário</th></tr></thead>
@@ -1513,55 +1822,178 @@ html:`
 <tr><td>15%</td><td>margem vai a 5%</td><td>+200%</td></tr>
 </tbody></table></div>
 
+<div class="fig">
+<p class="fig-t">O mesmo desconto de 10% pesa oito vezes mais no item de margem apertada</p>
+<p class="fig-s">Quanto de volume extra é preciso só para EMPATAR o lucro, conforme a margem do item.</p>
+<svg viewBox="0 0 400 158" role="img" aria-label="Curva do volume extra necessário para empatar com dez por cento de desconto: com margem de cinquenta por cento basta vinte e cinco por cento a mais, com quinze por cento é preciso duzentos por cento a mais">
+<line x1="44" y1="124" x2="392" y2="124" class="ax"/>
+<line x1="44" y1="80" x2="392" y2="80" class="gr"/>
+<line x1="44" y1="36" x2="392" y2="36" class="gr"/>
+<text x="40" y="128" class="tk" text-anchor="end">0</text>
+<text x="40" y="84" class="tk" text-anchor="end">+100%</text>
+<text x="40" y="40" class="tk" text-anchor="end">+200%</text>
+<path d="M58.5 14 L65.8 36 L73 50.7 L87.5 69 L102 80 L116.5 87.3 L138.3 94.7 L174.5 102 L210.8 106.4 L247 109.3 L283.3 111.4 L319.5 113 L355.8 114.2 L392 115.2" class="l1"/>
+<circle cx="319.5" cy="113" r="4.5" class="s1 ring" data-tip="Margem 50% · precisa vender 25% a mais para empatar"/>
+<circle cx="174.5" cy="102" r="4.5" class="s1 ring" data-tip="Margem 30% · precisa vender 50% a mais"/>
+<circle cx="102" cy="80" r="4.5" class="s2 ring" data-tip="Margem 20% · precisa vender o DOBRO"/>
+<circle cx="65.8" cy="36" r="4.5" class="s2 ring" data-tip="Margem 15% · precisa vender o TRIPLO"/>
+<text x="319.5" y="107" class="tk" text-anchor="middle">+25%</text>
+<text x="174.5" y="96" class="tk" text-anchor="middle">+50%</text>
+<text x="112" y="76" class="lb" text-anchor="start" font-size="11">+100%</text>
+<text x="76" y="32" class="lb" text-anchor="start" font-size="11">+200%</text>
+<text x="65.8" y="138" class="tk" text-anchor="middle">15%</text>
+<text x="102" y="138" class="tk" text-anchor="middle">20%</text>
+<text x="174.5" y="138" class="tk" text-anchor="middle">30%</text>
+<text x="247" y="138" class="tk" text-anchor="middle">40%</text>
+<text x="319.5" y="138" class="tk" text-anchor="middle">50%</text>
+<text x="200" y="152" class="tk" text-anchor="middle">margem do item antes do desconto</text>
+</svg>
+<p class="fig-c">A curva não é reta — ela vira parede. Por isso desconto linear no catálogo inteiro é sempre uma transferência de dinheiro: no item de 50% custa pouco, no de 15% torra a margem toda pelo mesmo cartaz.</p>
+</div>
+
+<p>Esse é o cálculo decisivo, e ele muda radicalmente com a margem do item. Faça com os seus números — e depois compare o volume necessário com o volume que você <em>espera</em> conseguir:</p>
+
+<div data-w="m4Desconto"></div>
+
+<p>O campo que decide tudo é o último: “volume extra que você espera ganhar”. Se ele for maior que o necessário, a promoção fecha; se for menor, você vai vender mais, trabalhar mais, pagar mais frete e fechar o mês com menos dinheiro. E há uma pergunta honesta antes de arrastar aquele controle: você tem evidência de promoção passada do mesmo item mostrando esse ganho, ou é esperança com formato de número?</p>
+
 <h4>Como estimar elasticidade sem laboratório</h4>
 <ul>
-<li><strong>Promoções passadas</strong> são experimentos naturais. Compare volume e margem em períodos de preço diferente, controlando sazonalidade.</li>
-<li><strong>Teste escalonado:</strong> mude o preço de um grupo de itens semelhantes e mantenha outro grupo como controle.</li>
-<li><strong>Diferença entre itens:</strong> produtos com muita concorrência de preço tendem a ser muito elásticos; produtos exclusivos ou técnicos, pouco elásticos.</li>
+<li><strong>Promoções passadas</strong> são experimentos naturais. Compare volume e margem em períodos de preço diferente, controlando sazonalidade — comparar novembro com setembro não vale nada.</li>
+<li><strong>Teste escalonado:</strong> mude o preço de um grupo de itens semelhantes e mantenha outro grupo como controle. É o A/B do módulo I aplicado a preço.</li>
+<li><strong>Diferença entre itens:</strong> produto muito comparado (mesmo código, vários vendedores) tende a ser elástico; produto exclusivo, técnico ou de reposição urgente, pouco elástico. Se o seu monitor de preço mostra cinco concorrentes com o mesmo item, assuma elasticidade alta; se mostra nenhum, assuma baixa.</li>
 </ul>
 
 <div class="box b-wr"><p class="h">⚠ Cinco cuidados</p>
 <ul>
 <li><strong>Canibalização:</strong> o item em promoção rouba venda do irmão de margem maior. Meça a categoria, não o item.</li>
-<li><strong>Efeito de estoque:</strong> parte do volume é antecipação de compra futura, não demanda nova.</li>
-<li><strong>Âncora quebrada:</strong> promoção permanente vira o preço de referência. Depois não dá pra voltar.</li>
-<li><strong>Preço individual por pessoa</strong> é risco jurídico e reputacional alto. Personalize oferta e condição, não o preço base.</li>
-<li><strong>Preço automático sem trava</strong> é receita para vender abaixo do custo. Sempre defina piso.</li>
+<li><strong>Efeito de estoque:</strong> parte do volume é antecipação de compra futura, não demanda nova. O mês seguinte paga a conta.</li>
+<li><strong>Âncora quebrada:</strong> promoção permanente vira o preço de referência. Depois não dá para voltar — e o feed de comparação de preço registra isso para sempre.</li>
+<li><strong>Preço individual por pessoa</strong> é risco jurídico e reputacional alto. Personalize oferta e condição de pagamento, não o preço base.</li>
+<li><strong>Preço automático sem trava</strong> é receita para vender abaixo do custo. Sempre defina piso por item, e um alarme para quando o piso for encostado.</li>
 </ul></div>
 
-<div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Antes de qualquer promoção, calcule o volume extra necessário. Se ele parecer implausível, a promoção é doação.</p></div>
+<div class="hoje"><p class="h">Faça hoje · 15 minutos</p>
+<p>Pegue a última promoção que você fez e responda três coisas com dado, não com memória: (1) quantas unidades a mais vendeu em relação às quatro semanas anteriores; (2) quanto caiu o lucro bruto por unidade; (3) qual foi o lucro bruto total da categoria no período — não do item. Se o item vendeu mais e a categoria lucrou menos, a promoção foi canibalização, e você acabou de descobrir por que o faturamento sobe e o dinheiro não aparece.</p></div>
+
+<div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Antes de qualquer promoção, calcule o volume extra necessário. Se ele parecer implausível — e acima de +100% quase sempre é — a promoção é doação disfarçada de estratégia.</p></div>
 `},
 
-{id:'m4a5', min:7, titulo:'Cenário e simulação: pensar em faixa, não em número',
+{id:'m4a5', min:14, titulo:'Cenário e simulação: pensar em faixa, não em número',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Toda projeção de um número único está errada. A pergunta certa não é “quanto vai ser”, mas “qual a chance de ficar abaixo do que eu aguento”.</p></div>
 
 <h4>O problema da planilha de três cenários</h4>
 <p>Pessimista, realista, otimista. Parece prudente, mas esconde duas falhas: as premissas foram escolhidas a dedo, e ninguém sabe a probabilidade de cada uma. Na prática, todo mundo planeja pelo realista e reza.</p>
 
+<div class="fig">
+<p class="fig-t">Quatro em cada dez futuros são piores que o seu “cenário pessimista”</p>
+<p class="fig-s">Mil simulações do caixa de uma loja em seis meses, com faixas de incerteza em tráfego, conversão, ticket e prazo de recebimento. As três marcas são os cenários da planilha.</p>
+<svg viewBox="0 0 400 156" role="img" aria-label="Histograma de mil resultados simulados de caixa: dezenove por cento terminam negativos, e o cenário pessimista da planilha está acima de quarenta por cento dos resultados">
+<line x1="153" y1="26" x2="153" y2="120" class="lg"/>
+<line x1="237.6" y1="26" x2="237.6" y2="120" class="lg"/>
+<line x1="312.8" y1="26" x2="312.8" y2="120" class="lg"/>
+<text x="153" y="20" class="lb" text-anchor="middle" font-size="10.5">pessimista</text>
+<text x="237.6" y="20" class="lb" text-anchor="middle" font-size="10.5">realista</text>
+<text x="312.8" y="20" class="lb" text-anchor="middle" font-size="10.5">otimista</text>
+<line x1="12" y1="120" x2="388" y2="120" class="ax"/>
+<rect x="12" y="117.5" width="17" height="2.5" class="s2" data-tip="Caixa por volta de −R$ 55 mil · 0,4% das simulações"/>
+<rect x="30.8" y="114.3" width="17" height="5.7" class="s2" data-tip="Caixa por volta de −R$ 45 mil · 0,9%"/>
+<rect x="49.6" y="108.5" width="17" height="11.5" class="s2" data-tip="Caixa por volta de −R$ 35 mil · 1,8%"/>
+<rect x="68.4" y="99.6" width="17" height="20.4" class="s2" data-tip="Caixa por volta de −R$ 25 mil · 3,2%"/>
+<rect x="87.2" y="86.9" width="17" height="33.1" class="s2" data-tip="Caixa por volta de −R$ 15 mil · 5,2%"/>
+<rect x="106" y="71.6" width="17" height="48.4" class="s2" data-tip="Caixa por volta de −R$ 5 mil · 7,6%"/>
+<rect x="124.8" y="56.3" width="17" height="63.7" class="s1" data-tip="Caixa por volta de +R$ 5 mil · 10%"/>
+<rect x="143.6" y="44.8" width="17" height="75.2" class="s1" data-tip="Caixa por volta de +R$ 15 mil · 11,8%"/>
+<rect x="162.4" y="39.7" width="17" height="80.3" class="s1" data-tip="Caixa por volta de +R$ 25 mil · 12,6%"/>
+<rect x="181.2" y="43.6" width="17" height="76.4" class="s1" data-tip="Caixa por volta de +R$ 35 mil · 12%"/>
+<rect x="200" y="53.7" width="17" height="66.3" class="s1" data-tip="Caixa por volta de +R$ 45 mil · 10,4%"/>
+<rect x="218.8" y="67.8" width="17" height="52.2" class="s1" data-tip="Caixa por volta de +R$ 55 mil · 8,2%"/>
+<rect x="237.6" y="81.8" width="17" height="38.2" class="s1" data-tip="Caixa por volta de +R$ 65 mil · 6%"/>
+<rect x="256.4" y="93.9" width="17" height="26.1" class="s1" data-tip="Caixa por volta de +R$ 75 mil · 4,1%"/>
+<rect x="275.2" y="102.8" width="17" height="17.2" class="s1" data-tip="Caixa por volta de +R$ 85 mil · 2,7%"/>
+<rect x="294" y="109.8" width="17" height="10.2" class="s1" data-tip="Caixa por volta de +R$ 95 mil · 1,6%"/>
+<rect x="312.8" y="114.3" width="17" height="5.7" class="s1" data-tip="Caixa por volta de +R$ 105 mil · 0,9%"/>
+<rect x="331.6" y="117.5" width="17" height="2.5" class="s1" data-tip="Caixa por volta de +R$ 115 mil · 0,4%"/>
+<rect x="350.4" y="118.7" width="17" height="1.3" class="s1" data-tip="Caixa por volta de +R$ 125 mil · 0,2%"/>
+<rect x="369.2" y="119.4" width="17" height="0.6" class="s1" data-tip="Caixa por volta de +R$ 135 mil · 0,1%"/>
+<line x1="124.8" y1="30" x2="124.8" y2="120" class="ax"/>
+<text x="121" y="38" class="tk" text-anchor="end">zero</text>
+<text x="12" y="134" class="tk" text-anchor="start">−R$ 60 mil</text>
+<text x="388" y="134" class="tk" text-anchor="end">+R$ 140 mil</text>
+<text x="200" y="150" class="tk" text-anchor="middle">caixa ao fim de 6 meses em cada uma das 1.000 simulações</text>
+</svg>
+<div class="legend"><span><i class="sq" style="background:var(--s1)"></i>caixa positivo</span><span><i class="sq" style="background:var(--s2)"></i>caixa negativo · 19%</span></div>
+<p class="fig-c">A planilha de três cenários só enxerga o miolo do histograma. Ela não tem nada a dizer sobre a barra laranja — os 19% de futuros em que o caixa vira negativo — e é exatamente sobre esses que você precisava de um plano.</p>
+</div>
+
 <h4>Simulação, em linguagem simples</h4>
 <p>Em vez de escolher um valor para cada premissa, você define uma <strong>faixa</strong> para cada uma — conversão entre 1,4% e 2,1%, ticket entre R$ 180 e R$ 240, tráfego entre 18 e 26 mil. O computador sorteia milhares de combinações e monta a distribuição dos resultados possíveis.</p>
-<p>O que sai é muito mais útil que um número: <em>“em 82% das simulações, o caixa sobrevive até março; nos 18% restantes, ele acaba em janeiro, e o gatilho comum é conversão abaixo de 1,5%”</em>. Isso é acionável — você sabe o que monitorar.</p>
+<p>O que sai é muito mais útil que um número: <em>“em 82% das simulações o caixa sobrevive até março; nos 18% restantes, ele acaba em janeiro, e o gatilho comum é conversão abaixo de 1,5%”</em>. Isso é acionável — você sabe o que monitorar.</p>
+<p>Rode você mesmo. Mexa nos controles e observe não só a porcentagem de sobrevivência, mas a frase que aparece embaixo, dizendo <em>o que</em> distingue as simulações que quebraram:</p>
+
+<div data-w="m4Caixa"></div>
+
+<p>Aumente o prazo de recebimento para 60 dias mantendo tudo o mais igual. O resultado costuma surpreender: as simulações que furam o caixa não são as que venderam menos — em algumas configurações, são as que venderam <em>mais</em>. Com recebimento longo e fornecedor curto, crescer consome caixa antes de gerar caixa. Nenhuma planilha de três cenários mostra isso, porque ninguém escreve um cenário chamado “vendemos bem e quebramos”.</p>
 
 <div class="box b-ex"><p class="h">Exemplo aplicado</p>
-<p>Uma loja com faturamento em queda quer saber quanto tempo o caixa aguenta. Em vez de projetar “vamos faturar R$ 180 mil por mês”, ela define faixas para tráfego, conversão, ticket, prazo de recebimento e prazo de pagamento a fornecedor. O resultado mostra que o risco não está no faturamento — está no <strong>descasamento de prazo</strong>. A decisão que sai dali é negociar prazo com fornecedor, não cortar marketing.</p></div>
+<p>Uma loja com faturamento em queda quer saber quanto tempo o caixa aguenta. Em vez de projetar “vamos faturar R$ 180 mil por mês”, ela define faixas para tráfego, conversão, ticket, prazo de recebimento e prazo de pagamento a fornecedor. O resultado mostra que o risco não está no faturamento — está no <strong>descasamento de prazo</strong>. A decisão que sai dali é antecipar recebível e renegociar prazo com fornecedor, não cortar marketing.</p></div>
 
 <h4>As três perguntas de estresse</h4>
 <ol>
-<li><strong>O que quebra primeiro?</strong> Qual premissa, se errar, derruba tudo.</li>
-<li><strong>Quanto ela pode piorar antes de eu sentir?</strong> Isso vira o seu alarme.</li>
+<li><strong>O que quebra primeiro?</strong> Qual premissa, se errar, derruba tudo. Nem sempre é a que mais aparece em reunião.</li>
+<li><strong>Quanto ela pode piorar antes de eu sentir?</strong> Isso vira o número do seu alarme — e amarra esta aula com a aula 3.</li>
 <li><strong>Qual a ação preparada?</strong> Decidir com antecedência o que fazer se o gatilho disparar — porque no dia, sob pressão, ninguém decide bem.</li>
 </ol>
+
+<div class="hoje"><p class="h">Faça hoje · 20 minutos</p>
+<p>Escreva em uma folha as cinco premissas do seu próximo trimestre com <em>faixa</em>, não com número: tráfego de X a Y, conversão de X a Y, ticket de X a Y, prazo médio de recebimento de X a Y dias, custo fixo de X a Y. Depois marque, para cada uma, o valor a partir do qual você precisa agir e <em>qual</em> é a ação. Guarde a folha. Daqui a 90 dias, ela vale mais que qualquer projeção.</p></div>
 
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Substitua “nossa projeção é R$ X” por “há 80% de chance de ficarmos entre X e Y, e o que nos tira dessa faixa é Z”. É a mesma informação, com honestidade e com plano.</p></div>
 `},
 
-{id:'m4a6', min:7, titulo:'Escoragem de risco e inadimplência',
+{id:'m4a6', min:14, titulo:'Escoragem de risco e inadimplência',
 html:`
-<div class="key"><p class="h">Ideia central</p><p>Escore é uma probabilidade, não um veredito. O valor está em <strong>ordenar</strong> os casos, e em escolher conscientemente onde cortar.</p></div>
+<div class="key"><p class="h">Ideia central</p><p>Escore é uma probabilidade, não um veredito. O valor está em <strong>ordenar</strong> os casos, e em escolher conscientemente onde cortar — sabendo quanto custa cada lado do corte.</p></div>
 
 <h4>O que um escore realmente diz</h4>
-<p>“Este pedido tem 12% de probabilidade de não ser pago.” Não diz que é fraude. Diz que, entre cem pedidos com este perfil, cerca de doze historicamente não foram pagos. A decisão sobre o que fazer com 12% é <strong>de negócio</strong>, não do modelo.</p>
+<p>“Este pedido tem 12% de probabilidade de não ser pago.” Não diz que é fraude. Diz que, entre cem pedidos com este perfil, cerca de doze historicamente não foram pagos. A decisão sobre o que fazer com 12% é <strong>de negócio</strong>, não do modelo — e depende do valor do pedido, da margem e do que você faz com o cliente recusado.</p>
+
+<h4>Os dois erros têm preços diferentes</h4>
+<p>Toda decisão de aprovar ou recusar cai numa de quatro caixas. Duas são acerto e ninguém comenta. As outras duas custam dinheiro — e só uma delas aparece em relatório.</p>
+
+<div class="fig">
+<p class="fig-t">O erro que ninguém vê custa mais da metade do erro que todo mundo vê</p>
+<p class="fig-s">10.000 pedidos por mês, ticket de R$ 320, margem de 30%, 2% não são pagos. Corte barrando 106 dos 200 ruins.</p>
+<svg viewBox="0 0 400 198" role="img" aria-label="Matriz de quatro caixas cruzando aprovar ou recusar com pagar ou não pagar, mostrando que aprovar fraude custa trinta mil por mês e recusar cliente bom custa dezessete mil">
+<text x="157" y="12" class="lb" text-anchor="middle" font-size="11">O CLIENTE PAGOU</text>
+<text x="317" y="12" class="lb" text-anchor="middle" font-size="11">NÃO PAGOU</text>
+<text x="2" y="52" class="lb" font-size="11">VOCÊ</text>
+<text x="2" y="66" class="lb" font-size="11">APROVOU</text>
+<rect x="80" y="18" width="154" height="76" rx="7" class="box"/>
+<text x="157" y="40" class="lb2" text-anchor="middle" font-size="11">acertou</text>
+<text x="157" y="56" class="tk" text-anchor="middle">9.620 pedidos</text>
+<text x="157" y="72" class="tk" text-anchor="middle">receita normal</text>
+<rect x="240" y="18" width="154" height="76" rx="7" class="boxa" data-tip="94 pedidos ruins passam pelo corte e custam o valor cheio: produto que saiu mais o estorno"/>
+<text x="317" y="38" class="lb" text-anchor="middle" font-size="11.5">ERRO CARO</text>
+<text x="317" y="54" class="tk" text-anchor="middle">94 pedidos aprovados</text>
+<text x="317" y="68" class="tk" text-anchor="middle">custa o pedido inteiro</text>
+<text x="317" y="85" class="lb" text-anchor="middle" font-size="12">R$ 30.080/mês</text>
+<text x="2" y="136" class="lb" font-size="11">VOCÊ</text>
+<text x="2" y="150" class="lb" font-size="11">RECUSOU</text>
+<rect x="80" y="102" width="154" height="76" rx="7" class="boxa" data-tip="180 clientes que pagariam são recusados. A perda é a margem daquela venda — e o cliente ainda vai contar para alguém"/>
+<text x="157" y="122" class="lb" text-anchor="middle" font-size="11.5">ERRO INVISÍVEL</text>
+<text x="157" y="138" class="tk" text-anchor="middle">180 clientes bons</text>
+<text x="157" y="152" class="tk" text-anchor="middle">custa a margem perdida</text>
+<text x="157" y="169" class="lb" text-anchor="middle" font-size="12">R$ 17.280/mês</text>
+<rect x="240" y="102" width="154" height="76" rx="7" class="box"/>
+<text x="317" y="124" class="lb2" text-anchor="middle" font-size="11">acertou</text>
+<text x="317" y="140" class="tk" text-anchor="middle">106 pedidos barrados</text>
+<text x="317" y="156" class="tk" text-anchor="middle">R$ 33.920 evitados</text>
+<text x="200" y="192" class="tk" text-anchor="middle">aprovar tudo custaria R$ 64.000 · este corte custa R$ 47.360</text>
+</svg>
+<p class="fig-c">O erro de cima entra no relatório de perdas com nome e sobrenome. O de baixo não entra em lugar nenhum: o cliente recusado simplesmente some, e ninguém soma R$ 17.280 por mês em lugar nenhum. É por isso que quase toda loja opera com corte apertado demais.</p>
+</div>
 
 <h4>Onde cortar é escolha de custo</h4>
 <div class="tbl"><table>
@@ -1570,15 +2002,23 @@ html:`
 <tr><td>Muito rígido</td><td>Barra fraude e também cliente bom</td><td>Venda perdida, cliente ofendido</td></tr>
 <tr><td>Muito frouxo</td><td>Aprova quase tudo</td><td>Perda financeira, contestação</td></tr>
 </tbody></table></div>
-<p>O ponto ótimo depende do valor do pedido, da margem e do custo de recuperar. Faz sentido ter cortes diferentes por faixa de valor: em pedido de R$ 80, o custo de revisar manualmente supera o prejuízo esperado; em pedido de R$ 4.000, não.</p>
+<p>O ponto ótimo depende do valor do pedido, da margem e do custo de recuperar. Faz sentido ter cortes diferentes por faixa de valor: em pedido de R$ 80, o custo de revisar manualmente supera o prejuízo esperado; em pedido de R$ 4.000, não chega perto.</p>
+<p>Mexa no corte abaixo e acompanhe os dois contadores ao mesmo tempo — ruins barrados e bons recusados. Depois clique em “achar o corte de menor custo” e compare com o número que você teria escolhido no olho:</p>
+
+<div data-w="m4Corte"></div>
+
+<p>Três coisas deveriam ter aparecido. O corte “responsável” de 40 costuma custar mais que aprovar tudo. A curva tem fundo largo: perseguir o corte perfeito rende pouco, fugir das pontas rende muito. E quando o ticket muda, o corte ótimo muda junto — o que condena qualquer regra única para o catálogo inteiro.</p>
 
 <div class="box b-dn"><p class="h">⚠ Onde a LGPD entra com força</p>
-<p>Negar venda, crédito ou acesso com base em decisão automatizada afeta o interesse do titular. Isso exige: critério explicável, direito de solicitar revisão, e registro do que foi decidido e por quê. Recusa automática sem canal de revisão é problema jurídico esperando acontecer.</p></div>
+<p>Negar venda, crédito ou acesso com base em decisão automatizada afeta o interesse do titular. Isso exige: critério explicável, direito de solicitar revisão, e registro do que foi decidido e por quê. Recusa automática sem canal de revisão é problema jurídico esperando acontecer — e, na prática, o canal de revisão também é o seu melhor detector de corte mal calibrado.</p></div>
 
 <div class="box b-wr"><p class="h">⚠ A armadilha do dado de treino enviesado</p>
-<p>Seu modelo só aprende com pedidos que foram <em>aprovados</em> — dos recusados, você nunca soube se pagariam. O modelo aprende sobre uma população filtrada por ele mesmo, e vai ficando mais restritivo com o tempo. Correção: aprovar deliberadamente uma pequena fração dos casos de fronteira para continuar aprendendo.</p></div>
+<p>Seu modelo só aprende com pedidos que foram <em>aprovados</em> — dos recusados, você nunca soube se pagariam. O modelo aprende sobre uma população filtrada por ele mesmo, e vai ficando mais restritivo com o tempo, sem que nenhum indicador mostre isso. Correção: aprovar deliberadamente uma pequena fração (1% a 3%) dos casos de fronteira e acompanhar o que acontece com eles. É o custo de continuar enxergando.</p></div>
 
-<div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Escore ordena. Quem decide o corte é o negócio, com o custo do erro na mão — e com um caminho de revisão para o cliente.</p></div>
+<div class="hoje"><p class="h">Faça hoje · 15 minutos</p>
+<p>Levante dois números do último mês: quantos pedidos foram recusados ou cancelados por suspeita, e quantos foram efetivamente não pagos. Multiplique os recusados pela margem média do ticket — esse é o seu “erro invisível” mensal, e provavelmente é a primeira vez que ele ganha um valor em reais. Se ele for maior que a perda por inadimplência, o seu corte está apertado demais e está custando dinheiro em nome da prudência.</p></div>
+
+<div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Escore ordena. Quem decide o corte é o negócio, com o custo dos <em>dois</em> erros na mão — e com um caminho de revisão para o cliente, que é exigência legal e, de quebra, o seu melhor sensor de calibragem.</p></div>
 `}
 ]},
 
@@ -3168,7 +3608,7 @@ id:'m8', num:'VIII', titulo:'Machine Learning para Decisão',
 resumo:'Como um modelo preditivo nasce, como se avalia e por que apodrece.',
 aulas:[
 
-{id:'m8a1', min:7, titulo:'Os três tipos de aprendizado',
+{id:'m8a1', min:11, titulo:'Os três tipos de aprendizado',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>A pergunta que define tudo: <em>eu tenho exemplos com a resposta certa?</em> A resposta determina o tipo de aprendizado, o esforço e o que é possível prometer.</p></div>
 
@@ -3183,26 +3623,124 @@ html:`
 <h4>Supervisionado é onde está 90% do valor de negócio</h4>
 <p>E o gargalo é sempre o mesmo: <strong>conseguir os rótulos</strong>. Nem sempre você sabe a resposta certa do passado. “Este cliente ia comprar de qualquer jeito?” não está registrado em lugar nenhum.</p>
 
+<div class="fig">
+<p class="fig-t">O algoritmo é a parte barata. O que trava o projeto está sempre na coluna da direita</p>
+<p class="fig-s">O que cada tipo de aprendizado exige antes da primeira linha de código.</p>
+<svg viewBox="0 0 400 206" role="img" aria-label="Três linhas comparando supervisionado, não supervisionado e por reforço: à esquerda o que a empresa já tem, à direita o que falta e trava o projeto">
+<text x="96" y="12" class="tk">VOCÊ JÁ TEM ISTO</text>
+<text x="398" y="12" class="tk" text-anchor="end">ISTO É O QUE TRAVA</text>
+<text x="0" y="36" class="lb" font-size="11.5">Supervisio-</text>
+<text x="0" y="49" class="lb" font-size="11.5">nado</text>
+<rect x="96" y="20" width="146" height="46" rx="8" class="box"/>
+<text x="169" y="38" class="lb2" text-anchor="middle" font-size="10.5">histórico de pedidos,</text>
+<text x="169" y="52" class="lb2" text-anchor="middle" font-size="10.5">clientes e pagamentos</text>
+<rect x="252" y="20" width="146" height="46" rx="8" class="boxa"/>
+<text x="325" y="38" class="lb" text-anchor="middle" font-size="10.5">o rótulo: a resposta</text>
+<text x="325" y="52" class="lb" text-anchor="middle" font-size="10.5">certa, caso a caso</text>
+<text x="0" y="92" class="lb" font-size="11.5">Não super-</text>
+<text x="0" y="105" class="lb" font-size="11.5">visionado</text>
+<rect x="96" y="76" width="146" height="46" rx="8" class="box"/>
+<text x="169" y="94" class="lb2" text-anchor="middle" font-size="10.5">exatamente os mesmos</text>
+<text x="169" y="108" class="lb2" text-anchor="middle" font-size="10.5">dados, sem rótulo</text>
+<rect x="252" y="76" width="146" height="46" rx="8" class="boxa"/>
+<text x="325" y="94" class="lb" text-anchor="middle" font-size="10.5">alguém que julgue se</text>
+<text x="325" y="108" class="lb" text-anchor="middle" font-size="10.5">o grupo muda uma ação</text>
+<text x="0" y="148" class="lb" font-size="11.5">Por</text>
+<text x="0" y="161" class="lb" font-size="11.5">reforço</text>
+<rect x="96" y="132" width="146" height="46" rx="8" class="box"/>
+<text x="169" y="150" class="lb2" text-anchor="middle" font-size="10.5">quase nada do que a</text>
+<text x="169" y="164" class="lb2" text-anchor="middle" font-size="10.5">loja já guarda serve</text>
+<rect x="252" y="132" width="146" height="46" rx="8" class="boxa"/>
+<text x="325" y="150" class="lb" text-anchor="middle" font-size="10.5">um ambiente onde dá</text>
+<text x="325" y="164" class="lb" text-anchor="middle" font-size="10.5">para errar muitas vezes</text>
+<text x="0" y="196" class="tk">A palavra “algoritmo” não aparece em nenhuma das três linhas.</text>
+</svg>
+<p class="fig-c">A coluna da esquerda você já tem — está no Magento e no ERP. A da direita é trabalho humano, decisão de negócio e tempo. É por isso que projeto de IA atrasa: ninguém atrasa no algoritmo.</p>
+</div>
+
 <div class="box b-wr"><p class="h">⚠ Quando a resposta certa não existe no dado</p>
-<p>Você quer prever quais clientes vão cancelar. Mas “cancelou” não é um campo — em comércio, ninguém cancela formalmente, apenas para de comprar. Você precisa <em>definir</em>: “cliente perdido = sem compra há mais de 2× o intervalo típico dele”. Essa definição é uma escolha de negócio, e o modelo inteiro depende dela. Definição errada produz modelo tecnicamente perfeito que não serve para nada.</p></div>
+<p>Você quer prever quais clientes vão parar de comprar. Mas “cancelou” não é um campo — em comércio ninguém cancela formalmente, apenas some. Você precisa <em>definir</em>: “cliente perdido = sem compra há mais de 2× o intervalo típico dele”. Essa definição é uma escolha de negócio, e o modelo inteiro depende dela. Definição errada produz modelo tecnicamente perfeito que não serve para nada.</p></div>
+
+<h4>Veja o tamanho do problema com as suas próprias mãos</h4>
+<p>Abaixo estão 8.000 clientes que já compraram alguma vez, distribuídos por quanto tempo faz desde a última compra. Você tem dois controles: o intervalo típico de recompra da sua categoria e quantas vezes esse intervalo você exige para chamar alguém de perdido. Mexa nos dois e acompanhe o número lá em cima.</p>
+
+<div data-w="m8Rotulo"></div>
+
+<p>Duas coisas deveriam ter incomodado. A primeira: o mesmo banco de dados produz de umas centenas a mais de sete mil “clientes perdidos”, sem que nada tenha acontecido na loja — só a definição mudou. A segunda: <strong>os dois erros existem ao mesmo tempo</strong>. Com o corte frouxo você rotula gente que ia voltar sozinha e vai dar cupom para quem já compraria; com o corte apertado, o modelo só avisa quando o cliente já foi embora há meses. Não existe definição sem erro — existe a que você escolheu conscientemente e consegue defender numa reunião.</p>
 
 <div class="box b-ex"><p class="h">Não supervisionado: cuidado com a expectativa</p>
 <p>Agrupamento de clientes sempre devolve grupos — mesmo que não haja estrutura real nos dados. O algoritmo obedece: você pede cinco grupos, ele entrega cinco. Cabe a você julgar se os grupos fazem sentido de negócio e se são acionáveis. Grupo que não muda nenhuma ação é ruído com nome bonito.</p></div>
 
+<div class="hoje"><p class="h">Faça hoje · 15 minutos</p>
+<p>Puxe do ERP o intervalo <strong>mediano</strong> entre a primeira e a segunda compra dos clientes que compraram duas vezes ou mais no último ano. Esse número é o seu “intervalo típico”. Depois escreva, numa frase, a definição de cliente perdido que você vai usar — com o multiplicador escolhido. Guarde a frase: tudo que vier depois (modelo, campanha, relatório de evasão) vai depender dela, e é bom que esteja escrita antes de alguém pedir o número.</p></div>
+
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Antes de qualquer modelo: existe rótulo? Se não existe, o primeiro projeto é criar a definição — e isso é decisão de negócio, não técnica.</p></div>
 `},
 
-{id:'m8a2', min:7, titulo:'Classificar, prever valor, agrupar',
+{id:'m8a2', min:9, titulo:'Classificar, prever valor, agrupar',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Três formatos de pergunta cobrem quase toda aplicação prática. Identificar o formato certo evita construir a coisa errada.</p></div>
 
+<div class="fig">
+<p class="fig-t">O formato da pergunta define o formato da resposta — e a decisão que ela permite</p>
+<p class="fig-s">Os três casos abaixo são de uma loja on-line comum, com Magento e ERP.</p>
+<svg viewBox="0 0 400 216" role="img" aria-label="Três colunas comparando classificação, regressão e agrupamento: o que sai de cada um, um caso de comércio eletrônico e a decisão que muda">
+<rect x="0" y="18" width="126" height="190" rx="8" class="box"/>
+<rect x="0" y="18" width="126" height="4" rx="2" class="s1"/>
+<text x="63" y="38" class="lb" text-anchor="middle" font-size="12">Classificação</text>
+<text x="63" y="53" class="tk" text-anchor="middle" font-size="10">sai uma probabilidade</text>
+<rect x="10" y="62" width="106" height="12" rx="3" class="box"/>
+<rect x="10" y="62" width="77" height="12" rx="3" class="s1" data-tip="73% de chance de recomprar em 60 dias"/>
+<line x1="74" y1="57" x2="74" y2="80" class="ax" stroke-width="2"/>
+<text x="63" y="92" class="lb" text-anchor="middle" font-size="12">73%</text>
+<text x="63" y="112" class="tk" text-anchor="middle" font-size="10">NA SUA LOJA</text>
+<text x="63" y="128" class="lb2" text-anchor="middle" font-size="10.5">“este cliente recompra</text>
+<text x="63" y="141" class="lb2" text-anchor="middle" font-size="10.5">nos próximos 60 dias?”</text>
+<text x="63" y="161" class="tk" text-anchor="middle" font-size="10">DECISÃO</text>
+<text x="63" y="177" class="lb2" text-anchor="middle" font-size="10.5">para quem mandar a</text>
+<text x="63" y="190" class="lb2" text-anchor="middle" font-size="10.5">campanha — e para</text>
+<text x="63" y="203" class="lb2" text-anchor="middle" font-size="10.5">quem não mandar</text>
+<rect x="137" y="18" width="126" height="190" rx="8" class="box"/>
+<rect x="137" y="18" width="126" height="4" rx="2" class="s2"/>
+<text x="200" y="38" class="lb" text-anchor="middle" font-size="12">Regressão</text>
+<text x="200" y="53" class="tk" text-anchor="middle" font-size="10">sai um número com faixa</text>
+<line x1="150" y1="68" x2="250" y2="68" class="lg"/>
+<line x1="150" y1="62" x2="150" y2="74" class="ax"/>
+<line x1="250" y1="62" x2="250" y2="74" class="ax"/>
+<circle cx="196" cy="68" r="5" class="s2 ring" data-tip="melhor estimativa: 480 unidades — mas a faixa é que se usa para comprar"/>
+<text x="200" y="92" class="lb" text-anchor="middle" font-size="12">420 a 560 un.</text>
+<text x="200" y="112" class="tk" text-anchor="middle" font-size="10">NA SUA LOJA</text>
+<text x="200" y="128" class="lb2" text-anchor="middle" font-size="10.5">“quanto deste item eu</text>
+<text x="200" y="141" class="lb2" text-anchor="middle" font-size="10.5">vendo no mês que vem?”</text>
+<text x="200" y="161" class="tk" text-anchor="middle" font-size="10">DECISÃO</text>
+<text x="200" y="177" class="lb2" text-anchor="middle" font-size="10.5">quanto comprar, e</text>
+<text x="200" y="190" class="lb2" text-anchor="middle" font-size="10.5">quanto de folga deixar</text>
+<text x="200" y="203" class="lb2" text-anchor="middle" font-size="10.5">no estoque</text>
+<rect x="274" y="18" width="126" height="190" rx="8" class="box"/>
+<rect x="274" y="18" width="126" height="4" rx="2" class="s3"/>
+<text x="337" y="38" class="lb" text-anchor="middle" font-size="12">Agrupamento</text>
+<text x="337" y="53" class="tk" text-anchor="middle" font-size="10">saem grupos, sem rótulo</text>
+<circle cx="298" cy="70" r="3.4" class="s3"/><circle cx="307" cy="64" r="3.4" class="s3"/><circle cx="304" cy="77" r="3.4" class="s3"/><circle cx="294" cy="62" r="3.4" class="s3"/>
+<circle cx="336" cy="86" r="3.4" class="s2"/><circle cx="345" cy="80" r="3.4" class="s2"/><circle cx="330" cy="76" r="3.4" class="s2"/>
+<circle cx="372" cy="63" r="3.4" class="sg"/><circle cx="380" cy="72" r="3.4" class="sg"/><circle cx="366" cy="74" r="3.4" class="sg"/><circle cx="377" cy="58" r="3.4" class="sg"/>
+<text x="337" y="112" class="tk" text-anchor="middle" font-size="10">NA SUA LOJA</text>
+<text x="337" y="128" class="lb2" text-anchor="middle" font-size="10.5">“que perfis de compra</text>
+<text x="337" y="141" class="lb2" text-anchor="middle" font-size="10.5">existem na minha base?”</text>
+<text x="337" y="161" class="tk" text-anchor="middle" font-size="10">DECISÃO</text>
+<text x="337" y="177" class="lb2" text-anchor="middle" font-size="10.5">sortimento e tom da</text>
+<text x="337" y="190" class="lb2" text-anchor="middle" font-size="10.5">comunicação — se algum</text>
+<text x="337" y="203" class="lb2" text-anchor="middle" font-size="10.5">grupo mudar uma ação</text>
+</svg>
+<p class="fig-c">Repare na terceira coluna: ela é a única que não responde pergunta nenhuma. O algoritmo devolve grupos sempre, inclusive quando não há grupo nenhum nos dados. Quem nomeia e quem julga se o grupo serve é gente.</p>
+</div>
+
 <h4>Classificação — a resposta é uma categoria</h4>
 <p>“Este pedido é fraude?” “Este cliente vai recomprar em 90 dias?” “Qual o assunto desta mensagem?”</p>
-<p>A saída útil não é o rótulo, é a <strong>probabilidade</strong>. Com a probabilidade você escolhe o corte conforme o custo do erro, e pode ter cortes diferentes por faixa de valor.</p>
+<p>A saída útil não é o rótulo, é a <strong>probabilidade</strong>. Com a probabilidade você escolhe o corte conforme o custo do erro, e pode ter cortes diferentes por faixa de valor: pedido de R$ 90 no Pix não precisa do mesmo rigor de um de R$ 4.000 em cartão.</p>
 
 <h4>Regressão — a resposta é um número</h4>
 <p>“Quantas unidades vou vender?” “Qual o valor esperado deste cliente nos próximos 12 meses?” “Em quantos dias este pedido será entregue?”</p>
-<p>Sempre entregue com faixa, nunca com número seco.</p>
+<p>Sempre entregue com faixa, nunca com número seco. Quem compra estoque decide com a faixa, não com a média: a diferença entre “480” e “entre 420 e 560” é a diferença entre uma compra e uma aposta.</p>
 
 <h4>Agrupamento — não há pergunta, há exploração</h4>
 <p>“Que tipos de cliente existem na minha base?” Útil para descobrir padrão que ninguém suspeitava. Perigoso quando vira justificativa para segmentação que não muda ação nenhuma.</p>
@@ -3221,17 +3759,20 @@ html:`
 
 <div class="box b-wr"><p class="h">⚠ Comece pela decisão, não pelo modelo</p><p>Se você não consegue nomear a decisão que muda com o resultado, não construa. Modelo que produz um número que ninguém usa é o desperdício mais comum da área.</p></div>
 
+<div class="hoje"><p class="h">Faça hoje · 10 minutos</p>
+<p>Pegue as três ideias de “usar IA” que estão em pé na sua empresa e escreva cada uma na frase-molde: <em>“se soubermos X, faremos Y em vez de Z, e isso vale R$ W por ano”</em>. Depois marque o tipo: classificação, regressão ou agrupamento. As que não couberem na frase não são projetos — são curiosidades, e podem esperar.</p></div>
+
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Toda proposta de modelo deve caber nesta frase: “se soubermos X, faremos Y em vez de Z, e isso vale R$ W por ano”.</p></div>
 `},
 
-{id:'m8a3', min:7, titulo:'O ciclo de vida de um modelo',
+{id:'m8a3', min:10, titulo:'O ciclo de vida de um modelo',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>Modelo não é entrega, é sistema vivo. A construção é a menor parte; o resto é manutenção — e é onde está o custo real.</p></div>
 
 <h4>As sete etapas</h4>
 <ol>
 <li><strong>Definir a decisão.</strong> O que muda quando tivermos a previsão, e quanto vale.</li>
-<li><strong>Montar o conjunto de dados.</strong> Histórico com as variáveis e a resposta conhecida. Normalmente 60 a 80% do esforço total.</li>
+<li><strong>Montar o conjunto de dados.</strong> Histórico com as variáveis e a resposta conhecida. Normalmente 60 a 70% do esforço total.</li>
 <li><strong>Separar os dados.</strong> Uma parte para treinar, outra que o modelo nunca vê, para avaliar honestamente. Em série temporal, a separação é por data — nunca aleatória.</li>
 <li><strong>Treinar.</strong> A parte mais rápida e a que menos importa.</li>
 <li><strong>Avaliar.</strong> Contra a linha de base ingênua, na parte reservada, com a métrica que reflete o custo do erro.</li>
@@ -3239,10 +3780,47 @@ html:`
 <li><strong>Monitorar e retreinar.</strong> Para sempre.</li>
 </ol>
 
-<div class="box b-wr"><p class="h">⚠ A proporção real do esforço</p><p>Dados: 60-70%. Treino: 5%. Produção e monitoramento: 25-35%. Quem orça só o treino orça 5% do projeto — e é exatamente o que costuma acontecer nas propostas.</p></div>
+<div class="fig">
+<p class="fig-t">A fatia que todo mundo chama de “o projeto de IA” é a menor de todas</p>
+<p class="fig-s">Proporção típica do esforço num projeto de modelo preditivo dentro de uma empresa.</p>
+<svg viewBox="0 0 400 162" role="img" aria-label="Barra de 100 por cento dividida em três partes: dados 60 a 70 por cento, treino 5 por cento e produção e monitoramento 25 a 35 por cento">
+<text x="8" y="14" class="tk">ONDE VAI O ESFORÇO, DO COMEÇO AO FIM</text>
+<rect x="8" y="26" width="250" height="40" rx="4" class="s3" data-tip="Coletar, cruzar, limpar e rotular o histórico — a maior parte do projeto"/>
+<rect x="258" y="26" width="19" height="40" class="s2" data-tip="Treinar o modelo: dias, às vezes horas"/>
+<rect x="277" y="26" width="115" height="40" rx="4" class="s1" data-tip="Integrar, colocar no ar, vigiar e retreinar — para sempre"/>
+<text x="133" y="86" class="lb2" text-anchor="middle" font-size="11">Montar e limpar os dados</text>
+<text x="133" y="100" class="tk" text-anchor="middle">60 a 70%</text>
+<text x="334" y="86" class="lb2" text-anchor="middle" font-size="11">Produção e monitoramento</text>
+<text x="334" y="100" class="tk" text-anchor="middle">25 a 35%</text>
+<line x1="267" y1="68" x2="267" y2="120" class="ax"/>
+<text x="267" y="136" class="lb" text-anchor="middle" font-size="12">Treinar o modelo: 5%</text>
+<text x="267" y="152" class="tk" text-anchor="middle">é esta fatia que a maioria das propostas orça</text>
+</svg>
+<p class="fig-c">Quem orça só a fatia laranja orça 5% do projeto. E é exatamente o que costuma acontecer: a proposta cobra o treino, a empresa descobre o resto depois — geralmente quando o piloto já foi aprovado.</p>
+</div>
+
+<div class="box b-wr"><p class="h">⚠ A conta que não fecha nas propostas</p><p>Se a proposta não tem linha para limpeza de dado nem para monitoramento, ela não está barata: está incompleta. Pergunte, com essas palavras: “quem limpa o histórico, e quem vigia isso no mês seis?”</p></div>
 
 <h4>A etapa 3 é onde se trapaceia sem querer</h4>
-<p>Se você avalia o modelo nos mesmos dados em que ele treinou, o resultado é lindo e falso — ele decorou. Por isso a parte reservada precisa ser rigorosamente intocada até o fim. Em previsão temporal, treinar com dados de agosto e avaliar em junho é vazamento clássico: o modelo viu o futuro.</p>
+<p>Se você avalia o modelo nos mesmos dados em que ele treinou, o resultado é lindo e falso — ele decorou. Por isso a parte reservada precisa ser rigorosamente intocada até o fim. E quando os dados têm tempo — pedidos, vendas, pagamentos —, sortear as linhas aleatoriamente é um vazamento disfarçado de boa prática.</p>
+
+<div class="fig">
+<p class="fig-t">Em dado com data, sortear as linhas é deixar o modelo ver o futuro</p>
+<p class="fig-s">Doze meses de pedidos. As duas formas de reservar uma parte para avaliar.</p>
+<svg viewBox="0 0 400 186" role="img" aria-label="Comparação entre separar treino e avaliação aleatoriamente ao longo de doze meses e separar por data, reservando os últimos meses">
+<text x="8" y="14" class="lb2" font-size="11">Aleatória — o jeito padrão, e o errado aqui</text>
+<rect x="8" y="22" width="30" height="24" rx="3" class="s3"/><rect x="40" y="22" width="30" height="24" rx="3" class="s2"/><rect x="72" y="22" width="30" height="24" rx="3" class="s3"/><rect x="104" y="22" width="30" height="24" rx="3" class="s3"/><rect x="136" y="22" width="30" height="24" rx="3" class="s2"/><rect x="168" y="22" width="30" height="24" rx="3" class="s3"/><rect x="200" y="22" width="30" height="24" rx="3" class="s3"/><rect x="232" y="22" width="30" height="24" rx="3" class="s2"/><rect x="264" y="22" width="30" height="24" rx="3" class="s3"/><rect x="296" y="22" width="30" height="24" rx="3" class="s3"/><rect x="328" y="22" width="30" height="24" rx="3" class="s2"/><rect x="360" y="22" width="30" height="24" rx="3" class="s3"/>
+<text x="23" y="60" class="tk" text-anchor="middle">jan</text><text x="55" y="60" class="tk" text-anchor="middle">fev</text><text x="87" y="60" class="tk" text-anchor="middle">mar</text><text x="119" y="60" class="tk" text-anchor="middle">abr</text><text x="151" y="60" class="tk" text-anchor="middle">mai</text><text x="183" y="60" class="tk" text-anchor="middle">jun</text><text x="215" y="60" class="tk" text-anchor="middle">jul</text><text x="247" y="60" class="tk" text-anchor="middle">ago</text><text x="279" y="60" class="tk" text-anchor="middle">set</text><text x="311" y="60" class="tk" text-anchor="middle">out</text><text x="343" y="60" class="tk" text-anchor="middle">nov</text><text x="375" y="60" class="tk" text-anchor="middle">dez</text>
+<text x="8" y="80" class="lb2" font-size="10.5">Treinou com novembro e foi avaliado em fevereiro: já sabia o que</text>
+<text x="8" y="93" class="lb2" font-size="10.5">ia acontecer. Nota alta, modelo inútil em produção.</text>
+<text x="8" y="120" class="lb2" font-size="11">Por data — reserva o final da linha do tempo</text>
+<rect x="8" y="128" width="30" height="24" rx="3" class="s3"/><rect x="40" y="128" width="30" height="24" rx="3" class="s3"/><rect x="72" y="128" width="30" height="24" rx="3" class="s3"/><rect x="104" y="128" width="30" height="24" rx="3" class="s3"/><rect x="136" y="128" width="30" height="24" rx="3" class="s3"/><rect x="168" y="128" width="30" height="24" rx="3" class="s3"/><rect x="200" y="128" width="30" height="24" rx="3" class="s3"/><rect x="232" y="128" width="30" height="24" rx="3" class="s3"/><rect x="264" y="128" width="30" height="24" rx="3" class="s3"/><rect x="296" y="128" width="30" height="24" rx="3" class="s2"/><rect x="328" y="128" width="30" height="24" rx="3" class="s2"/><rect x="360" y="128" width="30" height="24" rx="3" class="s2"/>
+<text x="23" y="166" class="tk" text-anchor="middle">jan</text><text x="55" y="166" class="tk" text-anchor="middle">fev</text><text x="87" y="166" class="tk" text-anchor="middle">mar</text><text x="119" y="166" class="tk" text-anchor="middle">abr</text><text x="151" y="166" class="tk" text-anchor="middle">mai</text><text x="183" y="166" class="tk" text-anchor="middle">jun</text><text x="215" y="166" class="tk" text-anchor="middle">jul</text><text x="247" y="166" class="tk" text-anchor="middle">ago</text><text x="279" y="166" class="tk" text-anchor="middle">set</text><text x="311" y="166" class="tk" text-anchor="middle">out</text><text x="343" y="166" class="tk" text-anchor="middle">nov</text><text x="375" y="166" class="tk" text-anchor="middle">dez</text>
+<rect x="8" y="176" width="9" height="9" class="s3"/><text x="22" y="184" class="tk">treino</text>
+<rect x="72" y="176" width="9" height="9" class="s2"/><text x="86" y="184" class="tk">reservado para avaliar</text>
+</svg>
+<p class="fig-c">A segunda forma é a única que reproduz como o modelo vai ser usado: prevendo o mês que ainda não aconteceu, com o que se sabia até ontem. E ela sempre dá nota pior que a primeira — essa nota pior é a verdadeira.</p>
+</div>
 
 <div class="box b-ac"><p class="h">O que precisa ficar documentado</p>
 <ul>
@@ -3254,12 +3832,15 @@ html:`
 </ul>
 <p>Isso não é burocracia: é o que permite a quem herdar o sistema decidir se ainda pode confiar nele.</p></div>
 
+<div class="hoje"><p class="h">Faça hoje · 10 minutos</p>
+<p>Escolha um modelo, previsão ou escoragem que já roda na sua empresa — pode ser do gateway de pagamento, do ERP ou de um fornecedor. Tente responder cinco perguntas: com que dados foi treinado, de que período, contra que linha de base foi comparado, quem é o dono e quando foi revisado pela última vez. As perguntas que ficarem sem resposta são o tamanho real do seu risco.</p></div>
+
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Se ninguém foi designado para monitorar e retreinar, o modelo tem prazo de validade — e ninguém vai perceber quando vencer.</p></div>
 `},
 
-{id:'m8a4', min:8, titulo:'Como ler o desempenho de um modelo',
+{id:'m8a4', min:13, titulo:'Como ler o desempenho de um modelo',
 html:`
-<div class="key"><p class="h">Ideia central</p><p>Existem dois tipos de erro, eles custam coisas diferentes, e reduzir um aumenta o outro. Escolher o equilíbrio é decisão de negócio.</p></div>
+<div class="key"><p class="h">Ideia central</p><p>Existem dois tipos de erro, eles custam coisas diferentes, e reduzir um aumenta o outro. Escolher o equilíbrio é decisão de negócio — não é o fornecedor que decide, é você.</p></div>
 
 <h4>A matriz de confusão</h4>
 <p>Para classificação, todo resultado cai em uma de quatro caixas:</p>
@@ -3275,81 +3856,216 @@ html:`
 <li><strong>Precisão:</strong> dos casos que o modelo apontou, quantos estavam certos? Precisão baixa = muito alarme falso = a equipe perde tempo e confiança.</li>
 <li><strong>Revocação:</strong> dos casos que realmente eram, quantos o modelo pegou? Revocação baixa = muita coisa passa batido.</li>
 </ul>
-<p>Elas são um cabo de guerra. Apertar o critério aumenta a precisão e derruba a revocação. Afrouxar faz o contrário. Não existe ponto ótimo universal — existe o ponto que minimiza o <em>seu</em> custo.</p>
+<p>Elas são um cabo de guerra. Apertar o critério aumenta a precisão e derruba a revocação. Afrouxar faz o contrário. E o que move as duas não é o modelo: é <strong>um número</strong>, o corte de probabilidade a partir do qual você age. Esse número quase nunca aparece na reunião, e é ele que define quanto o modelo custa.</p>
+
+<h4>Mexa no corte e veja o dinheiro andar</h4>
+<p>Abaixo estão 10.000 pedidos de cartão por mês, dos quais 2% viram chargeback. O modelo já está pronto e não vai mudar: só você decide a partir de que probabilidade o pedido é barrado, e quanto custa cada um dos dois erros na sua operação. Comece mexendo só no primeiro controle e olhe as duas barras da direita; depois mexa nos dois custos e olhe o ponto verde do segundo gráfico.</p>
+
+<div data-w="m8Matriz"></div>
+
+<p>O que esse simulador mostra e nenhuma tabela mostra: <strong>o mesmo modelo custa valores completamente diferentes conforme o corte</strong>, e o corte mais barato quase nunca é 50%. Ele depende de dois números que só existem dentro da sua empresa — quanto custa uma fraude que passa e quanto custa barrar um cliente bom. Se o seu fornecedor entregou o modelo mas não perguntou esses dois valores, ele entregou metade do trabalho.</p>
 
 <div class="box b-ex"><p class="h">Qual priorizar, na prática</p>
 <ul>
-<li><strong>Antifraude:</strong> falso negativo custa o valor do pedido; falso positivo custa uma venda e um cliente irritado. Depende do ticket — em pedido caro, priorize revocação; em pedido barato, precisão.</li>
+<li><strong>Antifraude:</strong> falso negativo custa o valor do pedido; falso positivo custa uma venda e um cliente irritado. Depende do ticket — em pedido caro, priorize revocação; em pedido barato, precisão. Nada impede ter cortes diferentes por faixa de valor, e quase todo mundo esquece disso.</li>
 <li><strong>Detecção de falha operacional:</strong> priorize revocação. Não perceber é muito pior que checar à toa.</li>
-<li><strong>Campanha de marketing paga:</strong> priorize precisão. Mandar para quem não vai comprar queima dinheiro e reputação de envio.</li>
+<li><strong>Campanha de marketing paga:</strong> priorize precisão. Mandar para quem não vai comprar queima dinheiro, e no caso de e-mail queima também a reputação de envio — que é bem mais cara de recuperar que a mídia.</li>
 </ul></div>
 
-<div class="box b-dn"><p class="h">⚠ Por que acurácia quase sempre engana</p>
-<p>Se 2% dos pedidos são fraude, um modelo que responde "não é fraude" para tudo acerta <strong>98%</strong>. Acurácia de 98% e utilidade zero.</p>
-<p>Sempre que o evento é raro — fraude, cancelamento, falha, conversão — acurácia é inútil. Olhe precisão, revocação e a matriz completa. Se um fornecedor apresenta só acurácia num problema desbalanceado, ou não sabe o que está fazendo, ou está escondendo.</p></div>
+<div class="fig">
+<p class="fig-t">98% de acurácia, zero fraude pega: as duas barras descrevem o mesmo modelo</p>
+<p class="fig-s">100 pedidos. Dois são fraude. O “modelo” responde “não é fraude” para todos.</p>
+<svg viewBox="0 0 400 202" role="img" aria-label="Cem quadradinhos representando cem pedidos, dois deles fraude, ao lado de duas barras: acurácia de 98 por cento e revocação de zero por cento">
+<text x="6" y="14" class="tk">100 PEDIDOS DO DIA</text>
+<rect x="6" y="24" width="13" height="13" rx="2" class="sg"/><rect x="21" y="24" width="13" height="13" rx="2" class="sg"/><rect x="36" y="24" width="13" height="13" rx="2" class="sg"/><rect x="51" y="24" width="13" height="13" rx="2" class="sg"/><rect x="66" y="24" width="13" height="13" rx="2" class="sg"/><rect x="81" y="24" width="13" height="13" rx="2" class="sg"/><rect x="96" y="24" width="13" height="13" rx="2" class="sg"/><rect x="111" y="24" width="13" height="13" rx="2" class="sg"/><rect x="126" y="24" width="13" height="13" rx="2" class="sg"/><rect x="141" y="24" width="13" height="13" rx="2" class="sg"/>
+<rect x="6" y="39" width="13" height="13" rx="2" class="sg"/><rect x="21" y="39" width="13" height="13" rx="2" class="sg"/><rect x="36" y="39" width="13" height="13" rx="2" class="sg"/><rect x="51" y="39" width="13" height="13" rx="2" class="sg"/><rect x="66" y="39" width="13" height="13" rx="2" class="sg"/><rect x="81" y="39" width="13" height="13" rx="2" class="sg"/><rect x="96" y="39" width="13" height="13" rx="2" class="sg"/><rect x="111" y="39" width="13" height="13" rx="2" class="sg"/><rect x="126" y="39" width="13" height="13" rx="2" class="sg"/><rect x="141" y="39" width="13" height="13" rx="2" class="sg"/>
+<rect x="6" y="54" width="13" height="13" rx="2" class="sg"/><rect x="21" y="54" width="13" height="13" rx="2" class="sg"/><rect x="36" y="54" width="13" height="13" rx="2" class="sg"/><rect x="51" y="54" width="13" height="13" rx="2" class="s2" data-tip="fraude número 1 — o modelo aprovou"/><rect x="66" y="54" width="13" height="13" rx="2" class="sg"/><rect x="81" y="54" width="13" height="13" rx="2" class="sg"/><rect x="96" y="54" width="13" height="13" rx="2" class="sg"/><rect x="111" y="54" width="13" height="13" rx="2" class="sg"/><rect x="126" y="54" width="13" height="13" rx="2" class="sg"/><rect x="141" y="54" width="13" height="13" rx="2" class="sg"/>
+<rect x="6" y="69" width="13" height="13" rx="2" class="sg"/><rect x="21" y="69" width="13" height="13" rx="2" class="sg"/><rect x="36" y="69" width="13" height="13" rx="2" class="sg"/><rect x="51" y="69" width="13" height="13" rx="2" class="sg"/><rect x="66" y="69" width="13" height="13" rx="2" class="sg"/><rect x="81" y="69" width="13" height="13" rx="2" class="sg"/><rect x="96" y="69" width="13" height="13" rx="2" class="sg"/><rect x="111" y="69" width="13" height="13" rx="2" class="sg"/><rect x="126" y="69" width="13" height="13" rx="2" class="sg"/><rect x="141" y="69" width="13" height="13" rx="2" class="sg"/>
+<rect x="6" y="84" width="13" height="13" rx="2" class="sg"/><rect x="21" y="84" width="13" height="13" rx="2" class="sg"/><rect x="36" y="84" width="13" height="13" rx="2" class="sg"/><rect x="51" y="84" width="13" height="13" rx="2" class="sg"/><rect x="66" y="84" width="13" height="13" rx="2" class="sg"/><rect x="81" y="84" width="13" height="13" rx="2" class="sg"/><rect x="96" y="84" width="13" height="13" rx="2" class="sg"/><rect x="111" y="84" width="13" height="13" rx="2" class="sg"/><rect x="126" y="84" width="13" height="13" rx="2" class="sg"/><rect x="141" y="84" width="13" height="13" rx="2" class="sg"/>
+<rect x="6" y="99" width="13" height="13" rx="2" class="sg"/><rect x="21" y="99" width="13" height="13" rx="2" class="sg"/><rect x="36" y="99" width="13" height="13" rx="2" class="sg"/><rect x="51" y="99" width="13" height="13" rx="2" class="sg"/><rect x="66" y="99" width="13" height="13" rx="2" class="sg"/><rect x="81" y="99" width="13" height="13" rx="2" class="sg"/><rect x="96" y="99" width="13" height="13" rx="2" class="sg"/><rect x="111" y="99" width="13" height="13" rx="2" class="sg"/><rect x="126" y="99" width="13" height="13" rx="2" class="sg"/><rect x="141" y="99" width="13" height="13" rx="2" class="sg"/>
+<rect x="6" y="114" width="13" height="13" rx="2" class="sg"/><rect x="21" y="114" width="13" height="13" rx="2" class="sg"/><rect x="36" y="114" width="13" height="13" rx="2" class="sg"/><rect x="51" y="114" width="13" height="13" rx="2" class="sg"/><rect x="66" y="114" width="13" height="13" rx="2" class="sg"/><rect x="81" y="114" width="13" height="13" rx="2" class="sg"/><rect x="96" y="114" width="13" height="13" rx="2" class="sg"/><rect x="111" y="114" width="13" height="13" rx="2" class="s2" data-tip="fraude número 2 — o modelo também aprovou"/><rect x="126" y="114" width="13" height="13" rx="2" class="sg"/><rect x="141" y="114" width="13" height="13" rx="2" class="sg"/>
+<rect x="6" y="129" width="13" height="13" rx="2" class="sg"/><rect x="21" y="129" width="13" height="13" rx="2" class="sg"/><rect x="36" y="129" width="13" height="13" rx="2" class="sg"/><rect x="51" y="129" width="13" height="13" rx="2" class="sg"/><rect x="66" y="129" width="13" height="13" rx="2" class="sg"/><rect x="81" y="129" width="13" height="13" rx="2" class="sg"/><rect x="96" y="129" width="13" height="13" rx="2" class="sg"/><rect x="111" y="129" width="13" height="13" rx="2" class="sg"/><rect x="126" y="129" width="13" height="13" rx="2" class="sg"/><rect x="141" y="129" width="13" height="13" rx="2" class="sg"/>
+<rect x="6" y="144" width="13" height="13" rx="2" class="sg"/><rect x="21" y="144" width="13" height="13" rx="2" class="sg"/><rect x="36" y="144" width="13" height="13" rx="2" class="sg"/><rect x="51" y="144" width="13" height="13" rx="2" class="sg"/><rect x="66" y="144" width="13" height="13" rx="2" class="sg"/><rect x="81" y="144" width="13" height="13" rx="2" class="sg"/><rect x="96" y="144" width="13" height="13" rx="2" class="sg"/><rect x="111" y="144" width="13" height="13" rx="2" class="sg"/><rect x="126" y="144" width="13" height="13" rx="2" class="sg"/><rect x="141" y="144" width="13" height="13" rx="2" class="sg"/>
+<rect x="6" y="159" width="13" height="13" rx="2" class="sg"/><rect x="21" y="159" width="13" height="13" rx="2" class="sg"/><rect x="36" y="159" width="13" height="13" rx="2" class="sg"/><rect x="51" y="159" width="13" height="13" rx="2" class="sg"/><rect x="66" y="159" width="13" height="13" rx="2" class="sg"/><rect x="81" y="159" width="13" height="13" rx="2" class="sg"/><rect x="96" y="159" width="13" height="13" rx="2" class="sg"/><rect x="111" y="159" width="13" height="13" rx="2" class="sg"/><rect x="126" y="159" width="13" height="13" rx="2" class="sg"/><rect x="141" y="159" width="13" height="13" rx="2" class="sg"/>
+<rect x="6" y="182" width="9" height="9" class="s2"/><text x="20" y="190" class="tk">as duas fraudes</text>
+<text x="398" y="14" class="tk" text-anchor="end">O QUE O PAINEL MOSTRA</text>
+<line x1="192" y1="60" x2="368" y2="60" class="gr"/>
+<text x="188" y="64" class="tk" text-anchor="end">100%</text>
+<line x1="192" y1="170" x2="368" y2="170" class="ax"/>
+<rect x="208" y="62" width="46" height="108" rx="3" class="s3" data-tip="98 dos 100 pedidos foram classificados corretamente"/>
+<text x="231" y="54" class="lb" text-anchor="middle" font-size="14">98%</text>
+<text x="231" y="184" class="tk" text-anchor="middle">acurácia</text>
+<rect x="298" y="168" width="46" height="2" rx="1" class="s2" data-tip="zero das duas fraudes foi detectada"/>
+<text x="321" y="160" class="lb" text-anchor="middle" font-size="14">0%</text>
+<text x="321" y="184" class="tk" text-anchor="middle">fraudes pegas</text>
+<text x="398" y="198" class="tk" text-anchor="end">mesmo modelo, duas leituras</text>
+</svg>
+<p class="fig-c">Quando o evento é raro, a acurácia mede quase só a frequência do evento — não a competência do modelo. Um sistema que nunca acusa nada bate 98% e não serve para nada. Barra à esquerda para vender, barra à direita para decidir.</p>
+</div>
 
-<div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Pergunte sempre: quantos falsos positivos por semana isso gera, e quem vai tratá-los? A resposta define se o modelo é usável.</p></div>
+<div class="box b-dn"><p class="h">⚠ Por que acurácia quase sempre engana</p>
+<p>Sempre que o evento é raro — fraude, evasão, falha, conversão — acurácia é inútil. Olhe precisão, revocação e a matriz completa. Se um fornecedor apresenta só acurácia num problema desbalanceado, ou não sabe o que está fazendo, ou está escondendo.</p>
+<p>E existe a versão nacional da armadilha: “o modelo acerta 95% dos pedidos”. Numa loja onde 93% dos pedidos são pagos normalmente, acertar 95% é quase não fazer nada.</p></div>
+
+<div class="hoje"><p class="h">Faça hoje · 15 minutos</p>
+<p>Levante dois números da sua operação, nem que seja por estimativa grosseira: (1) quanto custa, em reais, uma fraude ou um boleto não pago que passa — valor do produto, frete, taxa e trabalho de resolver; (2) quanto custa barrar ou atrasar um pedido bom — margem perdida mais a chance de o cliente não voltar. Volte ao simulador, coloque os seus dois números e anote o corte do ponto verde. Esse é o número que falta na sua próxima conversa com o gateway de pagamento.</p></div>
+
+<div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Pergunte sempre: quantos falsos positivos por semana isso gera, e quem vai tratá-los? A resposta define se o modelo é usável — e o corte que gera esse número é seu, não do fornecedor.</p></div>
 `},
 
-{id:'m8a5', min:7, titulo:'Sobreajuste e vazamento de dado',
+{id:'m8a5', min:11, titulo:'Sobreajuste e vazamento de dado',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>São as duas formas de um modelo parecer excelente no laboratório e falhar em produção. Juntas, explicam a maioria das decepções.</p></div>
 
 <h4>Sobreajuste: decorar em vez de aprender</h4>
 <p>O modelo memoriza particularidades do conjunto de treino — inclusive o ruído — em vez de capturar o padrão geral. Resultado: quase perfeito nos dados conhecidos, medíocre nos novos.</p>
-<p><strong>Sinais:</strong> desempenho muito melhor no treino que na avaliação; modelo muito complexo para pouco dado; desempenho que piora conforme você adiciona variáveis.</p>
-<p><strong>Correções:</strong> mais dados; modelo mais simples; menos variáveis; validação cruzada; e sempre reservar uma parte que o modelo nunca vê.</p>
+<p>Isso é fácil de dizer e difícil de acreditar, porque a impressão durante o trabalho é a oposta: cada complexidade a mais melhora o número que você está olhando. Veja acontecer.</p>
+
+<h4>Catorze clientes, um modelo, dois mundos</h4>
+<p>O gráfico da esquerda tem 14 clientes do histórico: quantos pedidos cada um fez no último ano e quanto gastou nos 12 meses seguintes. O da direita tem duas linhas — o erro do modelo nesses 14 e o erro em 900 clientes que ele nunca viu. Arraste a complexidade de 1 até o fim, devagar, e olhe as duas linhas ao mesmo tempo.</p>
+
+<div data-w="m8Sobreajuste"></div>
+
+<p>A linha laranja só sabe descer: mais complexidade sempre melhora o erro no treino. A azul desce, para e sobe. <strong>O ponto em que a azul vira é onde o projeto deveria parar</strong>, e é um ponto que só existe porque alguém reservou dados que o modelo nunca viu. Sem essa reserva, você só tem a linha laranja — e a linha laranja sempre diz que está tudo ótimo.</p>
+
+<p><strong>Sinais de sobreajuste:</strong> desempenho muito melhor no treino que na avaliação; modelo complexo para pouco dado; desempenho que piora conforme você adiciona variáveis. <strong>Correções:</strong> mais dados; modelo mais simples; menos variáveis; validação cruzada; e sempre reservar uma parte que o modelo nunca vê.</p>
 
 <div class="box b-dn"><p class="h">Vazamento: o modelo viu o futuro</p>
 <p>Acontece quando uma variável de treino contém, direta ou indiretamente, a resposta. O modelo fica maravilhoso — e inútil, porque em produção essa informação não existe ainda.</p>
 <p><strong>Casos clássicos:</strong></p>
 <ul>
 <li>Prever se o pedido será pago usando o campo <em>data do pagamento</em></li>
-<li>Prever cancelamento usando <em>motivo do cancelamento</em></li>
+<li>Prever evasão usando o campo <em>motivo do cancelamento</em></li>
 <li>Prever venda do mês usando um total que já inclui aquele mês</li>
-<li>Usar dado que só é preenchido <em>depois</em> do desfecho</li>
+<li>Usar dado que só é preenchido <em>depois</em> do desfecho — status “entregue”, nota fiscal emitida, ticket de atendimento aberto</li>
 <li>Normalizar os dados antes de separar treino e avaliação — a média do conjunto inteiro carrega informação da parte reservada</li>
 </ul></div>
+
+<div class="fig">
+<p class="fig-t">Uma pergunta por variável resolve quase todo vazamento</p>
+<p class="fig-s">No instante em que a previsão precisa sair, esse campo já está preenchido?</p>
+<svg viewBox="0 0 400 216" role="img" aria-label="Linha do tempo com o momento da previsão ao centro: variáveis já preenchidas à esquerda e variáveis que só existem depois do desfecho à direita">
+<rect x="268" y="28" width="124" height="166" class="band"/>
+<text x="172" y="20" class="tk">já preenchido</text>
+<text x="268" y="20" class="lb" text-anchor="middle" font-size="11">AGORA</text>
+<text x="392" y="20" class="tk" text-anchor="end">só existe depois</text>
+<line x1="268" y1="26" x2="268" y2="196" class="ax" stroke-width="2"/>
+<line x1="168" y1="196" x2="392" y2="196" class="ax"/>
+<text x="162" y="48" class="lb2" text-anchor="end" font-size="10.5">valor do pedido</text>
+<circle cx="200" cy="44" r="5" class="s1 ring" data-tip="Existe no instante do checkout — pode entrar no modelo"/>
+<text x="162" y="72" class="lb2" text-anchor="end" font-size="10.5">forma de pagamento</text>
+<circle cx="220" cy="68" r="5" class="s1 ring" data-tip="Existe no instante do checkout — pode entrar no modelo"/>
+<text x="162" y="96" class="lb2" text-anchor="end" font-size="10.5">compras anteriores do cliente</text>
+<circle cx="186" cy="92" r="5" class="s1 ring" data-tip="Histórico fechado, anterior ao pedido — pode entrar no modelo"/>
+<text x="162" y="120" class="lb2" text-anchor="end" font-size="10.5">data do pagamento</text>
+<circle cx="300" cy="116" r="5" class="s2 ring" data-tip="Só existe se o pedido foi pago — é a própria resposta disfarçada"/>
+<text x="162" y="144" class="lb2" text-anchor="end" font-size="10.5">motivo do cancelamento</text>
+<circle cx="332" cy="140" r="5" class="s2 ring" data-tip="Só é preenchido depois do cancelamento — vazamento puro"/>
+<text x="162" y="168" class="lb2" text-anchor="end" font-size="10.5">status “entregue”</text>
+<circle cx="356" cy="164" r="5" class="s2 ring" data-tip="Chega dias depois do checkout — não existe na hora da decisão"/>
+<text x="268" y="212" class="tk" text-anchor="middle">o instante em que a previsão precisa sair</text>
+</svg>
+<p class="fig-c">Tudo que cai na faixa clara é vazamento, por mais inocente que o nome do campo pareça. Percorra a lista de variáveis uma a uma com essa pergunta: leva dez minutos e salva projetos inteiros.</p>
+</div>
 
 <div class="box b-ac"><p class="h">O teste que pega quase todo vazamento</p>
 <p>Para cada variável, pergunte: <strong>“no momento exato em que eu preciso fazer a previsão, esse valor já existe e está preenchido?”</strong> Se a resposta for não, ou “só depois”, é vazamento.</p>
 <p>E desconfie sempre de resultado bom demais. Acurácia de 99% num problema difícil quase nunca é competência — quase sempre é vazamento.</p></div>
 
-<div class="box b-wr"><p class="h">⚠ Sobreajuste sem modelo nenhum</p><p>A mesma armadilha vale para análise humana: olhar o histórico até achar um padrão que "explica" tudo é decorar ruído. Se a explicação precisa de seis condições combinadas para funcionar, ela provavelmente não vale para o próximo caso.</p></div>
+<div class="box b-wr"><p class="h">⚠ Sobreajuste sem modelo nenhum</p><p>A mesma armadilha vale para análise humana: olhar o histórico até achar um padrão que “explica” tudo é decorar ruído. Se a explicação precisa de seis condições combinadas para funcionar — “cliente de São Paulo, que comprou por celular, no fim de semana, acima de R$ 300, com cupom, na segunda compra” —, ela provavelmente não vale para o próximo caso.</p></div>
+
+<div class="hoje"><p class="h">Faça hoje · 15 minutos</p>
+<p>Pegue a lista de campos de uma tabela que você usaria para prever alguma coisa — a de pedidos serve. Percorra campo a campo com a pergunta do teste e marque cada um com “antes” ou “depois”. Depois conte: em quase toda tabela de pedido, um terço dos campos só é preenchido depois do desfecho. Esses são os que fariam o seu modelo parecer genial e quebrar no primeiro dia em produção.</p></div>
 
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Resultado bom demais é motivo de auditoria, não de comemoração.</p></div>
 `},
 
-{id:'m8a6', min:7, titulo:'Deriva: por que todo modelo apodrece',
+{id:'m8a6', min:11, titulo:'Deriva: por que todo modelo apodrece',
 html:`
 <div class="key"><p class="h">Ideia central</p><p>O mundo muda; o modelo não. Ele foi treinado num retrato do passado e continua respondendo como se aquele retrato ainda valesse.</p></div>
 
 <h4>Os três tipos de deriva</h4>
 <ul>
-<li><strong>Deriva de dado:</strong> as entradas mudaram de perfil. Novo canal traz outro público; a proporção de compra por celular muda; entra uma categoria nova de produto.</li>
+<li><strong>Deriva de dado:</strong> as entradas mudaram de perfil. Novo canal traz outro público; a proporção de compra por celular sobe; entra uma categoria nova de produto.</li>
 <li><strong>Deriva de conceito:</strong> a relação entre entrada e resposta mudou. O que indicava fraude no ano passado deixou de indicar; o padrão de recompra mudou porque o mercado mudou.</li>
 <li><strong>Deriva por retroalimentação:</strong> o próprio modelo alterou a realidade que ele mede. Ele deixou de recomendar certos produtos, esses produtos pararam de vender, e o histórico novo confirma a decisão dele.</li>
 </ul>
 
-<div class="box b-ex"><p class="h">Exemplo aplicado</p>
-<p>Um modelo de propensão a recomprar treinado com dados de um período em que a loja fazia campanha de e-mail semanal. A campanha para. O comportamento da base muda completamente — as pessoas não têm mais o lembrete. O modelo continua prevendo com base num mundo que não existe mais, e passa a apontar como "propensos" clientes que não voltariam de jeito nenhum. Ninguém percebe, porque ele continua devolvendo números com a mesma cara.</p></div>
+<div class="fig">
+<p class="fig-t">Três formas de apodrecer — e a terceira é a que ninguém procura</p>
+<p class="fig-s">O mesmo modelo de recompra, visto de três ângulos.</p>
+<svg viewBox="0 0 400 196" role="img" aria-label="Três painéis: deriva de dado com a distribuição de entrada deslocada, deriva de conceito com a taxa de recompra caindo para o mesmo perfil, e retroalimentação com o ciclo em que a decisão do modelo vira histórico">
+<rect x="0" y="16" width="126" height="172" rx="8" class="box"/>
+<text x="63" y="34" class="lb" text-anchor="middle" font-size="11.5">Deriva de dado</text>
+<line x1="10" y1="108" x2="116" y2="108" class="ax"/>
+<path d="M12 108 Q38 54 64 108" class="lg"/>
+<path d="M58 108 Q84 54 110 108" class="l2"/>
+<text x="38" y="122" class="tk" text-anchor="middle">treino</text>
+<text x="90" y="122" class="tk" text-anchor="middle">hoje</text>
+<text x="63" y="142" class="lb2" text-anchor="middle" font-size="10.5">quem chega na loja</text>
+<text x="63" y="155" class="lb2" text-anchor="middle" font-size="10.5">mudou de perfil. As</text>
+<text x="63" y="168" class="lb2" text-anchor="middle" font-size="10.5">contas continuam as</text>
+<text x="63" y="181" class="lb2" text-anchor="middle" font-size="10.5">mesmas, o público não</text>
+<rect x="137" y="16" width="126" height="172" rx="8" class="box"/>
+<text x="200" y="34" class="lb" text-anchor="middle" font-size="11.5">Deriva de conceito</text>
+<line x1="150" y1="108" x2="250" y2="108" class="ax"/>
+<rect x="160" y="52" width="30" height="56" rx="3" class="sg" data-tip="No treino, 62 de cada 100 clientes com esse perfil recompravam"/>
+<rect x="210" y="83" width="30" height="25" rx="3" class="s2" data-tip="Hoje, com exatamente o mesmo perfil, só 28 recompram"/>
+<text x="175" y="46" class="lb" text-anchor="middle" font-size="11">62%</text>
+<text x="225" y="77" class="lb" text-anchor="middle" font-size="11">28%</text>
+<text x="175" y="122" class="tk" text-anchor="middle">treino</text>
+<text x="225" y="122" class="tk" text-anchor="middle">hoje</text>
+<text x="200" y="142" class="lb2" text-anchor="middle" font-size="10.5">mesmo perfil,</text>
+<text x="200" y="155" class="lb2" text-anchor="middle" font-size="10.5">outro desfecho. A</text>
+<text x="200" y="168" class="lb2" text-anchor="middle" font-size="10.5">entrada não mudou —</text>
+<text x="200" y="181" class="lb2" text-anchor="middle" font-size="10.5">a regra do mundo, sim</text>
+<rect x="274" y="16" width="126" height="172" rx="8" class="box"/>
+<text x="337" y="34" class="lb" text-anchor="middle" font-size="11.5">Retroalimentação</text>
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="arrf"/></marker></defs>
+<rect x="300" y="44" width="88" height="18" rx="5" class="boxa"/>
+<text x="344" y="57" class="lb" text-anchor="middle" font-size="10">não recomenda</text>
+<line x1="344" y1="62" x2="344" y2="70" class="arr"/>
+<rect x="300" y="72" width="88" height="18" rx="5" class="box"/>
+<text x="344" y="85" class="lb2" text-anchor="middle" font-size="10">para de vender</text>
+<line x1="344" y1="90" x2="344" y2="98" class="arr"/>
+<rect x="300" y="100" width="88" height="18" rx="5" class="box"/>
+<text x="344" y="113" class="lb2" text-anchor="middle" font-size="10">sai do histórico</text>
+<path d="M300 109 L288 109 L288 53 L297 53" class="arr"/>
+<text x="337" y="142" class="lb2" text-anchor="middle" font-size="10.5">o modelo produz o</text>
+<text x="337" y="155" class="lb2" text-anchor="middle" font-size="10.5">dado que vai provar</text>
+<text x="337" y="168" class="lb2" text-anchor="middle" font-size="10.5">que ele estava certo.</text>
+<text x="337" y="181" class="lb2" text-anchor="middle" font-size="10.5">Nenhum painel acusa</text>
+</svg>
+<p class="fig-c">A primeira você detecta olhando a entrada. A segunda, só quando o desfecho chega. A terceira é invisível por construção — e a única defesa contra ela é deixar uma fatia dos casos fora da decisão do modelo, de propósito.</p>
+</div>
 
-<h4>Como monitorar</h4>
+<div class="box b-ex"><p class="h">Exemplo aplicado</p>
+<p>Um modelo de propensão a recomprar treinado num período em que a loja fazia disparo de e-mail toda semana. O disparo para. O comportamento da base muda completamente — as pessoas não têm mais o lembrete. O modelo continua prevendo com base num mundo que não existe mais, e passa a apontar como “propensos” clientes que não voltariam de jeito nenhum. Ninguém percebe, porque ele continua devolvendo números com a mesma cara.</p></div>
+
+<h4>Como monitorar — e por que a ordem importa</h4>
 <ol>
-<li><strong>Distribuição das entradas.</strong> Compare o perfil dos dados de hoje com os do treino. Mudou muito? Alarme.</li>
-<li><strong>Distribuição das saídas.</strong> Se o modelo passou a prever "sim" para 30% dos casos quando antes previa para 12%, algo mudou.</li>
+<li><strong>Distribuição das entradas.</strong> Compare o perfil dos dados de hoje com os do treino. Mudou muito? Alarme. É o sinal mais barato e o mais rápido.</li>
+<li><strong>Distribuição das saídas.</strong> Se o modelo passou a prever “sim” para 30% dos casos quando antes previa para 12%, algo mudou.</li>
 <li><strong>Desempenho real, quando o desfecho aparecer.</strong> É a medida definitiva, mas chega com atraso — às vezes meses.</li>
 <li><strong>Amostra de controle.</strong> Manter uma fração dos casos fora da decisão do modelo, para continuar aprendendo o que aconteceria sem ele.</li>
 </ol>
+<p>A simulação abaixo é um modelo de recompra colocado no ar no mês zero. O desfecho de cada previsão só é conhecido quatro meses depois. Arraste o tempo mês a mês, do zero até o fim, e acompanhe as três estatísticas — principalmente a terceira.</p>
+
+<div data-w="m8Deriva"></div>
+
+<p>O buraco entre o mês 6 e o mês 9 é o ponto da aula: a entrada já tinha mudado, mas a queda de desempenho só ficou provada três meses depois — e nesse intervalo o modelo decidiu sobre dezenas de milhares de pedidos. Quem exige a prova definitiva para agir descobre sempre por último. E a terceira estatística, a confiança declarada pelo modelo, não se mexe nunca: é por isso que a degradação não gera chamado, não gera erro no log e não acorda ninguém.</p>
 
 <div class="box b-wr"><p class="h">⚠ O modelo silencioso</p><p>Modelo que degrada não dá erro. Continua respondendo, com a mesma confiança, cada vez pior. Sem monitoramento ativo, a descoberta vem por reclamação de cliente ou por prejuízo acumulado — meses depois.</p></div>
+
+<div class="hoje"><p class="h">Faça hoje · 15 minutos</p>
+<p>Escolha um modelo ou escoragem que já decide algo na sua loja. Liste as cinco variáveis de entrada mais importantes dele e monte uma consulta que devolva a distribuição de cada uma em dois períodos: o do treino e o último mês. Se você não souber qual foi o período do treino, já achou o problema. Se souber, olhe se alguma variável mudou mais de 10% — e coloque essa consulta para rodar todo mês, com um responsável de nome e sobrenome.</p></div>
 
 <div class="box b-ac"><p class="h">✓ Leve daqui</p><p>Todo modelo em produção precisa de data de revisão no calendário e de um responsável. Sem isso, ele vira uma decisão automática que ninguém entende mais.</p></div>
 `},
 
-{id:'m8a7', min:7, titulo:'Fechamento: o método completo em uma página',
+{id:'m8a7', min:13, titulo:'Fechamento: o método completo em uma página',
 html:`
-<div class="key"><p class="h">Ideia central</p><p>Tudo que os oito módulos cobrem se reduz a uma sequência de perguntas. Quem responde as onze na ordem, acerta na maioria das vezes.</p></div>
+<div class="key"><p class="h">Ideia central</p><p>Tudo que os oito módulos cobrem se reduz a uma sequência de perguntas. Quem responde as onze na ordem, acerta na maioria das vezes — e, mais importante, desiste cedo das que não valem.</p></div>
 
 <div class="box b-nu"><p class="h">As onze perguntas</p>
 <ol>
@@ -3366,6 +4082,13 @@ html:`
 <li><strong>Quando eu reviso?</strong> Data no calendário, não intenção.</li>
 </ol></div>
 
+<h4>Passe o seu próximo projeto pelas onze, agora</h4>
+<p>O avaliador abaixo não é um questionário de satisfação: ele agrupa as onze em três camadas, e a camada de baixo tem poder de veto sobre as de cima. Pense num projeto concreto — o de prever recompra, o de escorar risco de boleto, o de recomendação de produto — e responda sim ou não com honestidade. Responder “mais ou menos” como “sim” só transfere o problema para dezembro.</p>
+
+<div data-w="m8Onze"></div>
+
+<p>Se o veredito veio como “não comece”, isso é uma boa notícia, não uma derrota: custou dois minutos em vez de dois trimestres. E repare em qual camada você tropeçou — quase sempre é decisão, dado, custo do erro ou dono, e nenhuma dessas quatro se resolve contratando alguém melhor em modelagem.</p>
+
 <h4>Os cinco erros que mais custam caro</h4>
 <ol>
 <li><strong>Começar pela ferramenta.</strong> Comprar solução antes de definir o problema.</li>
@@ -3375,13 +4098,49 @@ html:`
 <li><strong>Ignorar quem vai usar.</strong> Ferramenta que não é adotada custa e não rende.</li>
 </ol>
 
+<div class="fig">
+<p class="fig-t">O curso inteiro, de baixo para cima: cada camada precisa da anterior firme</p>
+<p class="fig-s">Onde cada módulo entra na sequência de implantação.</p>
+<svg viewBox="0 0 400 296" role="img" aria-label="Cinco camadas empilhadas, de baixo para cima: enxergar, detectar, automatizar, prever e diferenciar, com os módulos do curso posicionados em cada uma e os módulos dois e três atravessando todas">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" class="arrf"/></marker></defs>
+<line x1="14" y1="262" x2="14" y2="24" class="arr"/>
+<rect x="32" y="22" width="366" height="42" rx="8" class="box"/>
+<text x="44" y="41" class="lb" font-size="13">Diferenciar</text>
+<text x="390" y="41" class="lb2" text-anchor="end" font-size="10.5">módulo VI</text>
+<text x="44" y="56" class="tk" font-size="10.5">dado proprietário que o concorrente não compra</text>
+<rect x="32" y="70" width="366" height="42" rx="8" class="box"/>
+<text x="44" y="89" class="lb" font-size="13">Prever</text>
+<text x="390" y="89" class="lb2" text-anchor="end" font-size="10.5">módulos IV e VIII</text>
+<text x="44" y="104" class="tk" font-size="10.5">modelo com linha de base, dono e data de revisão</text>
+<rect x="32" y="118" width="366" height="42" rx="8" class="box"/>
+<text x="44" y="137" class="lb" font-size="13">Automatizar</text>
+<text x="390" y="137" class="lb2" text-anchor="end" font-size="10.5">módulos V e VII</text>
+<text x="44" y="152" class="tk" font-size="10.5">esteira com humano no fim e vigia ligado</text>
+<rect x="32" y="166" width="366" height="42" rx="8" class="box"/>
+<text x="44" y="185" class="lb" font-size="13">Detectar</text>
+<text x="390" y="185" class="lb2" text-anchor="end" font-size="10.5">módulos IV e V</text>
+<text x="44" y="200" class="tk" font-size="10.5">alarme que avisa antes de virar prejuízo</text>
+<rect x="32" y="214" width="366" height="42" rx="8" class="boxa"/>
+<text x="44" y="233" class="lb" font-size="13">Enxergar</text>
+<text x="390" y="233" class="lb2" text-anchor="end" font-size="10.5">módulo I</text>
+<text x="44" y="248" class="tk" font-size="10.5">uma métrica em que a empresa realmente confia</text>
+<rect x="32" y="264" width="366" height="24" rx="8" class="box"/>
+<text x="215" y="279" class="lb2" text-anchor="middle" font-size="10.5">Módulos II e III — vocabulário e governança — atravessam as cinco</text>
+</svg>
+<p class="fig-c">A empresa que tenta começar por cima produz um modelo bonito respondendo a uma pergunta que ninguém confirmou que importa. Pular etapa não acelera: adia, e cobra juros. Se você não sabe qual é a sua camada, é a de baixo.</p>
+</div>
+
 <div class="box b-ac"><p class="h">A sequência de implantação que funciona</p>
 <p><strong>Enxergar</strong> (métrica confiável) → <strong>Detectar</strong> (vigias) → <strong>Automatizar</strong> (esteiras com humano no fim) → <strong>Prever</strong> (modelo com linha de base) → <strong>Diferenciar</strong> (dado proprietário).</p>
-<p>Pular etapa não acelera. A empresa que tenta prever sem enxergar acaba com um modelo bonito respondendo a uma pergunta que ninguém confirmou que importa.</p></div>
+<p>Na loja do exemplo que atravessou este módulo: primeiro uma definição escrita de cliente perdido e um número de evasão em que todo mundo confia; depois um vigia que avisa quando esse número piora; depois a campanha de reengajamento rodando sozinha com alguém aprovando a lista; só então o modelo de propensão, comparado contra a regra simples “comprou nos últimos 90 dias”; e por fim o dado que só você tem, porque veio de operar tudo isso por um ano.</p></div>
 
-<div class="box b-ac"><p class="h">✓ Leve daqui</p><p>IA não é projeto com data de término. É uma capacidade que se constrói em camadas, e cada camada precisa da anterior firme.</p></div>
+<div class="hoje"><p class="h">Faça hoje · 20 minutos</p>
+<p>Escreva uma página, só uma, sobre o seu próximo projeto de IA, com quatro partes: (1) a decisão que muda, na frase-molde do módulo II; (2) o número de hoje, medido, com a data da medição; (3) o nome de quem é o dono e o nome de quem desliga; (4) a data da primeira revisão, já marcada na agenda. Se você não conseguir preencher as quatro, o projeto ainda não existe — existe uma vontade. E vontade não sobrevive ao terceiro mês.</p></div>
+
+<div class="box b-ac"><p class="h">✓ Leve daqui</p><p>IA não é projeto com data de término. É uma capacidade que se constrói em camadas, e cada camada precisa da anterior firme. Você terminou o curso com as onze perguntas na mão: a diferença entre quem acerta e quem queima orçamento quase nunca está no modelo — está em quem faz essas perguntas antes, e em voz alta.</p></div>
 `}
 ]}
+
 ],
 
 glossario: [

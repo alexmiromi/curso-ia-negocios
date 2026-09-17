@@ -57,8 +57,13 @@ campo `aud:` de cada aula em `conteudo.js`.
 - Busca em todo o conteúdo e no glossário
 - Navegação anterior/próxima entre as 52 aulas
 - Offline completo via service worker
-- **Módulo I:** 10 gráficos SVG com tooltip · simulador da árvore de receita · calculadora de amostra de teste A/B · simulação de "espiar o teste" · autodiagnóstico de maturidade · ficha de métrica
-- **Módulo II:** 9 gráficos SVG · triagem regra/ML/generativa · simulação de treino passo a passo · sorteio da próxima palavra com temperatura · contador de tokens e custo mensal · calculadora do custo do erro · comparador comprar/alugar/construir · avaliador dos seis filtros
+- **75 figuras SVG** com tooltip e **43 simuladores interativos**, distribuídos pelos 8 módulos
+- Destaques: árvore de receita · amostra de teste A/B · "espiar o teste" com dois grupos idênticos ·
+  treino passo a passo · próxima palavra com temperatura · custo do erro · comprar/alugar/construir ·
+  quanto vale um vigia · gerador da política de uso de IA · previsão com faixa · o desconto vale a pena? ·
+  Monte Carlo do caixa · a cauda que a média esconde · teatro de conformidade · matriz de portfólio ·
+  curva de adoção · confiabilidade de cadeia de agentes · construtor de prompt · matriz de confusão ·
+  sobreajuste · deriva
 - Vídeos do YouTube com capa e fallback quando estiver sem internet
 
 ## Estrutura

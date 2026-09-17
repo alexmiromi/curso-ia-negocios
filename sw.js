@@ -1,4 +1,4 @@
-var CACHE = 'ia-negocios-v5';
+var CACHE = 'ia-negocios-v6';
 var ASSETS = ['./','index.html','app.css','app.js','conteudo.js','widgets.js','player.js','manifest.webmanifest',
   'icons/icon-192.png','icons/icon-512.png','icons/icon-180.png'];
 
