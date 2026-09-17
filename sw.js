@@ -1,9 +1,9 @@
-var CACHE = 'ia-negocios-v4';
+var CACHE = 'ia-negocios-v5';
 var ASSETS = ['./','index.html','app.css','app.js','conteudo.js','widgets.js','player.js','manifest.webmanifest',
   'icons/icon-192.png','icons/icon-512.png','icons/icon-180.png'];
 
 self.addEventListener('install', function(e){
-  e.waitUntil(caches.open(CACHE).then(function(c){ return c.addAll(ASSETS); }).then(function(){ return self.skipWaiting(); }));
+  e.waitUntil(caches.open(CACHE).then(function(c){ return c.addAll(ASSETS); }).then(function(){}));
 });
 self.addEventListener('activate', function(e){
   e.waitUntil(caches.keys().then(function(ks){
@@ -22,4 +22,8 @@ self.addEventListener('fetch', function(e){
       }).catch(function(){ return caches.match('index.html'); });
     })
   );
+});
+
+self.addEventListener('message', function(e){
+  if(e.data === 'atualizar') self.skipWaiting();
 });

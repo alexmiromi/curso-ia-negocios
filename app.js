@@ -270,6 +270,32 @@ fab.onclick=function(){ scrollTo({top:0,behavior:'smooth'}); };
 rota(); upd();
 
 if('serviceWorker' in navigator){
-  addEventListener('load',function(){ navigator.serviceWorker.register('sw.js').catch(function(){}); });
+  addEventListener('load',function(){
+    navigator.serviceWorker.register('sw.js').then(function(reg){
+      function espera(sw){
+        if(!sw) return;
+        sw.addEventListener('statechange',function(){ if(sw.state==='installed' && navigator.serviceWorker.controller) avisa(reg); });
+      }
+      if(reg.waiting && navigator.serviceWorker.controller) avisa(reg);
+      espera(reg.installing);
+      reg.addEventListener('updatefound',function(){ espera(reg.installing); });
+      setInterval(function(){ reg.update().catch(function(){}); }, 1800000);
+    }).catch(function(){});
+    var recarregou=false;
+    navigator.serviceWorker.addEventListener('controllerchange',function(){
+      if(recarregou) return; recarregou=true; location.reload();
+    });
+  });
+}
+function avisa(reg){
+  if(document.getElementById('nova')) return;
+  var d=document.createElement('div'); d.id='nova'; d.className='nova';
+  var t=document.createElement('span'); t.textContent='Versão nova disponível';
+  var b=document.createElement('button'); b.className='btn pri'; b.textContent='Atualizar';
+  b.onclick=function(){ if(reg.waiting) reg.waiting.postMessage('atualizar'); else location.reload(); };
+  var x=document.createElement('button'); x.className='btn ghost'; x.textContent='Agora não';
+  x.onclick=function(){ d.remove(); };
+  d.appendChild(t); d.appendChild(b); d.appendChild(x);
+  document.body.appendChild(d);
 }
 })();
